@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Weapon : MonoBehaviour
 {
+    public LayerMask shootingLayerMask;
     public Camera playerCamera;
     // Shooting
     public bool isShooting, readyToShoot;
@@ -19,6 +20,8 @@ public class Weapon : MonoBehaviour
     public Transform bulletSpawn;
     public float bulletVelocity = 30;
     public float bulletPrefabLifeTime = 5f;
+    // Muzzle Flash
+    public GameObject muzzleEffect;
 
     public enum ShootingMode
     {
@@ -53,21 +56,37 @@ public class Weapon : MonoBehaviour
 
     private void FireWeapon()
     {
+        muzzleEffect.GetComponent<ParticleSystem>().Play();
         readyToShoot = false;
 
-        Vector3 shootingDirection = CalculateDirectionAndSpread().normalized;
-        GameObject bullet = Instantiate(bulletPrefab, bulletSpawn.position, Quaternion.identity);
-        bullet.transform.forward = shootingDirection;
-        // Shoot bullet
-        bullet.GetComponent<Rigidbody>().AddForce(shootingDirection * bulletVelocity, ForceMode.Impulse);
-        // Destroy bullet
-        StartCoroutine(DestroyBulletAfterTime(bullet, bulletPrefabLifeTime));
+        Ray ray = playerCamera.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
+        Vector3 baseDirection = ray.direction;
 
-        // Check if done shooting
+        // Add Spread
+        Vector3 finalDirection = AddSpread(baseDirection);
+
+        // Bullet Hit
+        if (Physics.Raycast(playerCamera.transform.position, finalDirection, out RaycastHit hit, 1000f, shootingLayerMask))
+        {
+            // Handle Damage
+            if (hit.collider.CompareTag("Enemy"))
+            {
+                // hit.collider.GetComponent<EnemyHealth>().TakeDamage(damage);
+            }
+            // Spawn Impact Effect
+            CreateImpact(hit);
+        }
+        // Spawn Bullet Visual
+        GameObject tracer = Instantiate(bulletPrefab, bulletSpawn.position, Quaternion.identity);
+        tracer.transform.forward = finalDirection;
+        tracer.GetComponent<Rigidbody>().linearVelocity = finalDirection * bulletVelocity; // Set very high velocity
+        StartCoroutine(DestroyBulletAfterTime(tracer, 1f));
+
+        // Handle Reset/Burst logic
         if (allowReset)
         {
             Invoke("ResetShot", shootingDelay);
-            allowReset = false;
+            allowReset = true;
         }
         // Shooting in Burst Mode
         if (currentShootingMode == ShootingMode.Burst && burstBulletsLeft > 1)
@@ -76,39 +95,30 @@ public class Weapon : MonoBehaviour
             Invoke("FireWeapon", shootingDelay);
         }
     }
+    private void CreateImpact(RaycastHit hit)
+    {
+        GameObject hole = Instantiate(
+            GlobalReferences.Instance.bulletImpactEffectPrefab,
+            hit.point,
+            Quaternion.LookRotation(hit.normal)
+        );
+        hole.transform.SetParent(hit.transform);
+    }
+    private Vector3 AddSpread(Vector3 baseDir)
+    {
+        float x = Random.Range(-spreadIntensity, spreadIntensity);
+        float y = Random.Range(-spreadIntensity, spreadIntensity);
+        Vector3 spread = playerCamera.transform.right * x + playerCamera.transform.up * y;
+
+        return (baseDir + spread).normalized;
+    }
 
     private void ResetShot()
     {
         readyToShoot = true;
         allowReset = true;
     }
-    public Vector3 CalculateDirectionAndSpread()
-    {
-        // Shooting form middle of screen to check where we are pointing
-        Ray ray = playerCamera.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
-        RaycastHit hit;
 
-        Vector3 targetPoint;
-        if (Physics.Raycast(ray, out hit))
-        {
-            // Hitting Something
-            targetPoint = hit.point;
-        }
-        else
-        {
-            // Shooting at the air
-            targetPoint = ray.GetPoint(100);
-        }
-
-        Vector3 direction = targetPoint - bulletSpawn.position;
-        // Bulletspread
-        float x = UnityEngine.Random.Range(-spreadIntensity, spreadIntensity);
-        float y = UnityEngine.Random.Range(-spreadIntensity, spreadIntensity);
-
-        // Returning the shooting direction and spread
-        return direction + new Vector3(x, y, 0);
-
-    }
     private IEnumerator DestroyBulletAfterTime(GameObject bullet, float delay)
     {
         yield return new WaitForSeconds(delay);
