@@ -6,4 +6,8 @@ public class Bullet : MonoBehaviour
     {
         Destroy(gameObject);
     }
+    public class SelfDestruct : MonoBehaviour
+    {
+        void Start() { Destroy(gameObject, 5f); }
+    }
 }
