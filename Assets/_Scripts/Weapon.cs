@@ -5,6 +5,10 @@ public class Weapon : MonoBehaviour
 {
     public LayerMask shootingLayerMask;
     public Camera weaponCamera;
+    public enum ShootingMode
+    {
+        Single, Burst, Automatic
+    }
     [Header("Damage Settings")]
     public int damage;
     public int headshotDamage;
@@ -26,11 +30,11 @@ public class Weapon : MonoBehaviour
     public float bulletPrefabLifeTime = 5f;
     // Muzzle Flash
     public GameObject muzzleEffect;
-
-    public enum ShootingMode
-    {
-        Single, Burst, Automatic
-    }
+    [Header("Audio Settings")]
+    public AudioSource audioSourceSFX;
+    public AudioClip fireSound;
+    public float basePitch = 1.0f;
+    [Range(0f, 0.5f)] public float pitchVariation = 0.1f;
 
     void Awake()
     {
@@ -62,12 +66,18 @@ public class Weapon : MonoBehaviour
     {
         muzzleEffect.GetComponent<ParticleSystem>().Play();
         readyToShoot = false;
-
         Ray ray = weaponCamera.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
         Vector3 baseDirection = ray.direction;
-
         // Add Spread
         Vector3 finalDirection = AddSpread(baseDirection);
+        // Fire Sound
+        if (audioSourceSFX != null && fireSound != null)
+        {
+            // Randomize pitch
+            audioSourceSFX.pitch = basePitch + Random.Range(-pitchVariation, pitchVariation);
+            // Enables overlapping
+            audioSourceSFX.PlayOneShot(fireSound);
+        }
 
         // Bullet Hit
         if (Physics.Raycast(weaponCamera.transform.position, finalDirection, out RaycastHit hit, 1000f, shootingLayerMask))

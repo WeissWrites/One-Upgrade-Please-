@@ -555,6 +555,9 @@ MonoBehaviour:
   bulletVelocity: 300
   bulletPrefabLifeTime: 5
   muzzleEffect: {fileID: 5362935543660777470}
+  audioSourceSFX: {fileID: 0}
+  fireSound: {fileID: 8300000, guid: 33b2691ae216e8c47881dbf3db73a095, type: 3}
+  pitchVariation: 0.1
   currentShootingMode: 0
 --- !u!1 &5273298359293595320
 GameObject:
