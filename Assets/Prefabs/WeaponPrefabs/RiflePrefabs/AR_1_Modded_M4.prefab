@@ -466,7 +466,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &3467986972769033291
 Transform:
   m_ObjectHideFlags: 0
@@ -528,6 +528,9 @@ MonoBehaviour:
   bulletVelocity: 300
   bulletPrefabLifeTime: 5
   muzzleEffect: {fileID: 6503243419627725276}
+  audioSourceSFX: {fileID: 0}
+  fireSound: {fileID: 0}
+  pitchVariation: 0.1
   currentShootingMode: 2
 --- !u!1 &3660445297284671501
 GameObject:

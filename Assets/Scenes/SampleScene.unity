@@ -153,6 +153,149 @@ Transform:
   - {fileID: 1174349234}
   m_Father: {fileID: 1482834558}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6834656 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3662616773708587844, guid: 4a9774ede530c3a4f8f5a3a3bbdcc7c8, type: 3}
+  m_PrefabInstance: {fileID: 1034931041}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &7568893
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7568894}
+  - component: {fileID: 7568897}
+  - component: {fileID: 7568896}
+  - component: {fileID: 7568895}
+  m_Layer: 5
+  m_Name: Canvas
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &7568894
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7568893}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 535837896}
+  m_Father: {fileID: 1384911428}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0, y: 0}
+--- !u!114 &7568895
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7568893}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.GraphicRaycaster
+  m_IgnoreReversedGraphics: 1
+  m_BlockingObjects: 0
+  m_BlockingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+--- !u!114 &7568896
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7568893}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.CanvasScaler
+  m_UiScaleMode: 0
+  m_ReferencePixelsPerUnit: 100
+  m_ScaleFactor: 1
+  m_ReferenceResolution: {x: 800, y: 600}
+  m_ScreenMatchMode: 0
+  m_MatchWidthOrHeight: 0
+  m_PhysicalUnit: 3
+  m_FallbackScreenDPI: 96
+  m_DefaultSpriteDPI: 96
+  m_DynamicPixelsPerUnit: 1
+  m_PresetInfoIsWorld: 0
+--- !u!223 &7568897
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7568893}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 0
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 0
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_VertexColorAlwaysGammaSpace: 0
+  m_AdditionalShaderChannelsFlag: 0
+  m_UpdateRectTransformForStandalone: 0
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_TargetDisplay: 0
+--- !u!1 &14268269
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 14268270}
+  m_Layer: 5
+  m_Name: Handle Slide Area
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &14268270
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 14268269}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1499221904}
+  m_Father: {fileID: 535837896}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: -20, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &18565782
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -171,7 +314,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4856994953566141792, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: Concrete
       objectReference: {fileID: 0}
     - target: {fileID: 5200623486872905690, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_LocalScale.x
@@ -312,7 +455,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1613705764791839807, guid: 210699a1a51ee44488f7250860efd951, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: Concrete
       objectReference: {fileID: 0}
     - target: {fileID: 2102856100848776837, guid: 210699a1a51ee44488f7250860efd951, type: 3}
       propertyPath: m_LocalScale.x
@@ -409,7 +552,7 @@ GameObject:
   - component: {fileID: 74553555}
   m_Layer: 10
   m_Name: Pillar SE
-  m_TagString: Terrain
+  m_TagString: Concrete
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -535,7 +678,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4856994953566141792, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: Concrete
       objectReference: {fileID: 0}
     - target: {fileID: 5200623486872905690, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_LocalScale.x
@@ -616,7 +759,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4856994953566141792, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: Concrete
       objectReference: {fileID: 0}
     - target: {fileID: 5200623486872905690, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_LocalScale.x
@@ -697,7 +840,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4856994953566141792, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: Concrete
       objectReference: {fileID: 0}
     - target: {fileID: 5200623486872905690, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_LocalScale.x
@@ -834,7 +977,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2057785959805853133, guid: d4cf506ab97d74d43814f33e4a27c3fe, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: Concrete
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -864,7 +1007,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4856994953566141792, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: Concrete
       objectReference: {fileID: 0}
     - target: {fileID: 5200623486872905690, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_LocalScale.x
@@ -989,7 +1132,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8237353983624773225, guid: a84804855bdfba840ba3ca82c9d9ae61, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: Concrete
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1020,9 +1163,21 @@ PrefabInstance:
     m_TransformParent: {fileID: 1688825641}
     m_Modifications:
     - target: {fileID: -8562255080338593942, guid: d5a67d9408831114bbb5565471626ec6, type: 3}
+      propertyPath: fireSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 1cae697a74c3c73448b9c9ba1bfef074, type: 3}
+    - target: {fileID: -8562255080338593942, guid: d5a67d9408831114bbb5565471626ec6, type: 3}
       propertyPath: weaponCamera
       value: 
       objectReference: {fileID: 2042960615}
+    - target: {fileID: -8562255080338593942, guid: d5a67d9408831114bbb5565471626ec6, type: 3}
+      propertyPath: shootingDelay
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: -8562255080338593942, guid: d5a67d9408831114bbb5565471626ec6, type: 3}
+      propertyPath: audioSourceSFX
+      value: 
+      objectReference: {fileID: 971123230}
     - target: {fileID: 1539845545836955583, guid: d5a67d9408831114bbb5565471626ec6, type: 3}
       propertyPath: m_Name
       value: Recon_1_Modded_CZ 600
@@ -1090,7 +1245,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3797365401968105964, guid: 383331eea215141deaa7413452379478, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: Concrete
       objectReference: {fileID: 0}
     - target: {fileID: 4609754288705143638, guid: 383331eea215141deaa7413452379478, type: 3}
       propertyPath: m_LocalScale.x
@@ -1280,7 +1435,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4856994953566141792, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: Concrete
       objectReference: {fileID: 0}
     - target: {fileID: 5200623486872905690, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_LocalScale.x
@@ -1361,7 +1516,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4856994953566141792, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: Concrete
       objectReference: {fileID: 0}
     - target: {fileID: 5200623486872905690, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_LocalScale.x
@@ -1442,7 +1597,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4856994953566141792, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: Concrete
       objectReference: {fileID: 0}
     - target: {fileID: 5200623486872905690, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_LocalScale.x
@@ -1514,9 +1669,21 @@ PrefabInstance:
     m_TransformParent: {fileID: 1688825641}
     m_Modifications:
     - target: {fileID: -3936402482318148076, guid: 2aa48a24051ea2140948f976d05addfe, type: 3}
+      propertyPath: fireSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 8892ebfe548aae74c82cc54cde74bd73, type: 3}
+    - target: {fileID: -3936402482318148076, guid: 2aa48a24051ea2140948f976d05addfe, type: 3}
       propertyPath: weaponCamera
       value: 
       objectReference: {fileID: 2042960615}
+    - target: {fileID: -3936402482318148076, guid: 2aa48a24051ea2140948f976d05addfe, type: 3}
+      propertyPath: shootingDelay
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: -3936402482318148076, guid: 2aa48a24051ea2140948f976d05addfe, type: 3}
+      propertyPath: audioSourceSFX
+      value: 
+      objectReference: {fileID: 971123230}
     - target: {fileID: 601478301111662686, guid: 2aa48a24051ea2140948f976d05addfe, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.58
@@ -1561,6 +1728,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SMG_2_Modded_Scorpion EVO
       objectReference: {fileID: 0}
+    - target: {fileID: 7288999965336609265, guid: 2aa48a24051ea2140948f976d05addfe, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1584,7 +1755,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4856994953566141792, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: Concrete
       objectReference: {fileID: 0}
     - target: {fileID: 5200623486872905690, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_LocalScale.x
@@ -1697,7 +1868,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4856994953566141792, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: Concrete
       objectReference: {fileID: 0}
     - target: {fileID: 5200623486872905690, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_LocalScale.x
@@ -1769,9 +1940,21 @@ PrefabInstance:
     m_TransformParent: {fileID: 1688825641}
     m_Modifications:
     - target: {fileID: -8655037841799397677, guid: 07f27901f98ba1a4898a845cca1da965, type: 3}
+      propertyPath: fireSound
+      value: 
+      objectReference: {fileID: 8300000, guid: cf36a258ef758d346af6b07a9851d005, type: 3}
+    - target: {fileID: -8655037841799397677, guid: 07f27901f98ba1a4898a845cca1da965, type: 3}
       propertyPath: weaponCamera
       value: 
       objectReference: {fileID: 2042960615}
+    - target: {fileID: -8655037841799397677, guid: 07f27901f98ba1a4898a845cca1da965, type: 3}
+      propertyPath: shootingDelay
+      value: 0.07
+      objectReference: {fileID: 0}
+    - target: {fileID: -8655037841799397677, guid: 07f27901f98ba1a4898a845cca1da965, type: 3}
+      propertyPath: audioSourceSFX
+      value: 
+      objectReference: {fileID: 971123230}
     - target: {fileID: 585628351543991837, guid: 07f27901f98ba1a4898a845cca1da965, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.6
@@ -1816,6 +1999,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SMG_1_Modded_UZI
       objectReference: {fileID: 0}
+    - target: {fileID: 5161231620238289646, guid: 07f27901f98ba1a4898a845cca1da965, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1839,7 +2026,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4856994953566141792, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: Concrete
       objectReference: {fileID: 0}
     - target: {fileID: 5200623486872905690, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_LocalScale.x
@@ -1920,7 +2107,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4856994953566141792, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: Concrete
       objectReference: {fileID: 0}
     - target: {fileID: 5200623486872905690, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_LocalScale.x
@@ -2164,7 +2351,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2057785959805853133, guid: d4cf506ab97d74d43814f33e4a27c3fe, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: Concrete
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2188,9 +2375,17 @@ PrefabInstance:
       propertyPath: weaponCamera
       value: 
       objectReference: {fileID: 2042960615}
+    - target: {fileID: -9135481035900740840, guid: 696acfae30082ab4c9d93edcb76183e8, type: 3}
+      propertyPath: audioSourceSFX
+      value: 
+      objectReference: {fileID: 971123230}
     - target: {fileID: 1588724927527360224, guid: 696acfae30082ab4c9d93edcb76183e8, type: 3}
       propertyPath: m_Name
-      value: Pistol_4_Modded_FiveSeven
+      value: Pistol_2_Modded_FiveSeven
+      objectReference: {fileID: 0}
+    - target: {fileID: 1588724927527360224, guid: 696acfae30082ab4c9d93edcb76183e8, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1876376280487017093, guid: 696acfae30082ab4c9d93edcb76183e8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2270,7 +2465,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4856994953566141792, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: Concrete
       objectReference: {fileID: 0}
     - target: {fileID: 5200623486872905690, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_LocalScale.x
@@ -2351,7 +2546,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4856994953566141792, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: Concrete
       objectReference: {fileID: 0}
     - target: {fileID: 5200623486872905690, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_LocalScale.x
@@ -2437,7 +2632,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4856994953566141792, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: Concrete
       objectReference: {fileID: 0}
     - target: {fileID: 5200623486872905690, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_LocalScale.x
@@ -2518,7 +2713,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4856994953566141792, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: Concrete
       objectReference: {fileID: 0}
     - target: {fileID: 5200623486872905690, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_LocalScale.x
@@ -2598,6 +2793,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: AR_1_Modded_M4
       objectReference: {fileID: 0}
+    - target: {fileID: 2605834589401204728, guid: 305dc759395e2a94eb9d9a8b7cf072f0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3467986972769033291, guid: 305dc759395e2a94eb9d9a8b7cf072f0, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.58
@@ -2639,9 +2838,25 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4254955724695067017, guid: 305dc759395e2a94eb9d9a8b7cf072f0, type: 3}
+      propertyPath: basePitch
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4254955724695067017, guid: 305dc759395e2a94eb9d9a8b7cf072f0, type: 3}
+      propertyPath: fireSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 6453be76888727940b2b954a55ef25fc, type: 3}
+    - target: {fileID: 4254955724695067017, guid: 305dc759395e2a94eb9d9a8b7cf072f0, type: 3}
       propertyPath: weaponCamera
       value: 
       objectReference: {fileID: 2042960615}
+    - target: {fileID: 4254955724695067017, guid: 305dc759395e2a94eb9d9a8b7cf072f0, type: 3}
+      propertyPath: audioSourceSFX
+      value: 
+      objectReference: {fileID: 971123230}
+    - target: {fileID: 4254955724695067017, guid: 305dc759395e2a94eb9d9a8b7cf072f0, type: 3}
+      propertyPath: pitchVariation
+      value: 0.025
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2737,7 +2952,8 @@ GameObject:
   m_Component:
   - component: {fileID: 314426184}
   - component: {fileID: 314426186}
-  - component: {fileID: 314426185}
+  - component: {fileID: 314426188}
+  - component: {fileID: 314426187}
   m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
@@ -2763,26 +2979,6 @@ Transform:
   - {fileID: 330585546}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &314426185
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 314426182}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09874e1962f8c5445b8bf5bad927310d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
-  walkSpeed: 20
-  gravity: -40
-  jumpHeight: 2.5
-  dashDistance: 10
-  dashDuration: 0.2
-  dashCooldown: 3
-  mouseSensitivity: 2
-  playerCamera: {fileID: 330585546}
 --- !u!143 &314426186
 CharacterController:
   m_ObjectHideFlags: 0
@@ -2808,6 +3004,67 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &314426187
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 314426182}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3cc10aff2f41bb74083c63348a28c67f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerFootsteps
+  groundCheck: {fileID: 464546186}
+  groundDistance: 0.3
+  groundMask:
+    serializedVersion: 2
+    m_Bits: 1032
+  footstepSource: {fileID: 971123230}
+  walkStepInterval: 0.2
+  sandSounds:
+  - {fileID: 8300000, guid: 3610c2e39f5cb7e49832ff5a193b6a9d, type: 3}
+  - {fileID: 8300000, guid: d33aa23cc6d8d6043ae779862ea1bd07, type: 3}
+  - {fileID: 8300000, guid: b13f159001ab78e4684b043dc874dc72, type: 3}
+  - {fileID: 8300000, guid: 7e8c7eabe1b777d4caf7edc4119fed1a, type: 3}
+  - {fileID: 8300000, guid: b6a102af6b09cc840b65216d88df1bfe, type: 3}
+  - {fileID: 8300000, guid: 4990b5ce16355014d9730587853fa28c, type: 3}
+  - {fileID: 8300000, guid: 99499948d40b12740a60067d4e30a88f, type: 3}
+  - {fileID: 8300000, guid: b1b5897500e558c4489882224ba7ec4c, type: 3}
+  - {fileID: 8300000, guid: 67a8a099388bcf04f917828dd0b21b13, type: 3}
+  - {fileID: 8300000, guid: 6343f3ece5af4f144bd90e72349eec12, type: 3}
+  concreteSounds:
+  - {fileID: 8300000, guid: 0757c084bc3121b4db7d816bd1311f08, type: 3}
+  - {fileID: 8300000, guid: 88f7481fba485e340a5305983b3c5eb0, type: 3}
+  - {fileID: 8300000, guid: d1ee7cd663f74234a93e02e3b0965e09, type: 3}
+  - {fileID: 8300000, guid: 029449427fedd1e4c869dd6cdd134265, type: 3}
+  - {fileID: 8300000, guid: 5324eb843a0544844a076feb91a1f041, type: 3}
+  - {fileID: 8300000, guid: 2016e09042adcc845b61e06c110f8fb7, type: 3}
+  - {fileID: 8300000, guid: e906d23743fb34a4896034345653d6c0, type: 3}
+  - {fileID: 8300000, guid: dd822bc9cd0eafc43872c11dce2368c3, type: 3}
+  - {fileID: 8300000, guid: 1e8330fc24f99764eb5bca3f49c39e08, type: 3}
+  - {fileID: 8300000, guid: a093e95ad773d954a8b60ae2524e34f5, type: 3}
+--- !u!114 &314426188
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 314426182}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09874e1962f8c5445b8bf5bad927310d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
+  walkSpeed: 20
+  gravity: -40
+  jumpHeight: 2.5
+  dashDistance: 10
+  dashDuration: 0.2
+  dashCooldown: 3
+  mouseSensitivity: 2
+  playerCamera: {fileID: 330585546}
 --- !u!1 &317272527
 GameObject:
   m_ObjectHideFlags: 0
@@ -2858,7 +3115,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4856994953566141792, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: Concrete
       objectReference: {fileID: 0}
     - target: {fileID: 5200623486872905690, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_LocalScale.x
@@ -3108,7 +3365,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4856994953566141792, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: Concrete
       objectReference: {fileID: 0}
     - target: {fileID: 5200623486872905690, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_LocalScale.x
@@ -3189,7 +3446,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4856994953566141792, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: Concrete
       objectReference: {fileID: 0}
     - target: {fileID: 5200623486872905690, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_LocalScale.x
@@ -3309,10 +3566,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: AR_5_Modded_ASH-12
       objectReference: {fileID: 0}
+    - target: {fileID: 2520044755054083859, guid: a4b3426818dd17d44aca64428663811f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8412447066455728168, guid: a4b3426818dd17d44aca64428663811f, type: 3}
+      propertyPath: fireSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 6739c01659ad96d47987f4ddee226b36, type: 3}
     - target: {fileID: 8412447066455728168, guid: a4b3426818dd17d44aca64428663811f, type: 3}
       propertyPath: weaponCamera
       value: 
       objectReference: {fileID: 2042960615}
+    - target: {fileID: 8412447066455728168, guid: a4b3426818dd17d44aca64428663811f, type: 3}
+      propertyPath: audioSourceSFX
+      value: 
+      objectReference: {fileID: 971123230}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3478,7 +3747,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1613705764791839807, guid: 210699a1a51ee44488f7250860efd951, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: Concrete
       objectReference: {fileID: 0}
     - target: {fileID: 2102856100848776837, guid: 210699a1a51ee44488f7250860efd951, type: 3}
       propertyPath: m_LocalScale.x
@@ -3569,7 +3838,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4856994953566141792, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: Concrete
       objectReference: {fileID: 0}
     - target: {fileID: 5200623486872905690, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_LocalScale.x
@@ -3706,7 +3975,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2057785959805853133, guid: d4cf506ab97d74d43814f33e4a27c3fe, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: Concrete
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3761,9 +4030,17 @@ PrefabInstance:
       propertyPath: weaponCamera
       value: 
       objectReference: {fileID: 2042960615}
+    - target: {fileID: -8676169461016593331, guid: f6840d5ec058d9847a85b96426b63c1e, type: 3}
+      propertyPath: audioSourceSFX
+      value: 
+      objectReference: {fileID: 971123230}
     - target: {fileID: 4755269535393868564, guid: f6840d5ec058d9847a85b96426b63c1e, type: 3}
       propertyPath: m_Name
-      value: Pistol_3_Modded_Hudson H9
+      value: Pistol_1_Modded_Hudson H9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4755269535393868564, guid: f6840d5ec058d9847a85b96426b63c1e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8839694240434654427, guid: f6840d5ec058d9847a85b96426b63c1e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3843,7 +4120,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4856994953566141792, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: Concrete
       objectReference: {fileID: 0}
     - target: {fileID: 5200623486872905690, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_LocalScale.x
@@ -3924,7 +4201,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4856994953566141792, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: Concrete
       objectReference: {fileID: 0}
     - target: {fileID: 5200623486872905690, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_LocalScale.x
@@ -4047,7 +4324,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4856994953566141792, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: Concrete
       objectReference: {fileID: 0}
     - target: {fileID: 5200623486872905690, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_LocalScale.x
@@ -4110,6 +4387,108 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
+--- !u!1 &535837895
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 535837896}
+  - component: {fileID: 535837897}
+  m_Layer: 5
+  m_Name: SFXVolume
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &535837896
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 535837895}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1381997375}
+  - {fileID: 1774485951}
+  - {fileID: 14268270}
+  m_Father: {fileID: 7568894}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 160, y: 20}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &535837897
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 535837895}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Slider
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 1499221905}
+  m_FillRect: {fileID: 1533578907}
+  m_HandleRect: {fileID: 1499221904}
+  m_Direction: 0
+  m_MinValue: 0.0001
+  m_MaxValue: 1
+  m_WholeNumbers: 0
+  m_Value: 0.5
+  m_OnValueChanged:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 971123231}
+        m_TargetAssemblyTypeName: VolumeManager, Assembly-CSharp
+        m_MethodName: SetSFXVolume
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &543002182
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4128,7 +4507,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4856994953566141792, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: Concrete
       objectReference: {fileID: 0}
     - target: {fileID: 5200623486872905690, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_LocalScale.x
@@ -4200,12 +4579,28 @@ PrefabInstance:
     m_TransformParent: {fileID: 1688825641}
     m_Modifications:
     - target: {fileID: -2447247324898570501, guid: d2cd9729ac5b12f44bc226142b4c0c49, type: 3}
+      propertyPath: fireSound
+      value: 
+      objectReference: {fileID: 8300000, guid: a0e26b9f27346974dbc1b12dd6b3fb0c, type: 3}
+    - target: {fileID: -2447247324898570501, guid: d2cd9729ac5b12f44bc226142b4c0c49, type: 3}
       propertyPath: weaponCamera
       value: 
       objectReference: {fileID: 2042960615}
+    - target: {fileID: -2447247324898570501, guid: d2cd9729ac5b12f44bc226142b4c0c49, type: 3}
+      propertyPath: shootingDelay
+      value: 0.08
+      objectReference: {fileID: 0}
+    - target: {fileID: -2447247324898570501, guid: d2cd9729ac5b12f44bc226142b4c0c49, type: 3}
+      propertyPath: audioSourceSFX
+      value: 
+      objectReference: {fileID: 971123230}
     - target: {fileID: 3421700662205668341, guid: d2cd9729ac5b12f44bc226142b4c0c49, type: 3}
       propertyPath: m_Name
       value: SMG_3_Modded_P90
+      objectReference: {fileID: 0}
+    - target: {fileID: 3421700662205668341, guid: d2cd9729ac5b12f44bc226142b4c0c49, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3841834873541539405, guid: d2cd9729ac5b12f44bc226142b4c0c49, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4275,7 +4670,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4856994953566141792, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: Concrete
       objectReference: {fileID: 0}
     - target: {fileID: 5200623486872905690, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_LocalScale.x
@@ -4356,7 +4751,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4856994953566141792, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: Concrete
       objectReference: {fileID: 0}
     - target: {fileID: 5200623486872905690, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_LocalScale.x
@@ -4428,9 +4823,17 @@ PrefabInstance:
     m_TransformParent: {fileID: 1688825641}
     m_Modifications:
     - target: {fileID: 5596846495559684533, guid: 1ce660de7bedd5848b93e1d3e6f8f942, type: 3}
+      propertyPath: fireSound
+      value: 
+      objectReference: {fileID: 8300000, guid: cf36a258ef758d346af6b07a9851d005, type: 3}
+    - target: {fileID: 5596846495559684533, guid: 1ce660de7bedd5848b93e1d3e6f8f942, type: 3}
       propertyPath: weaponCamera
       value: 
       objectReference: {fileID: 2042960615}
+    - target: {fileID: 5596846495559684533, guid: 1ce660de7bedd5848b93e1d3e6f8f942, type: 3}
+      propertyPath: audioSourceSFX
+      value: 
+      objectReference: {fileID: 971123230}
     - target: {fileID: 6331857440545519915, guid: 1ce660de7bedd5848b93e1d3e6f8f942, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.67
@@ -4473,7 +4876,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8968488166648570801, guid: 1ce660de7bedd5848b93e1d3e6f8f942, type: 3}
       propertyPath: m_Name
-      value: Pistol_4
+      value: Pistol_2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4498,7 +4901,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4856994953566141792, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: Concrete
       objectReference: {fileID: 0}
     - target: {fileID: 5200623486872905690, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_LocalScale.x
@@ -4580,9 +4983,17 @@ PrefabInstance:
     m_TransformParent: {fileID: 1688825641}
     m_Modifications:
     - target: {fileID: -4443466004030271151, guid: 9b86bf4eb89ffd34b8f490bbd6a43bab, type: 3}
+      propertyPath: fireSound
+      value: 
+      objectReference: {fileID: 8300000, guid: ac4babb9c31863d479596679e1e75bcc, type: 3}
+    - target: {fileID: -4443466004030271151, guid: 9b86bf4eb89ffd34b8f490bbd6a43bab, type: 3}
       propertyPath: weaponCamera
       value: 
       objectReference: {fileID: 2042960615}
+    - target: {fileID: -4443466004030271151, guid: 9b86bf4eb89ffd34b8f490bbd6a43bab, type: 3}
+      propertyPath: audioSourceSFX
+      value: 
+      objectReference: {fileID: 971123230}
     - target: {fileID: 175095401240410630, guid: 9b86bf4eb89ffd34b8f490bbd6a43bab, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.58
@@ -4627,6 +5038,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: AR_2_Modded_M4-C
       objectReference: {fileID: 0}
+    - target: {fileID: 992716270599655095, guid: 9b86bf4eb89ffd34b8f490bbd6a43bab, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4665,7 +5080,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4856994953566141792, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: Concrete
       objectReference: {fileID: 0}
     - target: {fileID: 5200623486872905690, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_LocalScale.x
@@ -4746,7 +5161,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4856994953566141792, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: Concrete
       objectReference: {fileID: 0}
     - target: {fileID: 5200623486872905690, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_LocalScale.x
@@ -4842,7 +5257,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4856994953566141792, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: Concrete
       objectReference: {fileID: 0}
     - target: {fileID: 5200623486872905690, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_LocalScale.x
@@ -4978,7 +5393,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4856994953566141792, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: Concrete
       objectReference: {fileID: 0}
     - target: {fileID: 5200623486872905690, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_LocalScale.x
@@ -5059,7 +5474,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4856994953566141792, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: Concrete
       objectReference: {fileID: 0}
     - target: {fileID: 5200623486872905690, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_LocalScale.x
@@ -5140,7 +5555,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4856994953566141792, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: Concrete
       objectReference: {fileID: 0}
     - target: {fileID: 5200623486872905690, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_LocalScale.x
@@ -5221,7 +5636,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4856994953566141792, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: Concrete
       objectReference: {fileID: 0}
     - target: {fileID: 5200623486872905690, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_LocalScale.x
@@ -5302,7 +5717,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4856994953566141792, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: Concrete
       objectReference: {fileID: 0}
     - target: {fileID: 5200623486872905690, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_LocalScale.x
@@ -5383,7 +5798,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4856994953566141792, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: Concrete
       objectReference: {fileID: 0}
     - target: {fileID: 5200623486872905690, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_LocalScale.x
@@ -5464,7 +5879,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4856994953566141792, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: Concrete
       objectReference: {fileID: 0}
     - target: {fileID: 5200623486872905690, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_LocalScale.x
@@ -5550,7 +5965,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4856994953566141792, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: Concrete
       objectReference: {fileID: 0}
     - target: {fileID: 5200623486872905690, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_LocalScale.x
@@ -5750,6 +6165,38 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5200623486872905690, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
   m_PrefabInstance: {fileID: 1511009588}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &770155668
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 770155669}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &770155669
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 770155668}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 971123229}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &770834353
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5768,7 +6215,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4856994953566141792, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: Concrete
       objectReference: {fileID: 0}
     - target: {fileID: 5200623486872905690, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_LocalScale.x
@@ -5836,6 +6283,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2102856100848776837, guid: 210699a1a51ee44488f7250860efd951, type: 3}
   m_PrefabInstance: {fileID: 958506010}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &800037719 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1190841740196025449, guid: be02a38c56f014d44bacb08add161041, type: 3}
+  m_PrefabInstance: {fileID: 2015856988}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &809411058
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5854,7 +6306,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4856994953566141792, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: Concrete
       objectReference: {fileID: 0}
     - target: {fileID: 5200623486872905690, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_LocalScale.x
@@ -6149,7 +6601,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8237353983624773225, guid: a84804855bdfba840ba3ca82c9d9ae61, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: Concrete
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6189,7 +6641,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4856994953566141792, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: Concrete
       objectReference: {fileID: 0}
     - target: {fileID: 5200623486872905690, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_LocalScale.x
@@ -6275,7 +6727,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4856994953566141792, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: Concrete
       objectReference: {fileID: 0}
     - target: {fileID: 5200623486872905690, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_LocalScale.x
@@ -6356,7 +6808,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4856994953566141792, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: Concrete
       objectReference: {fileID: 0}
     - target: {fileID: 5200623486872905690, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_LocalScale.x
@@ -6437,7 +6889,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4856994953566141792, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: Concrete
       objectReference: {fileID: 0}
     - target: {fileID: 5200623486872905690, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_LocalScale.x
@@ -6518,7 +6970,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4856994953566141792, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: Concrete
       objectReference: {fileID: 0}
     - target: {fileID: 5200623486872905690, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_LocalScale.x
@@ -6599,7 +7051,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4856994953566141792, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: Concrete
       objectReference: {fileID: 0}
     - target: {fileID: 5200623486872905690, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_LocalScale.x
@@ -6783,9 +7235,17 @@ PrefabInstance:
     m_TransformParent: {fileID: 1688825641}
     m_Modifications:
     - target: {fileID: 2910400293789212665, guid: ffa74543fed6d8d4ba1f69abe549db1d, type: 3}
+      propertyPath: fireSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 5aa33f02777dd304787f28968296c3e4, type: 3}
+    - target: {fileID: 2910400293789212665, guid: ffa74543fed6d8d4ba1f69abe549db1d, type: 3}
       propertyPath: weaponCamera
       value: 
       objectReference: {fileID: 2042960615}
+    - target: {fileID: 2910400293789212665, guid: ffa74543fed6d8d4ba1f69abe549db1d, type: 3}
+      propertyPath: audioSourceSFX
+      value: 
+      objectReference: {fileID: 971123230}
     - target: {fileID: 4818025856526087407, guid: ffa74543fed6d8d4ba1f69abe549db1d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.67
@@ -6828,7 +7288,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6840000779421132169, guid: ffa74543fed6d8d4ba1f69abe549db1d, type: 3}
       propertyPath: m_Name
-      value: Pistol_5
+      value: Pistol_3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6858,7 +7318,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4856994953566141792, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: Concrete
       objectReference: {fileID: 0}
     - target: {fileID: 5200623486872905690, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_LocalScale.x
@@ -6939,7 +7399,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1613705764791839807, guid: 210699a1a51ee44488f7250860efd951, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: Concrete
       objectReference: {fileID: 0}
     - target: {fileID: 2102856100848776837, guid: 210699a1a51ee44488f7250860efd951, type: 3}
       propertyPath: m_LocalScale.x
@@ -7002,6 +7462,149 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 210699a1a51ee44488f7250860efd951, type: 3}
+--- !u!1 &971123228
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 971123229}
+  - component: {fileID: 971123230}
+  - component: {fileID: 971123231}
+  m_Layer: 0
+  m_Name: AudioManagerSFX
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &971123229
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 971123228}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 770155669}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &971123230
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 971123228}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: -7019151285865633628, guid: 98a1491321d9d7840a029261605f8d9a, type: 2}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!114 &971123231
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 971123228}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be72d9e8258a23846b4f5fdee4bdb23e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::VolumeManager
+  mainMixer: {fileID: 24100000, guid: 98a1491321d9d7840a029261605f8d9a, type: 2}
 --- !u!4 &973452905 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5200623486872905690, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
@@ -7030,7 +7633,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1613705764791839807, guid: 210699a1a51ee44488f7250860efd951, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: Concrete
       objectReference: {fileID: 0}
     - target: {fileID: 2102856100848776837, guid: 210699a1a51ee44488f7250860efd951, type: 3}
       propertyPath: m_LocalScale.x
@@ -7111,7 +7714,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4856994953566141792, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: Concrete
       objectReference: {fileID: 0}
     - target: {fileID: 5200623486872905690, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_LocalScale.x
@@ -7192,7 +7795,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4856994953566141792, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: Concrete
       objectReference: {fileID: 0}
     - target: {fileID: 5200623486872905690, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_LocalScale.x
@@ -7273,7 +7876,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4856994953566141792, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: Concrete
       objectReference: {fileID: 0}
     - target: {fileID: 5200623486872905690, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_LocalScale.x
@@ -7354,7 +7957,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4856994953566141792, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: Concrete
       objectReference: {fileID: 0}
     - target: {fileID: 5200623486872905690, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_LocalScale.x
@@ -7427,12 +8030,24 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3662616773708587844, guid: 4a9774ede530c3a4f8f5a3a3bbdcc7c8, type: 3}
       propertyPath: m_Name
-      value: Pistol_6_Modded_MiniUzi
+      value: Pistol_4_Modded_MiniUzi
       objectReference: {fileID: 0}
+    - target: {fileID: 7231522081788239057, guid: 4a9774ede530c3a4f8f5a3a3bbdcc7c8, type: 3}
+      propertyPath: basePitch
+      value: 1.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7231522081788239057, guid: 4a9774ede530c3a4f8f5a3a3bbdcc7c8, type: 3}
+      propertyPath: fireSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 6453be76888727940b2b954a55ef25fc, type: 3}
     - target: {fileID: 7231522081788239057, guid: 4a9774ede530c3a4f8f5a3a3bbdcc7c8, type: 3}
       propertyPath: weaponCamera
       value: 
       objectReference: {fileID: 2042960615}
+    - target: {fileID: 7231522081788239057, guid: 4a9774ede530c3a4f8f5a3a3bbdcc7c8, type: 3}
+      propertyPath: audioSourceSFX
+      value: 
+      objectReference: {fileID: 971123230}
     - target: {fileID: 8168608955263336424, guid: 4a9774ede530c3a4f8f5a3a3bbdcc7c8, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.67
@@ -7496,7 +8111,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4856994953566141792, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: Concrete
       objectReference: {fileID: 0}
     - target: {fileID: 5200623486872905690, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_LocalScale.x
@@ -7577,7 +8192,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4856994953566141792, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: Concrete
       objectReference: {fileID: 0}
     - target: {fileID: 5200623486872905690, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_LocalScale.x
@@ -7673,7 +8288,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4856994953566141792, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: Concrete
       objectReference: {fileID: 0}
     - target: {fileID: 5200623486872905690, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_LocalScale.x
@@ -7736,6 +8351,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
+--- !u!1 &1071701476 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4755269535393868564, guid: f6840d5ec058d9847a85b96426b63c1e, type: 3}
+  m_PrefabInstance: {fileID: 481652934}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1082488937
 GameObject:
   m_ObjectHideFlags: 0
@@ -7750,7 +8370,7 @@ GameObject:
   - component: {fileID: 1082488939}
   m_Layer: 10
   m_Name: Pillar NW
-  m_TagString: Terrain
+  m_TagString: Concrete
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7866,7 +8486,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4856994953566141792, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: Concrete
       objectReference: {fileID: 0}
     - target: {fileID: 5200623486872905690, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_LocalScale.x
@@ -8067,7 +8687,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4856994953566141792, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: Concrete
       objectReference: {fileID: 0}
     - target: {fileID: 5200623486872905690, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_LocalScale.x
@@ -8210,12 +8830,20 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4713984701994193172, guid: 80ceeb9fe58aec949b1aac714a9bbc87, type: 3}
       propertyPath: m_Name
-      value: Pistol_3
+      value: Pistol_1
       objectReference: {fileID: 0}
+    - target: {fileID: 8745231770388605918, guid: 80ceeb9fe58aec949b1aac714a9bbc87, type: 3}
+      propertyPath: fireSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 33b2691ae216e8c47881dbf3db73a095, type: 3}
     - target: {fileID: 8745231770388605918, guid: 80ceeb9fe58aec949b1aac714a9bbc87, type: 3}
       propertyPath: weaponCamera
       value: 
       objectReference: {fileID: 2042960615}
+    - target: {fileID: 8745231770388605918, guid: 80ceeb9fe58aec949b1aac714a9bbc87, type: 3}
+      propertyPath: audioSourceSFX
+      value: 
+      objectReference: {fileID: 971123230}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8239,7 +8867,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4856994953566141792, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: Concrete
       objectReference: {fileID: 0}
     - target: {fileID: 5200623486872905690, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_LocalScale.x
@@ -8325,7 +8953,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4856994953566141792, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: Concrete
       objectReference: {fileID: 0}
     - target: {fileID: 5200623486872905690, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_LocalScale.x
@@ -8448,7 +9076,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4856994953566141792, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: Concrete
       objectReference: {fileID: 0}
     - target: {fileID: 5200623486872905690, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_LocalScale.x
@@ -8534,7 +9162,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4856994953566141792, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: Concrete
       objectReference: {fileID: 0}
     - target: {fileID: 5200623486872905690, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_LocalScale.x
@@ -8615,7 +9243,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4856994953566141792, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: Concrete
       objectReference: {fileID: 0}
     - target: {fileID: 5200623486872905690, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_LocalScale.x
@@ -8701,7 +9329,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1613705764791839807, guid: 210699a1a51ee44488f7250860efd951, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: Concrete
       objectReference: {fileID: 0}
     - target: {fileID: 2102856100848776837, guid: 210699a1a51ee44488f7250860efd951, type: 3}
       propertyPath: m_LocalScale.x
@@ -8787,7 +9415,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4856994953566141792, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: Concrete
       objectReference: {fileID: 0}
     - target: {fileID: 5200623486872905690, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_LocalScale.x
@@ -8983,7 +9611,7 @@ GameObject:
   - component: {fileID: 1320050536}
   m_Layer: 10
   m_Name: Pillar NE
-  m_TagString: Terrain
+  m_TagString: Concrete
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9104,7 +9732,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4856994953566141792, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: Concrete
       objectReference: {fileID: 0}
     - target: {fileID: 5200623486872905690, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_LocalScale.x
@@ -9185,7 +9813,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4856994953566141792, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: Concrete
       objectReference: {fileID: 0}
     - target: {fileID: 5200623486872905690, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_LocalScale.x
@@ -9266,7 +9894,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4856994953566141792, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: Concrete
       objectReference: {fileID: 0}
     - target: {fileID: 5200623486872905690, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_LocalScale.x
@@ -9366,6 +9994,113 @@ Transform:
   - {fileID: 22291392}
   m_Father: {fileID: 1482834558}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1381997374
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1381997375}
+  - component: {fileID: 1381997377}
+  - component: {fileID: 1381997376}
+  m_Layer: 5
+  m_Name: Background
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1381997375
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1381997374}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 535837896}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0.25}
+  m_AnchorMax: {x: 1, y: 0.75}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1381997376
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1381997374}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1381997377
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1381997374}
+  m_CullTransparentMesh: 1
+--- !u!1 &1384911427
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1384911428}
+  m_Layer: 0
+  m_Name: SettingsScreen
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1384911428
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1384911427}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -43.53911, y: 0, z: 14.68519}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 7568894}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1385081733 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5200623486872905690, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
@@ -9389,7 +10124,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4856994953566141792, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: Concrete
       objectReference: {fileID: 0}
     - target: {fileID: 5200623486872905690, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_LocalScale.x
@@ -9470,7 +10205,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4856994953566141792, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: Concrete
       objectReference: {fileID: 0}
     - target: {fileID: 5200623486872905690, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_LocalScale.x
@@ -9556,7 +10291,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4856994953566141792, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: Concrete
       objectReference: {fileID: 0}
     - target: {fileID: 5200623486872905690, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_LocalScale.x
@@ -9689,7 +10424,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4856994953566141792, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: Concrete
       objectReference: {fileID: 0}
     - target: {fileID: 5200623486872905690, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_LocalScale.x
@@ -9963,7 +10698,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4856994953566141792, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: Concrete
       objectReference: {fileID: 0}
     - target: {fileID: 5200623486872905690, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_LocalScale.x
@@ -10026,6 +10761,81 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
+--- !u!1 &1499221903
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1499221904}
+  - component: {fileID: 1499221906}
+  - component: {fileID: 1499221905}
+  m_Layer: 5
+  m_Name: Handle
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1499221904
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1499221903}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 14268270}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.49995, y: 0}
+  m_AnchorMax: {x: 0.49995, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 20, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1499221905
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1499221903}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1499221906
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1499221903}
+  m_CullTransparentMesh: 1
 --- !u!1001 &1505951026
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10044,7 +10854,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4856994953566141792, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: Concrete
       objectReference: {fileID: 0}
     - target: {fileID: 5200623486872905690, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_LocalScale.x
@@ -10125,7 +10935,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4856994953566141792, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: Concrete
       objectReference: {fileID: 0}
     - target: {fileID: 5200623486872905690, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_LocalScale.x
@@ -10211,7 +11021,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4856994953566141792, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: Concrete
       objectReference: {fileID: 0}
     - target: {fileID: 5200623486872905690, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_LocalScale.x
@@ -10274,6 +11084,81 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
+--- !u!1 &1533578906
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1533578907}
+  - component: {fileID: 1533578909}
+  - component: {fileID: 1533578908}
+  m_Layer: 5
+  m_Name: Fill
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1533578907
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1533578906}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1774485951}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0.49995, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 10, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1533578908
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1533578906}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1533578909
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1533578906}
+  m_CullTransparentMesh: 1
 --- !u!1001 &1555330063
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10292,7 +11177,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4856994953566141792, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: Concrete
       objectReference: {fileID: 0}
     - target: {fileID: 5200623486872905690, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_LocalScale.x
@@ -10388,7 +11273,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4856994953566141792, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: Concrete
       objectReference: {fileID: 0}
     - target: {fileID: 5200623486872905690, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_LocalScale.x
@@ -10474,7 +11359,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4856994953566141792, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: Concrete
       objectReference: {fileID: 0}
     - target: {fileID: 5200623486872905690, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_LocalScale.x
@@ -10560,7 +11445,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4856994953566141792, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: Concrete
       objectReference: {fileID: 0}
     - target: {fileID: 5200623486872905690, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_LocalScale.x
@@ -10651,7 +11536,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4856994953566141792, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: Concrete
       objectReference: {fileID: 0}
     - target: {fileID: 5200623486872905690, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_LocalScale.x
@@ -10742,7 +11627,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4856994953566141792, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: Concrete
       objectReference: {fileID: 0}
     - target: {fileID: 5200623486872905690, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_LocalScale.x
@@ -10876,6 +11761,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WeaponManager
   weapons:
+  - {fileID: 1071701476}
+  - {fileID: 251904387}
+  - {fileID: 800037719}
+  - {fileID: 6834656}
   - {fileID: 2023509756}
   - {fileID: 1608141461}
   - {fileID: 1693816934}
@@ -10885,7 +11774,6 @@ MonoBehaviour:
   - {fileID: 1106617721}
   - {fileID: 601557817}
   - {fileID: 1660860479}
-  - {fileID: 251904387}
 --- !u!1 &1693816934 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5592343104298725397, guid: 93db53d01346b274abdefc7809891993, type: 3}
@@ -10912,6 +11800,10 @@ PrefabInstance:
     - target: {fileID: 428001793694919265, guid: 30ca34f61f36f7f488911ec2cd867a96, type: 3}
       propertyPath: m_Name
       value: AR_4_Modded_552 Commando
+      objectReference: {fileID: 0}
+    - target: {fileID: 428001793694919265, guid: 30ca34f61f36f7f488911ec2cd867a96, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4912735628353664144, guid: 30ca34f61f36f7f488911ec2cd867a96, type: 3}
       propertyPath: m_LocalPosition.x
@@ -10954,9 +11846,21 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6089872603688441374, guid: 30ca34f61f36f7f488911ec2cd867a96, type: 3}
+      propertyPath: fireSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 4cd0327f49555d2419bb0d86951b440f, type: 3}
+    - target: {fileID: 6089872603688441374, guid: 30ca34f61f36f7f488911ec2cd867a96, type: 3}
       propertyPath: weaponCamera
       value: 
       objectReference: {fileID: 2042960615}
+    - target: {fileID: 6089872603688441374, guid: 30ca34f61f36f7f488911ec2cd867a96, type: 3}
+      propertyPath: audioSourceSFX
+      value: 
+      objectReference: {fileID: 971123230}
+    - target: {fileID: 6089872603688441374, guid: 30ca34f61f36f7f488911ec2cd867a96, type: 3}
+      propertyPath: pitchVariation
+      value: 0.025
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -10980,7 +11884,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4856994953566141792, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: Concrete
       objectReference: {fileID: 0}
     - target: {fileID: 5200623486872905690, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_LocalScale.x
@@ -11103,7 +12007,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4856994953566141792, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: Concrete
       objectReference: {fileID: 0}
     - target: {fileID: 5200623486872905690, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_LocalScale.x
@@ -11180,7 +12084,7 @@ GameObject:
   - component: {fileID: 1730462322}
   m_Layer: 10
   m_Name: Pillar SW
-  m_TagString: Terrain
+  m_TagString: Concrete
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11287,12 +12191,32 @@ PrefabInstance:
     m_TransformParent: {fileID: 1688825641}
     m_Modifications:
     - target: {fileID: -6129453682439630796, guid: 93db53d01346b274abdefc7809891993, type: 3}
+      propertyPath: basePitch
+      value: 1.1
+      objectReference: {fileID: 0}
+    - target: {fileID: -6129453682439630796, guid: 93db53d01346b274abdefc7809891993, type: 3}
+      propertyPath: fireSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 6453be76888727940b2b954a55ef25fc, type: 3}
+    - target: {fileID: -6129453682439630796, guid: 93db53d01346b274abdefc7809891993, type: 3}
       propertyPath: weaponCamera
       value: 
       objectReference: {fileID: 2042960615}
+    - target: {fileID: -6129453682439630796, guid: 93db53d01346b274abdefc7809891993, type: 3}
+      propertyPath: audioSourceSFX
+      value: 
+      objectReference: {fileID: 971123230}
+    - target: {fileID: -6129453682439630796, guid: 93db53d01346b274abdefc7809891993, type: 3}
+      propertyPath: pitchVariation
+      value: 0.025
+      objectReference: {fileID: 0}
     - target: {fileID: 5592343104298725397, guid: 93db53d01346b274abdefc7809891993, type: 3}
       propertyPath: m_Name
       value: AR_3_Modded_AUG
+      objectReference: {fileID: 0}
+    - target: {fileID: 5592343104298725397, guid: 93db53d01346b274abdefc7809891993, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7155514406965014110, guid: 93db53d01346b274abdefc7809891993, type: 3}
       propertyPath: m_LocalPosition.x
@@ -11525,7 +12449,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3797365401968105964, guid: 383331eea215141deaa7413452379478, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: Concrete
       objectReference: {fileID: 0}
     - target: {fileID: 4609754288705143638, guid: 383331eea215141deaa7413452379478, type: 3}
       propertyPath: m_LocalScale.x
@@ -11602,7 +12526,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4856994953566141792, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: Concrete
       objectReference: {fileID: 0}
     - target: {fileID: 5200623486872905690, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_LocalScale.x
@@ -11688,7 +12612,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4856994953566141792, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: Concrete
       objectReference: {fileID: 0}
     - target: {fileID: 5200623486872905690, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_LocalScale.x
@@ -11756,6 +12680,42 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5200623486872905690, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
   m_PrefabInstance: {fileID: 734877744}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1774485950
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1774485951}
+  m_Layer: 5
+  m_Name: Fill Area
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1774485951
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1774485950}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1533578907}
+  m_Father: {fileID: 535837896}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0.25}
+  m_AnchorMax: {x: 1, y: 0.75}
+  m_AnchoredPosition: {x: -5, y: 0}
+  m_SizeDelta: {x: -20, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &1784201215
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11774,7 +12734,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4856994953566141792, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: Concrete
       objectReference: {fileID: 0}
     - target: {fileID: 5200623486872905690, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_LocalScale.x
@@ -11860,7 +12820,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4856994953566141792, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: Concrete
       objectReference: {fileID: 0}
     - target: {fileID: 5200623486872905690, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_LocalScale.x
@@ -11941,7 +12901,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4856994953566141792, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: Concrete
       objectReference: {fileID: 0}
     - target: {fileID: 5200623486872905690, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_LocalScale.x
@@ -12087,7 +13047,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4856994953566141792, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: Concrete
       objectReference: {fileID: 0}
     - target: {fileID: 5200623486872905690, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_LocalScale.x
@@ -12173,7 +13133,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4856994953566141792, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: Concrete
       objectReference: {fileID: 0}
     - target: {fileID: 5200623486872905690, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_LocalScale.x
@@ -12308,7 +13268,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8237353983624773225, guid: a84804855bdfba840ba3ca82c9d9ae61, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: Concrete
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -12338,7 +13298,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4856994953566141792, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: Concrete
       objectReference: {fileID: 0}
     - target: {fileID: 5200623486872905690, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_LocalScale.x
@@ -12419,7 +13379,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4856994953566141792, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: Concrete
       objectReference: {fileID: 0}
     - target: {fileID: 5200623486872905690, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_LocalScale.x
@@ -12500,7 +13460,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4856994953566141792, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: Concrete
       objectReference: {fileID: 0}
     - target: {fileID: 5200623486872905690, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_LocalScale.x
@@ -12586,7 +13546,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4856994953566141792, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: Concrete
       objectReference: {fileID: 0}
     - target: {fileID: 5200623486872905690, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_LocalScale.x
@@ -12667,7 +13627,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4856994953566141792, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: Concrete
       objectReference: {fileID: 0}
     - target: {fileID: 5200623486872905690, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_LocalScale.x
@@ -12748,7 +13708,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4856994953566141792, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: Concrete
       objectReference: {fileID: 0}
     - target: {fileID: 5200623486872905690, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_LocalScale.x
@@ -12834,7 +13794,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4856994953566141792, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: Concrete
       objectReference: {fileID: 0}
     - target: {fileID: 5200623486872905690, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_LocalScale.x
@@ -12922,7 +13882,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1190841740196025449, guid: be02a38c56f014d44bacb08add161041, type: 3}
       propertyPath: m_Name
-      value: Pistol_5_Modded_Ruger Mark IV 2245 Lite
+      value: Pistol_3_Modded_Ruger Mark IV 2245 Lite
       objectReference: {fileID: 0}
     - target: {fileID: 6270662927080615973, guid: be02a38c56f014d44bacb08add161041, type: 3}
       propertyPath: m_LocalPosition.x
@@ -12968,6 +13928,10 @@ PrefabInstance:
       propertyPath: weaponCamera
       value: 
       objectReference: {fileID: 2042960615}
+    - target: {fileID: 7324938813409303150, guid: be02a38c56f014d44bacb08add161041, type: 3}
+      propertyPath: audioSourceSFX
+      value: 
+      objectReference: {fileID: 971123230}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -13128,7 +14092,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4856994953566141792, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: Concrete
       objectReference: {fileID: 0}
     - target: {fileID: 5200623486872905690, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_LocalScale.x
@@ -13343,7 +14307,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1613705764791839807, guid: 210699a1a51ee44488f7250860efd951, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: Concrete
       objectReference: {fileID: 0}
     - target: {fileID: 2102856100848776837, guid: 210699a1a51ee44488f7250860efd951, type: 3}
       propertyPath: m_LocalScale.x
@@ -13424,7 +14388,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4856994953566141792, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: Concrete
       objectReference: {fileID: 0}
     - target: {fileID: 5200623486872905690, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_LocalScale.x
@@ -13561,7 +14525,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2057785959805853133, guid: d4cf506ab97d74d43814f33e4a27c3fe, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: Concrete
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -13643,7 +14607,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4856994953566141792, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: Concrete
       objectReference: {fileID: 0}
     - target: {fileID: 5200623486872905690, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_LocalScale.x
@@ -13774,7 +14738,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4856994953566141792, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: Concrete
       objectReference: {fileID: 0}
     - target: {fileID: 5200623486872905690, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_LocalScale.x
@@ -13860,7 +14824,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4856994953566141792, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: Concrete
       objectReference: {fileID: 0}
     - target: {fileID: 5200623486872905690, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
       propertyPath: m_LocalScale.x
@@ -14003,7 +14967,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8237353983624773225, guid: a84804855bdfba840ba3ca82c9d9ae61, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: Concrete
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -14022,3 +14986,5 @@ SceneRoots:
   - {fileID: 1436819099}
   - {fileID: 1213764051}
   - {fileID: 239079968}
+  - {fileID: 770155669}
+  - {fileID: 1384911428}

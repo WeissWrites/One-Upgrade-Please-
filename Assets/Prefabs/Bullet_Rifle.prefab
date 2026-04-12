@@ -166,7 +166,7 @@ GameObject:
   - component: {fileID: 7985191287381414445}
   - component: {fileID: -3265455634773376979}
   - component: {fileID: -1421969197437916930}
-  - component: {fileID: -606882333411479313}
+  - component: {fileID: 7534338812545904432}
   m_Layer: 0
   m_Name: Bullet_Rifle
   m_TagString: Untagged
@@ -295,7 +295,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &-606882333411479313
+--- !u!114 &7534338812545904432
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
