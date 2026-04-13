@@ -37,8 +37,13 @@ public class WeaponManager : MonoBehaviour
     {
         for (int i = 0; i < weapons.Length; i++)
         {
-            // Activate Weapon / Deactivate others
-            weapons[i].SetActive(i == selectedWeapon);
+            // Deactivate other weapons
+            if (i != selectedWeapon)
+            {
+                weapons[i].SetActive(false);
+            }
         }
+        //  Activate new Weapon
+        weapons[selectedWeapon].SetActive(true);
     }
 }

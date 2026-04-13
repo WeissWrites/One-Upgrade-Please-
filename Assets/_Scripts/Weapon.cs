@@ -44,6 +44,7 @@ public class Weapon : MonoBehaviour
     public float basePitch = 1.0f;
     [Range(0f, 0.5f)] public float pitchVariation = 0.1f;
     public AudioClip reloadSound;
+    public AudioClip equipSound;
     [Header("Animation")]
 
     public Animator weaponAnimator;
@@ -88,17 +89,18 @@ public class Weapon : MonoBehaviour
         bulletsLeft--;
         muzzleEffect.GetComponent<ParticleSystem>().Play();
         readyToShoot = false;
+
         Ray ray = weaponCamera.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
         Vector3 baseDirection = ray.direction;
         // Add Spread
         Vector3 finalDirection = AddSpread(baseDirection);
         // Fire Sound
-        if (audioSourceSFX != null && fireSound != null)
+        if (fireSound != null)
         {
             // Randomize pitch
-            audioSourceSFX.pitch = basePitch + Random.Range(-pitchVariation, pitchVariation);
+            float randomPitch = basePitch + Random.Range(-pitchVariation, pitchVariation);
             // Enables overlapping
-            audioSourceSFX.PlayOneShot(fireSound);
+            AudioManagerShooting.Instance.PlayFiringSound(fireSound, bulletSpawn.position, randomPitch);
         }
 
         // Bullet Hit
@@ -128,7 +130,7 @@ public class Weapon : MonoBehaviour
         // Spawn Bullet Visual
         GameObject tracer = Instantiate(bulletPrefab, bulletSpawn.position, Quaternion.identity);
         tracer.transform.forward = finalDirection;
-        tracer.GetComponent<Rigidbody>().linearVelocity = finalDirection * bulletVelocity; // Set very high velocity
+        tracer.GetComponent<Rigidbody>().linearVelocity = finalDirection * bulletVelocity;
         StartCoroutine(DestroyBulletAfterTime(tracer, bulletPrefabLifeTime));
         // Shooting in Burst Mode
         if (currentShootingMode == ShootingMode.Burst && burstBulletsLeft > 1)
@@ -168,6 +170,17 @@ public class Weapon : MonoBehaviour
         }
 
         isReloading = false;
+    }
+    private void PlayEquipSound()
+    {
+        if (audioSourceSFX != null && equipSound != null)
+        {
+            audioSourceSFX.Stop();
+            audioSourceSFX.clip = equipSound;
+            audioSourceSFX.time = 0;
+            audioSourceSFX.pitch = 1f;
+            audioSourceSFX.Play();
+        }
     }
     private void PlayReloadSound()
     {
@@ -213,6 +226,8 @@ public class Weapon : MonoBehaviour
         isReloading = false;
         isSwapping = true;
 
+        PlayEquipSound();
+
         // Spawn gun at correct position
         transform.localPosition = spawnPosition;
         transform.localRotation = spawnRotation;
@@ -226,16 +241,20 @@ public class Weapon : MonoBehaviour
     }
     private void OnDisable() // When Weapon is swapped away
     {
-        // Gun Swapped = Stop Reload Sound
-        if (isReloading)
+        // Gun Swapped = Stop Reload Sound / Equip Sound
+        if (isSwapping || isReloading)
         {
             if (audioSourceSFX != null)
             {
                 audioSourceSFX.Stop();
             }
         }
-        // Gun swapped = Cancel reload and don't replenish ammo
+        // Gun swapped = Cancel reload and don't replenish ammo (Cancel Previous Swapping)
         CancelInvoke("ReloadFinished");
+        CancelInvoke("FinishSwapping");
+        // Safety
+        isSwapping = false;
+        isReloading = false;
 
         transform.localPosition = spawnPosition;
         transform.localRotation = spawnRotation;

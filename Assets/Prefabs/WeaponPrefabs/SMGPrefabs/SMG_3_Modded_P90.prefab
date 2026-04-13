@@ -388,7 +388,9 @@ MonoBehaviour:
   basePitch: 1
   pitchVariation: 0.1
   reloadSound: {fileID: 8300000, guid: 84f591de0c84258489f5bda3f1739a1f, type: 3}
+  equipSound: {fileID: 8300000, guid: e0fa99deca1d81c468c52008a5f6d5bb, type: 3}
   weaponAnimator: {fileID: 631050388463596351}
+  swapInTime: 0.35
 --- !u!95 &631050388463596351
 Animator:
   serializedVersion: 7
