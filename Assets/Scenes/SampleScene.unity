@@ -1163,9 +1163,9 @@ PrefabInstance:
     m_TransformParent: {fileID: 1688825641}
     m_Modifications:
     - target: {fileID: -8562255080338593942, guid: d5a67d9408831114bbb5565471626ec6, type: 3}
-      propertyPath: swapInTime
-      value: 0.6
-      objectReference: {fileID: 0}
+      propertyPath: equipSound
+      value: 
+      objectReference: {fileID: 8300000, guid: e10158e4ad24e9243b10f8d9071b3ae8, type: 3}
     - target: {fileID: -8562255080338593942, guid: d5a67d9408831114bbb5565471626ec6, type: 3}
       propertyPath: weaponCamera
       value: 
@@ -1177,10 +1177,6 @@ PrefabInstance:
     - target: {fileID: 1539845545836955583, guid: d5a67d9408831114bbb5565471626ec6, type: 3}
       propertyPath: m_Name
       value: Recon_1_Modded_CZ 600 Trail
-      objectReference: {fileID: 0}
-    - target: {fileID: 1539845545836955583, guid: d5a67d9408831114bbb5565471626ec6, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4624234565502670664, guid: d5a67d9408831114bbb5565471626ec6, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1669,10 +1665,6 @@ PrefabInstance:
     m_TransformParent: {fileID: 1688825641}
     m_Modifications:
     - target: {fileID: -3936402482318148076, guid: 2aa48a24051ea2140948f976d05addfe, type: 3}
-      propertyPath: swapInTime
-      value: 0.3
-      objectReference: {fileID: 0}
-    - target: {fileID: -3936402482318148076, guid: 2aa48a24051ea2140948f976d05addfe, type: 3}
       propertyPath: weaponCamera
       value: 
       objectReference: {fileID: 2042960615}
@@ -1723,10 +1715,6 @@ PrefabInstance:
     - target: {fileID: 7288999965336609265, guid: 2aa48a24051ea2140948f976d05addfe, type: 3}
       propertyPath: m_Name
       value: SMG_2_Modded_Scorpion EVO
-      objectReference: {fileID: 0}
-    - target: {fileID: 7288999965336609265, guid: 2aa48a24051ea2140948f976d05addfe, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1936,10 +1924,6 @@ PrefabInstance:
     m_TransformParent: {fileID: 1688825641}
     m_Modifications:
     - target: {fileID: -8655037841799397677, guid: 07f27901f98ba1a4898a845cca1da965, type: 3}
-      propertyPath: swapInTime
-      value: 0.25
-      objectReference: {fileID: 0}
-    - target: {fileID: -8655037841799397677, guid: 07f27901f98ba1a4898a845cca1da965, type: 3}
       propertyPath: weaponCamera
       value: 
       objectReference: {fileID: 2042960615}
@@ -1990,10 +1974,6 @@ PrefabInstance:
     - target: {fileID: 5161231620238289646, guid: 07f27901f98ba1a4898a845cca1da965, type: 3}
       propertyPath: m_Name
       value: SMG_1_Modded_UZI
-      objectReference: {fileID: 0}
-    - target: {fileID: 5161231620238289646, guid: 07f27901f98ba1a4898a845cca1da965, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2364,10 +2344,6 @@ PrefabInstance:
     m_TransformParent: {fileID: 1688825641}
     m_Modifications:
     - target: {fileID: -9135481035900740840, guid: 696acfae30082ab4c9d93edcb76183e8, type: 3}
-      propertyPath: swapInTime
-      value: 0.25
-      objectReference: {fileID: 0}
-    - target: {fileID: -9135481035900740840, guid: 696acfae30082ab4c9d93edcb76183e8, type: 3}
       propertyPath: weaponCamera
       value: 
       objectReference: {fileID: 2042960615}
@@ -2378,10 +2354,6 @@ PrefabInstance:
     - target: {fileID: 1588724927527360224, guid: 696acfae30082ab4c9d93edcb76183e8, type: 3}
       propertyPath: m_Name
       value: Pistol_2_Modded_FiveSeven
-      objectReference: {fileID: 0}
-    - target: {fileID: 1588724927527360224, guid: 696acfae30082ab4c9d93edcb76183e8, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1876376280487017093, guid: 696acfae30082ab4c9d93edcb76183e8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2789,10 +2761,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: AR_1_Modded_M4
       objectReference: {fileID: 0}
-    - target: {fileID: 2605834589401204728, guid: 305dc759395e2a94eb9d9a8b7cf072f0, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3467986972769033291, guid: 305dc759395e2a94eb9d9a8b7cf072f0, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.58
@@ -2834,9 +2802,9 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4254955724695067017, guid: 305dc759395e2a94eb9d9a8b7cf072f0, type: 3}
-      propertyPath: swapInTime
-      value: 0.35
-      objectReference: {fileID: 0}
+      propertyPath: equipSound
+      value: 
+      objectReference: {fileID: 8300000, guid: e10158e4ad24e9243b10f8d9071b3ae8, type: 3}
     - target: {fileID: 4254955724695067017, guid: 305dc759395e2a94eb9d9a8b7cf072f0, type: 3}
       propertyPath: weaponCamera
       value: 
@@ -3554,14 +3522,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: AR_5_Modded_ASH-12
       objectReference: {fileID: 0}
-    - target: {fileID: 2520044755054083859, guid: a4b3426818dd17d44aca64428663811f, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8412447066455728168, guid: a4b3426818dd17d44aca64428663811f, type: 3}
-      propertyPath: swapInTime
-      value: 0.38
-      objectReference: {fileID: 0}
+      propertyPath: equipSound
+      value: 
+      objectReference: {fileID: 8300000, guid: e10158e4ad24e9243b10f8d9071b3ae8, type: 3}
     - target: {fileID: 8412447066455728168, guid: a4b3426818dd17d44aca64428663811f, type: 3}
       propertyPath: weaponCamera
       value: 
@@ -4015,10 +3979,6 @@ PrefabInstance:
     m_TransformParent: {fileID: 1688825641}
     m_Modifications:
     - target: {fileID: -8676169461016593331, guid: f6840d5ec058d9847a85b96426b63c1e, type: 3}
-      propertyPath: swapInTime
-      value: 0.25
-      objectReference: {fileID: 0}
-    - target: {fileID: -8676169461016593331, guid: f6840d5ec058d9847a85b96426b63c1e, type: 3}
       propertyPath: weaponCamera
       value: 
       objectReference: {fileID: 2042960615}
@@ -4026,17 +3986,9 @@ PrefabInstance:
       propertyPath: audioSourceSFX
       value: 
       objectReference: {fileID: 971123230}
-    - target: {fileID: 1206583659589185799, guid: f6840d5ec058d9847a85b96426b63c1e, type: 3}
-      propertyPath: m_ApplyRootMotion
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4755269535393868564, guid: f6840d5ec058d9847a85b96426b63c1e, type: 3}
       propertyPath: m_Name
       value: Pistol_1_Modded_Hudson H9
-      objectReference: {fileID: 0}
-    - target: {fileID: 4755269535393868564, guid: f6840d5ec058d9847a85b96426b63c1e, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8839694240434654427, guid: f6840d5ec058d9847a85b96426b63c1e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4566,6 +4518,149 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ae3edb1ffd32a4b18b583a15715b94f0, type: 3}
+--- !u!1 &550929034
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 550929035}
+  - component: {fileID: 550929037}
+  - component: {fileID: 550929036}
+  m_Layer: 0
+  m_Name: AudioManagerShooting
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &550929035
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 550929034}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 770155669}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &550929036
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 550929034}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: -7019151285865633628, guid: 98a1491321d9d7840a029261605f8d9a, type: 2}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 0
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!114 &550929037
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 550929034}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 297b95fb5abee894da0e7ace6b5ab96d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AudioManagerShooting
+  audioSource: {fileID: 550929036}
 --- !u!1001 &561743626
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4575,9 +4670,9 @@ PrefabInstance:
     m_TransformParent: {fileID: 1688825641}
     m_Modifications:
     - target: {fileID: -2447247324898570501, guid: d2cd9729ac5b12f44bc226142b4c0c49, type: 3}
-      propertyPath: swapInTime
-      value: 0.35
-      objectReference: {fileID: 0}
+      propertyPath: equipSound
+      value: 
+      objectReference: {fileID: 8300000, guid: e0fa99deca1d81c468c52008a5f6d5bb, type: 3}
     - target: {fileID: -2447247324898570501, guid: d2cd9729ac5b12f44bc226142b4c0c49, type: 3}
       propertyPath: weaponCamera
       value: 
@@ -4589,10 +4684,6 @@ PrefabInstance:
     - target: {fileID: 3421700662205668341, guid: d2cd9729ac5b12f44bc226142b4c0c49, type: 3}
       propertyPath: m_Name
       value: SMG_3_Modded_P90
-      objectReference: {fileID: 0}
-    - target: {fileID: 3421700662205668341, guid: d2cd9729ac5b12f44bc226142b4c0c49, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3841834873541539405, guid: d2cd9729ac5b12f44bc226142b4c0c49, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4975,9 +5066,9 @@ PrefabInstance:
     m_TransformParent: {fileID: 1688825641}
     m_Modifications:
     - target: {fileID: -4443466004030271151, guid: 9b86bf4eb89ffd34b8f490bbd6a43bab, type: 3}
-      propertyPath: swapInTime
-      value: 0.35
-      objectReference: {fileID: 0}
+      propertyPath: equipSound
+      value: 
+      objectReference: {fileID: 8300000, guid: e10158e4ad24e9243b10f8d9071b3ae8, type: 3}
     - target: {fileID: -4443466004030271151, guid: 9b86bf4eb89ffd34b8f490bbd6a43bab, type: 3}
       propertyPath: weaponCamera
       value: 
@@ -5029,10 +5120,6 @@ PrefabInstance:
     - target: {fileID: 992716270599655095, guid: 9b86bf4eb89ffd34b8f490bbd6a43bab, type: 3}
       propertyPath: m_Name
       value: AR_2_Modded_M4-C
-      objectReference: {fileID: 0}
-    - target: {fileID: 992716270599655095, guid: 9b86bf4eb89ffd34b8f490bbd6a43bab, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6187,6 +6274,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 971123229}
+  - {fileID: 550929035}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &770834353
@@ -7506,7 +7594,7 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 0
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -8023,14 +8111,6 @@ PrefabInstance:
     - target: {fileID: 3662616773708587844, guid: 4a9774ede530c3a4f8f5a3a3bbdcc7c8, type: 3}
       propertyPath: m_Name
       value: Pistol_4_Modded_MicroUzi
-      objectReference: {fileID: 0}
-    - target: {fileID: 3662616773708587844, guid: 4a9774ede530c3a4f8f5a3a3bbdcc7c8, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7231522081788239057, guid: 4a9774ede530c3a4f8f5a3a3bbdcc7c8, type: 3}
-      propertyPath: swapInTime
-      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 7231522081788239057, guid: 4a9774ede530c3a4f8f5a3a3bbdcc7c8, type: 3}
       propertyPath: weaponCamera
@@ -11706,6 +11786,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1688825641}
   - component: {fileID: 1688825642}
+  - component: {fileID: 1688825643}
   m_Layer: 0
   m_Name: WeaponHolder
   m_TagString: Untagged
@@ -11770,6 +11851,103 @@ MonoBehaviour:
   - {fileID: 1106617721}
   - {fileID: 601557817}
   - {fileID: 1660860479}
+--- !u!82 &1688825643
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1688825640}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1693816934 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5592343104298725397, guid: 93db53d01346b274abdefc7809891993, type: 3}
@@ -11796,10 +11974,6 @@ PrefabInstance:
     - target: {fileID: 428001793694919265, guid: 30ca34f61f36f7f488911ec2cd867a96, type: 3}
       propertyPath: m_Name
       value: AR_4_Modded_552 Commando
-      objectReference: {fileID: 0}
-    - target: {fileID: 428001793694919265, guid: 30ca34f61f36f7f488911ec2cd867a96, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4912735628353664144, guid: 30ca34f61f36f7f488911ec2cd867a96, type: 3}
       propertyPath: m_LocalPosition.x
@@ -11842,9 +12016,9 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6089872603688441374, guid: 30ca34f61f36f7f488911ec2cd867a96, type: 3}
-      propertyPath: swapInTime
-      value: 0.35
-      objectReference: {fileID: 0}
+      propertyPath: equipSound
+      value: 
+      objectReference: {fileID: 8300000, guid: e10158e4ad24e9243b10f8d9071b3ae8, type: 3}
     - target: {fileID: 6089872603688441374, guid: 30ca34f61f36f7f488911ec2cd867a96, type: 3}
       propertyPath: weaponCamera
       value: 
@@ -12183,9 +12357,9 @@ PrefabInstance:
     m_TransformParent: {fileID: 1688825641}
     m_Modifications:
     - target: {fileID: -6129453682439630796, guid: 93db53d01346b274abdefc7809891993, type: 3}
-      propertyPath: swapInTime
-      value: 0.38
-      objectReference: {fileID: 0}
+      propertyPath: equipSound
+      value: 
+      objectReference: {fileID: 8300000, guid: e10158e4ad24e9243b10f8d9071b3ae8, type: 3}
     - target: {fileID: -6129453682439630796, guid: 93db53d01346b274abdefc7809891993, type: 3}
       propertyPath: weaponCamera
       value: 
@@ -12197,10 +12371,6 @@ PrefabInstance:
     - target: {fileID: 5592343104298725397, guid: 93db53d01346b274abdefc7809891993, type: 3}
       propertyPath: m_Name
       value: AR_3_Modded_AUG
-      objectReference: {fileID: 0}
-    - target: {fileID: 5592343104298725397, guid: 93db53d01346b274abdefc7809891993, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7155514406965014110, guid: 93db53d01346b274abdefc7809891993, type: 3}
       propertyPath: m_LocalPosition.x
@@ -13868,10 +14038,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pistol_3_Modded_Ruger Mark IV 2245 Lite
       objectReference: {fileID: 0}
-    - target: {fileID: 1190841740196025449, guid: be02a38c56f014d44bacb08add161041, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6270662927080615973, guid: be02a38c56f014d44bacb08add161041, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.67
@@ -13913,9 +14079,9 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7324938813409303150, guid: be02a38c56f014d44bacb08add161041, type: 3}
-      propertyPath: swapInTime
-      value: 0.25
-      objectReference: {fileID: 0}
+      propertyPath: equipSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 130a3d3d73b64d240a39e56b58da8a54, type: 3}
     - target: {fileID: 7324938813409303150, guid: be02a38c56f014d44bacb08add161041, type: 3}
       propertyPath: weaponCamera
       value: 
