@@ -460,13 +460,14 @@ GameObject:
   m_Component:
   - component: {fileID: 3467986972769033291}
   - component: {fileID: 4254955724695067017}
+  - component: {fileID: 5439662836476698392}
   m_Layer: 0
   m_Name: AR_1_Modded_M4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &3467986972769033291
 Transform:
   m_ObjectHideFlags: 0
@@ -520,18 +521,48 @@ MonoBehaviour:
   isShooting: 0
   readyToShoot: 0
   shootingDelay: 0.15
+  spreadIntensity: 0.003
+  magazineSize: 30
+  bulletsLeft: 0
+  totalReservedAmmo: 120
+  reloadTime: 1.5
+  isReloading: 0
   bulletPerBurst: 3
   burstBulletsLeft: 0
-  spreadIntensity: 0.003
   bulletPrefab: {fileID: 8489818951931819000, guid: 0378c810e23239f4c95daf4b8ea484f3, type: 3}
   bulletSpawn: {fileID: 2052861865796783768}
   bulletVelocity: 300
   bulletPrefabLifeTime: 5
   muzzleEffect: {fileID: 6503243419627725276}
-  audioSourceSFX: {fileID: 0}
-  fireSound: {fileID: 0}
-  pitchVariation: 0.1
   currentShootingMode: 2
+  audioSourceSFX: {fileID: 0}
+  fireSound: {fileID: 8300000, guid: 6453be76888727940b2b954a55ef25fc, type: 3}
+  basePitch: 0.9
+  pitchVariation: 0.025
+  reloadSound: {fileID: 8300000, guid: bf262f02cf775994bab4a48e628498ee, type: 3}
+  weaponAnimator: {fileID: 5439662836476698392}
+--- !u!95 &5439662836476698392
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2605834589401204728}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 09ad91f2fbf2ac04195b7d76907b5803, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &3660445297284671501
 GameObject:
   m_ObjectHideFlags: 0

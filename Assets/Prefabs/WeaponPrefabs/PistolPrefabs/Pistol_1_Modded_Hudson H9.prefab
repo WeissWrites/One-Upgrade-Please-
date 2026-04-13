@@ -493,6 +493,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8839694240434654427}
   - component: {fileID: -8676169461016593331}
+  - component: {fileID: 1206583659589185799}
   m_Layer: 8
   m_Name: Pistol_1_Modded_Hudson H9
   m_TagString: Untagged
@@ -547,18 +548,48 @@ MonoBehaviour:
   isShooting: 0
   readyToShoot: 0
   shootingDelay: 0.2
+  spreadIntensity: 0.0075
+  magazineSize: 15
+  bulletsLeft: 0
+  totalReservedAmmo: 45
+  reloadTime: 1.25
+  isReloading: 0
   bulletPerBurst: 3
   burstBulletsLeft: 0
-  spreadIntensity: 0.0075
   bulletPrefab: {fileID: 3467565710620987745, guid: a53cb425502a6ba4da1243de58cc91b7, type: 3}
   bulletSpawn: {fileID: 3591661821763800963}
   bulletVelocity: 300
   bulletPrefabLifeTime: 5
   muzzleEffect: {fileID: 5362935543660777470}
+  currentShootingMode: 0
   audioSourceSFX: {fileID: 0}
   fireSound: {fileID: 8300000, guid: 33b2691ae216e8c47881dbf3db73a095, type: 3}
+  basePitch: 1
   pitchVariation: 0.1
-  currentShootingMode: 0
+  reloadSound: {fileID: 8300000, guid: 1d01489f3d560324faf5d7ed07e6ba62, type: 3}
+  weaponAnimator: {fileID: 1206583659589185799}
+--- !u!95 &1206583659589185799
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4755269535393868564}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 257d4995d724e154cbd865db1d07e954, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &5273298359293595320
 GameObject:
   m_ObjectHideFlags: 0

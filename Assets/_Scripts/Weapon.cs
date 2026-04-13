@@ -17,12 +17,18 @@ public class Weapon : MonoBehaviour
     public bool isShooting;
     public bool readyToShoot;
     [Header("Weapon Settings")]
+
     public float shootingDelay = 2f;
+    // Spread
+    public float spreadIntensity;
+    public int magazineSize = 30;
+    public int bulletsLeft;
+    public int totalReservedAmmo = 90;
+    public float reloadTime = 1.5f;
+    public bool isReloading;
     // Burst
     public int bulletPerBurst = 3;
     public int burstBulletsLeft;
-    // Spread
-    public float spreadIntensity;
     // Bullet
     public GameObject bulletPrefab;
     public Transform bulletSpawn;
@@ -30,20 +36,30 @@ public class Weapon : MonoBehaviour
     public float bulletPrefabLifeTime = 5f;
     // Muzzle Flash
     public GameObject muzzleEffect;
+    // Shooting Mode
+    public ShootingMode currentShootingMode;
     [Header("Audio Settings")]
     public AudioSource audioSourceSFX;
     public AudioClip fireSound;
     public float basePitch = 1.0f;
     [Range(0f, 0.5f)] public float pitchVariation = 0.1f;
+    public AudioClip reloadSound;
+    [Header("Animation")]
 
+    public Animator weaponAnimator;
+    private Vector3 spawnPosition;
+    private Quaternion spawnRotation;
+    public float swapInTime = 0.5f;
+    private bool isSwapping;
     void Awake()
     {
+        spawnPosition = transform.localPosition;
+        spawnRotation = transform.localRotation;
+
         readyToShoot = true;
         burstBulletsLeft = bulletPerBurst;
+        bulletsLeft = magazineSize;
     }
-
-    public ShootingMode currentShootingMode;
-
     void Update()
     {
         if (currentShootingMode == ShootingMode.Automatic)
@@ -54,8 +70,13 @@ public class Weapon : MonoBehaviour
         {
             isShooting = Input.GetKeyDown(KeyCode.Mouse0);
         }
+        if (Input.GetKeyDown(KeyCode.R) && bulletsLeft < magazineSize && !isReloading && !isSwapping && totalReservedAmmo > 0
+        || bulletsLeft == 0 && !isReloading && !isSwapping && totalReservedAmmo > 0)
+        {
+            Reload();
+        }
 
-        if (readyToShoot && isShooting)
+        if (readyToShoot && isShooting && !isReloading && !isSwapping && bulletsLeft > 0)
         {
             burstBulletsLeft = bulletPerBurst;
             FireWeapon();
@@ -64,6 +85,7 @@ public class Weapon : MonoBehaviour
 
     private void FireWeapon()
     {
+        bulletsLeft--;
         muzzleEffect.GetComponent<ParticleSystem>().Play();
         readyToShoot = false;
         Ray ray = weaponCamera.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
@@ -119,6 +141,41 @@ public class Weapon : MonoBehaviour
             Invoke("ResetShot", shootingDelay);
         }
     }
+    private void Reload()
+    {
+        isReloading = true;
+        if (weaponAnimator != null)
+        {
+            weaponAnimator.SetTrigger("Reload");
+        }
+
+        Invoke("ReloadFinished", reloadTime);
+    }
+    private void ReloadFinished()
+    {
+        int bulletsToReplenish = magazineSize - bulletsLeft;
+
+        // If enough bullets, fill Magazine
+        if (totalReservedAmmo >= bulletsToReplenish)
+        {
+            bulletsLeft = magazineSize;
+            totalReservedAmmo -= bulletsToReplenish;
+        }
+        else // If not, fill as much as you can
+        {
+            bulletsLeft += totalReservedAmmo;
+            totalReservedAmmo = 0;
+        }
+
+        isReloading = false;
+    }
+    private void PlayReloadSound()
+    {
+        if (reloadSound != null)
+        {
+            audioSourceSFX.PlayOneShot(reloadSound);
+        }
+    }
     private void CreateImpact(RaycastHit hit)
     {
         GameObject hole = Instantiate(
@@ -149,5 +206,48 @@ public class Weapon : MonoBehaviour
         {
             Destroy(bullet);
         }
+    }
+
+    private void OnEnable() // When Weapon is swapped to
+    {
+        isReloading = false;
+        isSwapping = true;
+
+        // Spawn gun at correct position
+        transform.localPosition = spawnPosition;
+        transform.localRotation = spawnRotation;
+
+        if (weaponAnimator != null)
+        {
+            weaponAnimator.Rebind();
+            weaponAnimator.Update(0f);
+        }
+        Invoke("FinishSwapping", swapInTime);
+    }
+    private void OnDisable() // When Weapon is swapped away
+    {
+        // Gun Swapped = Stop Reload Sound
+        if (isReloading)
+        {
+            if (audioSourceSFX != null)
+            {
+                audioSourceSFX.Stop();
+            }
+        }
+        // Gun swapped = Cancel reload and don't replenish ammo
+        CancelInvoke("ReloadFinished");
+
+        transform.localPosition = spawnPosition;
+        transform.localRotation = spawnRotation;
+
+        // Reset Animator
+        if (weaponAnimator != null)
+        {
+            weaponAnimator.Rebind();
+        }
+    }
+    private void FinishSwapping()
+    {
+        isSwapping = false;
     }
 }

@@ -190,6 +190,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6270662927080615973}
   - component: {fileID: 7324938813409303150}
+  - component: {fileID: 2478564051114445429}
   m_Layer: 8
   m_Name: Pistol_3_Modded_Ruger Mark IV 2245 Lite
   m_TagString: Untagged
@@ -248,18 +249,48 @@ MonoBehaviour:
   isShooting: 0
   readyToShoot: 0
   shootingDelay: 0.6
+  spreadIntensity: 0.001
+  magazineSize: 10
+  bulletsLeft: 0
+  totalReservedAmmo: 30
+  reloadTime: 1.5
+  isReloading: 0
   bulletPerBurst: 3
   burstBulletsLeft: 0
-  spreadIntensity: 0.001
   bulletPrefab: {fileID: 3467565710620987745, guid: a53cb425502a6ba4da1243de58cc91b7, type: 3}
   bulletSpawn: {fileID: 8852460745305053951}
   bulletVelocity: 300
   bulletPrefabLifeTime: 5
   muzzleEffect: {fileID: 6774932267437380501}
+  currentShootingMode: 0
   audioSourceSFX: {fileID: 0}
   fireSound: {fileID: 8300000, guid: 5aa33f02777dd304787f28968296c3e4, type: 3}
+  basePitch: 1
   pitchVariation: 0.1
-  currentShootingMode: 0
+  reloadSound: {fileID: 8300000, guid: 670c03a647e39334a9a7ed65f6cee62d, type: 3}
+  weaponAnimator: {fileID: 2478564051114445429}
+--- !u!95 &2478564051114445429
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1190841740196025449}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 35f919baa2b80c148b49aa78069d5251, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1667359299154939395
 GameObject:
   m_ObjectHideFlags: 0

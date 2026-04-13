@@ -1163,24 +1163,24 @@ PrefabInstance:
     m_TransformParent: {fileID: 1688825641}
     m_Modifications:
     - target: {fileID: -8562255080338593942, guid: d5a67d9408831114bbb5565471626ec6, type: 3}
-      propertyPath: fireSound
-      value: 
-      objectReference: {fileID: 8300000, guid: 1cae697a74c3c73448b9c9ba1bfef074, type: 3}
+      propertyPath: swapInTime
+      value: 0.6
+      objectReference: {fileID: 0}
     - target: {fileID: -8562255080338593942, guid: d5a67d9408831114bbb5565471626ec6, type: 3}
       propertyPath: weaponCamera
       value: 
       objectReference: {fileID: 2042960615}
-    - target: {fileID: -8562255080338593942, guid: d5a67d9408831114bbb5565471626ec6, type: 3}
-      propertyPath: shootingDelay
-      value: 1.5
-      objectReference: {fileID: 0}
     - target: {fileID: -8562255080338593942, guid: d5a67d9408831114bbb5565471626ec6, type: 3}
       propertyPath: audioSourceSFX
       value: 
       objectReference: {fileID: 971123230}
     - target: {fileID: 1539845545836955583, guid: d5a67d9408831114bbb5565471626ec6, type: 3}
       propertyPath: m_Name
-      value: Recon_1_Modded_CZ 600
+      value: Recon_1_Modded_CZ 600 Trail
+      objectReference: {fileID: 0}
+    - target: {fileID: 1539845545836955583, guid: d5a67d9408831114bbb5565471626ec6, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4624234565502670664, guid: d5a67d9408831114bbb5565471626ec6, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1669,17 +1669,13 @@ PrefabInstance:
     m_TransformParent: {fileID: 1688825641}
     m_Modifications:
     - target: {fileID: -3936402482318148076, guid: 2aa48a24051ea2140948f976d05addfe, type: 3}
-      propertyPath: fireSound
-      value: 
-      objectReference: {fileID: 8300000, guid: 8892ebfe548aae74c82cc54cde74bd73, type: 3}
+      propertyPath: swapInTime
+      value: 0.3
+      objectReference: {fileID: 0}
     - target: {fileID: -3936402482318148076, guid: 2aa48a24051ea2140948f976d05addfe, type: 3}
       propertyPath: weaponCamera
       value: 
       objectReference: {fileID: 2042960615}
-    - target: {fileID: -3936402482318148076, guid: 2aa48a24051ea2140948f976d05addfe, type: 3}
-      propertyPath: shootingDelay
-      value: 0.05
-      objectReference: {fileID: 0}
     - target: {fileID: -3936402482318148076, guid: 2aa48a24051ea2140948f976d05addfe, type: 3}
       propertyPath: audioSourceSFX
       value: 
@@ -1940,17 +1936,13 @@ PrefabInstance:
     m_TransformParent: {fileID: 1688825641}
     m_Modifications:
     - target: {fileID: -8655037841799397677, guid: 07f27901f98ba1a4898a845cca1da965, type: 3}
-      propertyPath: fireSound
-      value: 
-      objectReference: {fileID: 8300000, guid: cf36a258ef758d346af6b07a9851d005, type: 3}
+      propertyPath: swapInTime
+      value: 0.25
+      objectReference: {fileID: 0}
     - target: {fileID: -8655037841799397677, guid: 07f27901f98ba1a4898a845cca1da965, type: 3}
       propertyPath: weaponCamera
       value: 
       objectReference: {fileID: 2042960615}
-    - target: {fileID: -8655037841799397677, guid: 07f27901f98ba1a4898a845cca1da965, type: 3}
-      propertyPath: shootingDelay
-      value: 0.07
-      objectReference: {fileID: 0}
     - target: {fileID: -8655037841799397677, guid: 07f27901f98ba1a4898a845cca1da965, type: 3}
       propertyPath: audioSourceSFX
       value: 
@@ -2371,6 +2363,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1688825641}
     m_Modifications:
+    - target: {fileID: -9135481035900740840, guid: 696acfae30082ab4c9d93edcb76183e8, type: 3}
+      propertyPath: swapInTime
+      value: 0.25
+      objectReference: {fileID: 0}
     - target: {fileID: -9135481035900740840, guid: 696acfae30082ab4c9d93edcb76183e8, type: 3}
       propertyPath: weaponCamera
       value: 
@@ -2838,13 +2834,9 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4254955724695067017, guid: 305dc759395e2a94eb9d9a8b7cf072f0, type: 3}
-      propertyPath: basePitch
-      value: 0.9
+      propertyPath: swapInTime
+      value: 0.35
       objectReference: {fileID: 0}
-    - target: {fileID: 4254955724695067017, guid: 305dc759395e2a94eb9d9a8b7cf072f0, type: 3}
-      propertyPath: fireSound
-      value: 
-      objectReference: {fileID: 8300000, guid: 6453be76888727940b2b954a55ef25fc, type: 3}
     - target: {fileID: 4254955724695067017, guid: 305dc759395e2a94eb9d9a8b7cf072f0, type: 3}
       propertyPath: weaponCamera
       value: 
@@ -2853,10 +2845,6 @@ PrefabInstance:
       propertyPath: audioSourceSFX
       value: 
       objectReference: {fileID: 971123230}
-    - target: {fileID: 4254955724695067017, guid: 305dc759395e2a94eb9d9a8b7cf072f0, type: 3}
-      propertyPath: pitchVariation
-      value: 0.025
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3571,9 +3559,9 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8412447066455728168, guid: a4b3426818dd17d44aca64428663811f, type: 3}
-      propertyPath: fireSound
-      value: 
-      objectReference: {fileID: 8300000, guid: 6739c01659ad96d47987f4ddee226b36, type: 3}
+      propertyPath: swapInTime
+      value: 0.38
+      objectReference: {fileID: 0}
     - target: {fileID: 8412447066455728168, guid: a4b3426818dd17d44aca64428663811f, type: 3}
       propertyPath: weaponCamera
       value: 
@@ -4027,6 +4015,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 1688825641}
     m_Modifications:
     - target: {fileID: -8676169461016593331, guid: f6840d5ec058d9847a85b96426b63c1e, type: 3}
+      propertyPath: swapInTime
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: -8676169461016593331, guid: f6840d5ec058d9847a85b96426b63c1e, type: 3}
       propertyPath: weaponCamera
       value: 
       objectReference: {fileID: 2042960615}
@@ -4034,6 +4026,10 @@ PrefabInstance:
       propertyPath: audioSourceSFX
       value: 
       objectReference: {fileID: 971123230}
+    - target: {fileID: 1206583659589185799, guid: f6840d5ec058d9847a85b96426b63c1e, type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4755269535393868564, guid: f6840d5ec058d9847a85b96426b63c1e, type: 3}
       propertyPath: m_Name
       value: Pistol_1_Modded_Hudson H9
@@ -4579,17 +4575,13 @@ PrefabInstance:
     m_TransformParent: {fileID: 1688825641}
     m_Modifications:
     - target: {fileID: -2447247324898570501, guid: d2cd9729ac5b12f44bc226142b4c0c49, type: 3}
-      propertyPath: fireSound
-      value: 
-      objectReference: {fileID: 8300000, guid: a0e26b9f27346974dbc1b12dd6b3fb0c, type: 3}
+      propertyPath: swapInTime
+      value: 0.35
+      objectReference: {fileID: 0}
     - target: {fileID: -2447247324898570501, guid: d2cd9729ac5b12f44bc226142b4c0c49, type: 3}
       propertyPath: weaponCamera
       value: 
       objectReference: {fileID: 2042960615}
-    - target: {fileID: -2447247324898570501, guid: d2cd9729ac5b12f44bc226142b4c0c49, type: 3}
-      propertyPath: shootingDelay
-      value: 0.08
-      objectReference: {fileID: 0}
     - target: {fileID: -2447247324898570501, guid: d2cd9729ac5b12f44bc226142b4c0c49, type: 3}
       propertyPath: audioSourceSFX
       value: 
@@ -4983,9 +4975,9 @@ PrefabInstance:
     m_TransformParent: {fileID: 1688825641}
     m_Modifications:
     - target: {fileID: -4443466004030271151, guid: 9b86bf4eb89ffd34b8f490bbd6a43bab, type: 3}
-      propertyPath: fireSound
-      value: 
-      objectReference: {fileID: 8300000, guid: ac4babb9c31863d479596679e1e75bcc, type: 3}
+      propertyPath: swapInTime
+      value: 0.35
+      objectReference: {fileID: 0}
     - target: {fileID: -4443466004030271151, guid: 9b86bf4eb89ffd34b8f490bbd6a43bab, type: 3}
       propertyPath: weaponCamera
       value: 
@@ -8030,16 +8022,16 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3662616773708587844, guid: 4a9774ede530c3a4f8f5a3a3bbdcc7c8, type: 3}
       propertyPath: m_Name
-      value: Pistol_4_Modded_MiniUzi
+      value: Pistol_4_Modded_MicroUzi
+      objectReference: {fileID: 0}
+    - target: {fileID: 3662616773708587844, guid: 4a9774ede530c3a4f8f5a3a3bbdcc7c8, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7231522081788239057, guid: 4a9774ede530c3a4f8f5a3a3bbdcc7c8, type: 3}
-      propertyPath: basePitch
-      value: 1.3
+      propertyPath: swapInTime
+      value: 0.25
       objectReference: {fileID: 0}
-    - target: {fileID: 7231522081788239057, guid: 4a9774ede530c3a4f8f5a3a3bbdcc7c8, type: 3}
-      propertyPath: fireSound
-      value: 
-      objectReference: {fileID: 8300000, guid: 6453be76888727940b2b954a55ef25fc, type: 3}
     - target: {fileID: 7231522081788239057, guid: 4a9774ede530c3a4f8f5a3a3bbdcc7c8, type: 3}
       propertyPath: weaponCamera
       value: 
@@ -8836,6 +8828,10 @@ PrefabInstance:
       propertyPath: fireSound
       value: 
       objectReference: {fileID: 8300000, guid: 33b2691ae216e8c47881dbf3db73a095, type: 3}
+    - target: {fileID: 8745231770388605918, guid: 80ceeb9fe58aec949b1aac714a9bbc87, type: 3}
+      propertyPath: magazineSize
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8745231770388605918, guid: 80ceeb9fe58aec949b1aac714a9bbc87, type: 3}
       propertyPath: weaponCamera
       value: 
@@ -11846,9 +11842,9 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6089872603688441374, guid: 30ca34f61f36f7f488911ec2cd867a96, type: 3}
-      propertyPath: fireSound
-      value: 
-      objectReference: {fileID: 8300000, guid: 4cd0327f49555d2419bb0d86951b440f, type: 3}
+      propertyPath: swapInTime
+      value: 0.35
+      objectReference: {fileID: 0}
     - target: {fileID: 6089872603688441374, guid: 30ca34f61f36f7f488911ec2cd867a96, type: 3}
       propertyPath: weaponCamera
       value: 
@@ -11857,10 +11853,6 @@ PrefabInstance:
       propertyPath: audioSourceSFX
       value: 
       objectReference: {fileID: 971123230}
-    - target: {fileID: 6089872603688441374, guid: 30ca34f61f36f7f488911ec2cd867a96, type: 3}
-      propertyPath: pitchVariation
-      value: 0.025
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -12191,13 +12183,9 @@ PrefabInstance:
     m_TransformParent: {fileID: 1688825641}
     m_Modifications:
     - target: {fileID: -6129453682439630796, guid: 93db53d01346b274abdefc7809891993, type: 3}
-      propertyPath: basePitch
-      value: 1.1
+      propertyPath: swapInTime
+      value: 0.38
       objectReference: {fileID: 0}
-    - target: {fileID: -6129453682439630796, guid: 93db53d01346b274abdefc7809891993, type: 3}
-      propertyPath: fireSound
-      value: 
-      objectReference: {fileID: 8300000, guid: 6453be76888727940b2b954a55ef25fc, type: 3}
     - target: {fileID: -6129453682439630796, guid: 93db53d01346b274abdefc7809891993, type: 3}
       propertyPath: weaponCamera
       value: 
@@ -12206,10 +12194,6 @@ PrefabInstance:
       propertyPath: audioSourceSFX
       value: 
       objectReference: {fileID: 971123230}
-    - target: {fileID: -6129453682439630796, guid: 93db53d01346b274abdefc7809891993, type: 3}
-      propertyPath: pitchVariation
-      value: 0.025
-      objectReference: {fileID: 0}
     - target: {fileID: 5592343104298725397, guid: 93db53d01346b274abdefc7809891993, type: 3}
       propertyPath: m_Name
       value: AR_3_Modded_AUG
@@ -13884,6 +13868,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pistol_3_Modded_Ruger Mark IV 2245 Lite
       objectReference: {fileID: 0}
+    - target: {fileID: 1190841740196025449, guid: be02a38c56f014d44bacb08add161041, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6270662927080615973, guid: be02a38c56f014d44bacb08add161041, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.67
@@ -13923,6 +13911,10 @@ PrefabInstance:
     - target: {fileID: 6270662927080615973, guid: be02a38c56f014d44bacb08add161041, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7324938813409303150, guid: be02a38c56f014d44bacb08add161041, type: 3}
+      propertyPath: swapInTime
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 7324938813409303150, guid: be02a38c56f014d44bacb08add161041, type: 3}
       propertyPath: weaponCamera
