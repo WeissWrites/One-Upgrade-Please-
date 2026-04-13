@@ -6151,6 +6151,7 @@ GameObject:
   m_Component:
   - component: {fileID: 601478301111662686}
   - component: {fileID: -3936402482318148076}
+  - component: {fileID: 7102829254617863348}
   m_Layer: 0
   m_Name: SMG_2_Modded_Scorpion EVO
   m_TagString: Untagged
@@ -6209,16 +6210,49 @@ MonoBehaviour:
   headshotDamage: 0
   isShooting: 0
   readyToShoot: 0
-  shootingDelay: 0.15
+  shootingDelay: 0.05
+  spreadIntensity: 0.003
+  magazineSize: 30
+  bulletsLeft: 0
+  totalReservedAmmo: 120
+  reloadTime: 1.5
+  isReloading: 0
   bulletPerBurst: 3
   burstBulletsLeft: 0
-  spreadIntensity: 0.003
   bulletPrefab: {fileID: 3467565710620987745, guid: a53cb425502a6ba4da1243de58cc91b7, type: 3}
   bulletSpawn: {fileID: 2485279518069758626}
   bulletVelocity: 300
   bulletPrefabLifeTime: 5
   muzzleEffect: {fileID: 6704212455723309365}
   currentShootingMode: 2
+  audioSourceSFX: {fileID: 0}
+  fireSound: {fileID: 8300000, guid: 8892ebfe548aae74c82cc54cde74bd73, type: 3}
+  basePitch: 1
+  pitchVariation: 0.1
+  reloadSound: {fileID: 8300000, guid: 05f85faa82cb9254c8e5b4b07426ecdd, type: 3}
+  weaponAnimator: {fileID: 7102829254617863348}
+--- !u!95 &7102829254617863348
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7288999965336609265}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 069f3fc2498475443ae5f33f6266609d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &7443336822341177776
 GameObject:
   m_ObjectHideFlags: 0

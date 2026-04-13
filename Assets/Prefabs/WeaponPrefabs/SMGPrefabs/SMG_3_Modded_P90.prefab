@@ -312,6 +312,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3841834873541539405}
   - component: {fileID: -2447247324898570501}
+  - component: {fileID: 631050388463596351}
   m_Layer: 0
   m_Name: SMG_3_Modded_P90
   m_TagString: Untagged
@@ -367,16 +368,49 @@ MonoBehaviour:
   headshotDamage: 0
   isShooting: 0
   readyToShoot: 0
-  shootingDelay: 0.15
+  shootingDelay: 0.08
+  spreadIntensity: 0.003
+  magazineSize: 50
+  bulletsLeft: 0
+  totalReservedAmmo: 200
+  reloadTime: 1.7
+  isReloading: 0
   bulletPerBurst: 3
   burstBulletsLeft: 0
-  spreadIntensity: 0.003
   bulletPrefab: {fileID: 3467565710620987745, guid: a53cb425502a6ba4da1243de58cc91b7, type: 3}
   bulletSpawn: {fileID: 2799914289590481492}
   bulletVelocity: 300
   bulletPrefabLifeTime: 5
   muzzleEffect: {fileID: 5295151776860627868}
   currentShootingMode: 2
+  audioSourceSFX: {fileID: 0}
+  fireSound: {fileID: 8300000, guid: a0e26b9f27346974dbc1b12dd6b3fb0c, type: 3}
+  basePitch: 1
+  pitchVariation: 0.1
+  reloadSound: {fileID: 8300000, guid: 84f591de0c84258489f5bda3f1739a1f, type: 3}
+  weaponAnimator: {fileID: 631050388463596351}
+--- !u!95 &631050388463596351
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3421700662205668341}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8cae92f064eaef7409bd6382352a92ff, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &4703710605087499220
 GameObject:
   m_ObjectHideFlags: 0

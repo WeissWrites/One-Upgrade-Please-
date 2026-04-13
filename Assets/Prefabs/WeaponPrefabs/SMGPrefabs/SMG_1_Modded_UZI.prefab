@@ -730,6 +730,7 @@ GameObject:
   m_Component:
   - component: {fileID: 585628351543991837}
   - component: {fileID: -8655037841799397677}
+  - component: {fileID: 8402066348423791642}
   m_Layer: 0
   m_Name: SMG_1_Modded_UZI
   m_TagString: Untagged
@@ -785,16 +786,49 @@ MonoBehaviour:
   headshotDamage: 0
   isShooting: 0
   readyToShoot: 0
-  shootingDelay: 0.15
+  shootingDelay: 0.07
+  spreadIntensity: 0.003
+  magazineSize: 32
+  bulletsLeft: 0
+  totalReservedAmmo: 126
+  reloadTime: 1.5
+  isReloading: 0
   bulletPerBurst: 3
   burstBulletsLeft: 0
-  spreadIntensity: 0.003
   bulletPrefab: {fileID: 3467565710620987745, guid: a53cb425502a6ba4da1243de58cc91b7, type: 3}
   bulletSpawn: {fileID: 4081188744230823893}
   bulletVelocity: 300
   bulletPrefabLifeTime: 5
   muzzleEffect: {fileID: 5552640042751969213}
   currentShootingMode: 2
+  audioSourceSFX: {fileID: 0}
+  fireSound: {fileID: 8300000, guid: cf36a258ef758d346af6b07a9851d005, type: 3}
+  basePitch: 1
+  pitchVariation: 0.1
+  reloadSound: {fileID: 8300000, guid: 25997c412a0ae0644badb547801674e3, type: 3}
+  weaponAnimator: {fileID: 8402066348423791642}
+--- !u!95 &8402066348423791642
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5161231620238289646}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 348a3e2a39d77b44eaef7e903a97788a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &5534670130592599045
 GameObject:
   m_ObjectHideFlags: 0

@@ -190,6 +190,7 @@ GameObject:
   m_Component:
   - component: {fileID: 175095401240410630}
   - component: {fileID: -4443466004030271151}
+  - component: {fileID: 2751041556243043987}
   m_Layer: 0
   m_Name: AR_2_Modded_M4-C
   m_TagString: Untagged
@@ -250,15 +251,48 @@ MonoBehaviour:
   isShooting: 0
   readyToShoot: 0
   shootingDelay: 0.15
+  spreadIntensity: 0.003
+  magazineSize: 30
+  bulletsLeft: 0
+  totalReservedAmmo: 120
+  reloadTime: 1.5
+  isReloading: 0
   bulletPerBurst: 3
   burstBulletsLeft: 0
-  spreadIntensity: 0.003
   bulletPrefab: {fileID: 8489818951931819000, guid: 0378c810e23239f4c95daf4b8ea484f3, type: 3}
   bulletSpawn: {fileID: 4430755394701913642}
   bulletVelocity: 300
   bulletPrefabLifeTime: 5
   muzzleEffect: {fileID: 1984420104459880410}
   currentShootingMode: 2
+  audioSourceSFX: {fileID: 0}
+  fireSound: {fileID: 8300000, guid: ac4babb9c31863d479596679e1e75bcc, type: 3}
+  basePitch: 1
+  pitchVariation: 0.1
+  reloadSound: {fileID: 8300000, guid: bf262f02cf775994bab4a48e628498ee, type: 3}
+  weaponAnimator: {fileID: 2751041556243043987}
+--- !u!95 &2751041556243043987
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 992716270599655095}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5689c9701284fe141a95ebacbb470434, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1740300206973928963
 GameObject:
   m_ObjectHideFlags: 0
