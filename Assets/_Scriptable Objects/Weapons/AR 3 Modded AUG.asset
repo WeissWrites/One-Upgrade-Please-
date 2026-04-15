@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b7d7995c9150c54c81ea4a504b033cf, type: 3}
+  m_Name: AR 3 Modded AUG
+  m_EditorClassIdentifier: Assembly-CSharp::WeaponDataSO
+  weaponName: AUG
+  damage: 0
+  headshotDamage: 0
+  shootingDelay: 0.2
+  spreadIntensity: 0
+  shootingMode: 2
+  kickBackZ: 0
+  kickRotationX: 0
+  snappiness: 0
+  returnSpeed: 0
+  magazineSize: 42
+  startingReservedAmmo: 168
+  reloadTime: 1.85
+  fireSound: {fileID: 8300000, guid: 6453be76888727940b2b954a55ef25fc, type: 3}
+  reloadSound: {fileID: 8300000, guid: d55757cf2fce7924da719866f106509b, type: 3}
+  equipSound: {fileID: 8300000, guid: 00334bf4d681d3c46b84e80b0dfbdc14, type: 3}
+  swapInTime: 0.42

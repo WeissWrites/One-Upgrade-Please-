@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b7d7995c9150c54c81ea4a504b033cf, type: 3}
+  m_Name: Pistol 4 Modded MicroUzi
+  m_EditorClassIdentifier: Assembly-CSharp::WeaponDataSO
+  weaponName: MicroUzi
+  damage: 0
+  headshotDamage: 0
+  shootingDelay: 0.1
+  spreadIntensity: 0
+  shootingMode: 2
+  kickBackZ: 0
+  kickRotationX: 0
+  snappiness: 0
+  returnSpeed: 0
+  magazineSize: 25
+  startingReservedAmmo: 100
+  reloadTime: 1.3
+  fireSound: {fileID: 8300000, guid: 6453be76888727940b2b954a55ef25fc, type: 3}
+  reloadSound: {fileID: 8300000, guid: bf262f02cf775994bab4a48e628498ee, type: 3}
+  equipSound: {fileID: 8300000, guid: 2aa561217ffbdfe4cae312d5acf87f38, type: 3}
+  swapInTime: 0.22
