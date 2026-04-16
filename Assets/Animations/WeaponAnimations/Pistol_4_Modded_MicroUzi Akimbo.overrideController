@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Pistol_4_Modded_MicroUzi Akimbo
+  m_Controller: {fileID: 9100000, guid: 11e73c1fd3d174747b2eed27126c3071, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: cad86397c01353442bb0af6a35d31f30, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: fecb6cd186e1b0b41a63ab80363da93e, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: d69b9fbd3ea522a41bda133c0e87a419, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 8bfab59710e12994a93909625ee117d2, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: a0425654a663c2945a8016c49368e58f, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: a96a8a7899bdbbb44a4ef5de74a871de, type: 2}

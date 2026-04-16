@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Pistol_3_Modded_Ruger Mark IV 2245 Lite Akimbo
+  m_Controller: {fileID: 9100000, guid: 35f919baa2b80c148b49aa78069d5251, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: a4ecb73d80ed1754ab1118b3bd65082d, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: e7e178d30fef3aa47a538af3477d72c3, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: dfc7e1243f035c84abba3466bcde169c, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 311cf58683cf6e04bad09a2139f76f50, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 4d5fe16d6105c8a438e2508d37c55732, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 02aa15e227507354ba72f860d925b248, type: 2}

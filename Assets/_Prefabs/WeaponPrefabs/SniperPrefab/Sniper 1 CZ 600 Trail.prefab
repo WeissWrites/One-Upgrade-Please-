@@ -408,7 +408,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5320645843854400047
 Transform:
   m_ObjectHideFlags: 0
@@ -438,13 +438,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Weapon
   data: {fileID: 11400000, guid: 9d44c564ef8d4ab4ba3ae290b22847d7, type: 2}
+  currentRarityLevel: 0
   shootingLayerMask:
     serializedVersion: 2
     m_Bits: 1215
   weaponCamera: {fileID: 0}
-  sight: {fileID: 0}
-  muzzle: {fileID: 0}
-  laser: {fileID: 0}
+  sightAttachment: {fileID: 0}
+  laserAttachment: {fileID: 0}
+  gripAttachment: {fileID: 0}
   bulletsLeft: 0
   totalReservedAmmo: 15
   bulletImpactPrefab: {fileID: 6248269765741331700, guid: 89edfee002030cb4d8b00758de0ddc81, type: 3}

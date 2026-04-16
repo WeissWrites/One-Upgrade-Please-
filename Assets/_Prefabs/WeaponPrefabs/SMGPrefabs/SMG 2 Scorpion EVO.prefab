@@ -856,17 +856,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Weapon
   data: {fileID: 11400000, guid: a33b98be7ea902b4782048498b26d289, type: 2}
+  currentRarityLevel: 0
   shootingLayerMask:
     serializedVersion: 2
     m_Bits: 1215
   weaponCamera: {fileID: 0}
+  sightAttachment: {fileID: 6542940333368743525}
+  laserAttachment: {fileID: 7591902371053323179}
+  gripAttachment: {fileID: 8958250140867980734}
   bulletsLeft: 0
   totalReservedAmmo: 120
+  isAkimbo: 0
   bulletImpactPrefab: {fileID: 6248269765741331700, guid: 89edfee002030cb4d8b00758de0ddc81, type: 3}
   bloodImpactPrefab: {fileID: 1326358922357506203, guid: 70c5a013df30507438597bd8b904d15e, type: 3}
   weaponAnimator: {fileID: 7496607349506264944}
+  weaponAnimatorAkimbo: {fileID: 0}
+  akimboModel: {fileID: 0}
   bulletSpawn: {fileID: 7958498778064622135}
   muzzleFlash: {fileID: 3149941531840650433}
+  secondaryBulletSpawn: {fileID: 0}
+  secondaryMuzzleFlash: {fileID: 0}
   audioSourceSFX: {fileID: 0}
 --- !u!1 &5308935435560254238
 GameObject:
