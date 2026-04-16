@@ -13,19 +13,57 @@ MonoBehaviour:
   m_Name: SMG 2 Modded Scorpion EVO
   m_EditorClassIdentifier: Assembly-CSharp::WeaponDataSO
   weaponName: Scorpion EVO
-  weaponRarity: 0
-  damage: 11
-  headshotDamage: 24
-  shootingDelay: 0.06
-  spreadIntensity: 0.03
   shootingMode: 2
-  kickBackZ: 0.05
-  kickRotationX: 3
-  snappiness: 22
-  returnSpeed: 15
   magazineSize: 30
   startingReservedAmmo: 120
   reloadTime: 1.5
+  kickBackZ: 0.05
+  kickRotationX: 3
+  rarityTiers:
+  - rarityName: Common
+    rarityLevel: 0
+    damage: 11
+    headshotDamage: 24
+    shootingDelay: 0.06
+    spreadIntensity: 0.035
+    snappiness: 22
+    returnSpeed: 15
+    hasSight: 0
+    hasLaser: 0
+    hasGrip: 0
+  - rarityName: Rare
+    rarityLevel: 1
+    damage: 15
+    headshotDamage: 33
+    shootingDelay: 0.057
+    spreadIntensity: 0.0298
+    snappiness: 25
+    returnSpeed: 17
+    hasSight: 1
+    hasLaser: 0
+    hasGrip: 0
+  - rarityName: Epic
+    rarityLevel: 2
+    damage: 19
+    headshotDamage: 43
+    shootingDelay: 0.054
+    spreadIntensity: 0.0253
+    snappiness: 29
+    returnSpeed: 19
+    hasSight: 1
+    hasLaser: 1
+    hasGrip: 0
+  - rarityName: Legendary
+    rarityLevel: 3
+    damage: 25
+    headshotDamage: 55
+    shootingDelay: 0.051
+    spreadIntensity: 0.0215
+    snappiness: 33
+    returnSpeed: 22
+    hasSight: 1
+    hasLaser: 1
+    hasGrip: 1
   fireSound: {fileID: 8300000, guid: 8892ebfe548aae74c82cc54cde74bd73, type: 3}
   reloadSound: {fileID: 8300000, guid: 05f85faa82cb9254c8e5b4b07426ecdd, type: 3}
   equipSound: {fileID: 8300000, guid: 2851244d5c5b6a140b3357b4a5aad090, type: 3}

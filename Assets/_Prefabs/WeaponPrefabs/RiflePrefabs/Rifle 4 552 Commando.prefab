@@ -4958,10 +4958,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Weapon
   data: {fileID: 11400000, guid: 56b2ed5d7ef7c6345a64ade40835bd1e, type: 2}
+  currentRarityLevel: 0
   shootingLayerMask:
     serializedVersion: 2
     m_Bits: 1215
   weaponCamera: {fileID: 0}
+  sightAttachment: {fileID: 5972547919528307582}
+  laserAttachment: {fileID: 2660358326991687998}
+  gripAttachment: {fileID: 3745610224745070751}
   bulletsLeft: 0
   totalReservedAmmo: 90
   bulletImpactPrefab: {fileID: 6248269765741331700, guid: 89edfee002030cb4d8b00758de0ddc81, type: 3}

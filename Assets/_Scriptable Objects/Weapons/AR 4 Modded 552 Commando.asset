@@ -13,19 +13,57 @@ MonoBehaviour:
   m_Name: AR 4 Modded 552 Commando
   m_EditorClassIdentifier: Assembly-CSharp::WeaponDataSO
   weaponName: 552 Commando
-  weaponRarity: 0
-  damage: 22
-  headshotDamage: 55
-  shootingDelay: 0.11
-  spreadIntensity: 0.01
   shootingMode: 2
-  kickBackZ: 0.04
-  kickRotationX: 2.8
-  snappiness: 10
-  returnSpeed: 8
   magazineSize: 30
   startingReservedAmmo: 90
   reloadTime: 1.8
+  kickBackZ: 0.04
+  kickRotationX: 2.8
+  rarityTiers:
+  - rarityName: Common
+    rarityLevel: 0
+    damage: 22
+    headshotDamage: 55
+    shootingDelay: 0.11
+    spreadIntensity: 0.019
+    snappiness: 10
+    returnSpeed: 8
+    hasSight: 0
+    hasLaser: 0
+    hasGrip: 0
+  - rarityName: Rare
+    rarityLevel: 1
+    damage: 30
+    headshotDamage: 77
+    shootingDelay: 0.104
+    spreadIntensity: 0.0161
+    snappiness: 11
+    returnSpeed: 9
+    hasSight: 1
+    hasLaser: 0
+    hasGrip: 0
+  - rarityName: Epic
+    rarityLevel: 2
+    damage: 39
+    headshotDamage: 99
+    shootingDelay: 0.099
+    spreadIntensity: 0.0137
+    snappiness: 13
+    returnSpeed: 10
+    hasSight: 1
+    hasLaser: 1
+    hasGrip: 0
+  - rarityName: Legendary
+    rarityLevel: 3
+    damage: 50
+    headshotDamage: 126
+    shootingDelay: 0.094
+    spreadIntensity: 0.0117
+    snappiness: 15
+    returnSpeed: 12
+    hasSight: 1
+    hasLaser: 1
+    hasGrip: 1
   fireSound: {fileID: 8300000, guid: 4cd0327f49555d2419bb0d86951b440f, type: 3}
   reloadSound: {fileID: 8300000, guid: e67b84f0919c1d54ebd23251aa7c7a9c, type: 3}
   equipSound: {fileID: 8300000, guid: 375a92b0ec2c2c94ab2e7d228d349fcf, type: 3}

@@ -16063,10 +16063,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: MicroUzi
       objectReference: {fileID: 0}
-    - target: {fileID: 6007531922534702727, guid: c7f7fdae8ed882b4d9c2105e9a908714, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6009176542695527708, guid: c7f7fdae8ed882b4d9c2105e9a908714, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -16188,10 +16184,6 @@ PrefabInstance:
     - target: {fileID: 3978162682769924640, guid: 58b44e2ce2f5df54fad79f90f41e33cb, type: 3}
       propertyPath: m_Name
       value: FiveSeven
-      objectReference: {fileID: 0}
-    - target: {fileID: 3978162682769924640, guid: 58b44e2ce2f5df54fad79f90f41e33cb, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4073579472235266465, guid: 58b44e2ce2f5df54fad79f90f41e33cb, type: 3}
       propertyPath: weaponCamera
@@ -16493,10 +16485,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ruger Mark IV 2245 Lite
       objectReference: {fileID: 0}
-    - target: {fileID: 1716201528775141670, guid: 3f7f88d1a50e8b34a8b6bc692b44e1d9, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8778302256529202081, guid: 3f7f88d1a50e8b34a8b6bc692b44e1d9, type: 3}
       propertyPath: weaponCamera
       value: 
@@ -16647,10 +16635,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: M4
       objectReference: {fileID: 0}
-    - target: {fileID: 7891117102825046242, guid: 06b378e0cc891e44886cca66e9ca78a0, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -16733,10 +16717,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: CZ 600 Trail
       objectReference: {fileID: 0}
-    - target: {fileID: 4812532414244649316, guid: fec8c94cf0f674b43b4d7e4decf8af9e, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5320645843854400047, guid: fec8c94cf0f674b43b4d7e4decf8af9e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -16809,10 +16789,6 @@ PrefabInstance:
     - target: {fileID: 2963010286949641147, guid: 92630ed186f627b4fb9a656efaa4f07b, type: 3}
       propertyPath: m_Name
       value: Hudson H9
-      objectReference: {fileID: 0}
-    - target: {fileID: 2963010286949641147, guid: 92630ed186f627b4fb9a656efaa4f07b, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6239126873390050467, guid: 92630ed186f627b4fb9a656efaa4f07b, type: 3}
       propertyPath: m_LocalPosition.x

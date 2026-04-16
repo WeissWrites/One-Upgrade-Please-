@@ -13,19 +13,57 @@ MonoBehaviour:
   m_Name: SMG 3 Modded P90
   m_EditorClassIdentifier: Assembly-CSharp::WeaponDataSO
   weaponName: P90
-  weaponRarity: 0
-  damage: 13
-  headshotDamage: 2
-  shootingDelay: 0.07
-  spreadIntensity: 0.025
   shootingMode: 2
-  kickBackZ: 0.02
-  kickRotationX: 1.5
-  snappiness: 20
-  returnSpeed: 18
   magazineSize: 50
   startingReservedAmmo: 200
   reloadTime: 1.7
+  kickBackZ: 0.02
+  kickRotationX: 1.5
+  rarityTiers:
+  - rarityName: Common
+    rarityLevel: 0
+    damage: 13
+    headshotDamage: 26
+    shootingDelay: 0.07
+    spreadIntensity: 0.029
+    snappiness: 20
+    returnSpeed: 18
+    hasSight: 0
+    hasLaser: 0
+    hasGrip: 0
+  - rarityName: Rare
+    rarityLevel: 1
+    damage: 18
+    headshotDamage: 36
+    shootingDelay: 0.067
+    spreadIntensity: 0.0247
+    snappiness: 23
+    returnSpeed: 20
+    hasSight: 1
+    hasLaser: 0
+    hasGrip: 0
+  - rarityName: Epic
+    rarityLevel: 2
+    damage: 23
+    headshotDamage: 46
+    shootingDelay: 0.063
+    spreadIntensity: 0.021
+    snappiness: 26
+    returnSpeed: 23
+    hasSight: 1
+    hasLaser: 1
+    hasGrip: 0
+  - rarityName: Legendary
+    rarityLevel: 3
+    damage: 29
+    headshotDamage: 59
+    shootingDelay: 0.06
+    spreadIntensity: 0.0178
+    snappiness: 30
+    returnSpeed: 27
+    hasSight: 1
+    hasLaser: 1
+    hasGrip: 0
   fireSound: {fileID: 8300000, guid: a0e26b9f27346974dbc1b12dd6b3fb0c, type: 3}
   reloadSound: {fileID: 8300000, guid: 84f591de0c84258489f5bda3f1739a1f, type: 3}
   equipSound: {fileID: 8300000, guid: e0fa99deca1d81c468c52008a5f6d5bb, type: 3}

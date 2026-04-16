@@ -13,19 +13,57 @@ MonoBehaviour:
   m_Name: AR 5 Modded ASH-12
   m_EditorClassIdentifier: Assembly-CSharp::WeaponDataSO
   weaponName: ASH-12
-  weaponRarity: 0
-  damage: 35
-  headshotDamage: 105
-  shootingDelay: 0.15
-  spreadIntensity: 0.012
   shootingMode: 2
-  kickBackZ: 0.07
-  kickRotationX: 6
-  snappiness: 25
-  returnSpeed: 6
   magazineSize: 25
   startingReservedAmmo: 75
   reloadTime: 1.85
+  kickBackZ: 0.07
+  kickRotationX: 6
+  rarityTiers:
+  - rarityName: Common
+    rarityLevel: 0
+    damage: 35
+    headshotDamage: 105
+    shootingDelay: 0.15
+    spreadIntensity: 0.022
+    snappiness: 25
+    returnSpeed: 6
+    hasSight: 0
+    hasLaser: 0
+    hasGrip: 0
+  - rarityName: Rare
+    rarityLevel: 1
+    damage: 49
+    headshotDamage: 147
+    shootingDelay: 0.142
+    spreadIntensity: 0.0187
+    snappiness: 28
+    returnSpeed: 6
+    hasSight: 1
+    hasLaser: 0
+    hasGrip: 0
+  - rarityName: Epic
+    rarityLevel: 2
+    damage: 63
+    headshotDamage: 189
+    shootingDelay: 0.135
+    spreadIntensity: 0.0159
+    snappiness: 33
+    returnSpeed: 7
+    hasSight: 1
+    hasLaser: 1
+    hasGrip: 0
+  - rarityName: Legendary
+    rarityLevel: 3
+    damage: 80
+    headshotDamage: 241
+    shootingDelay: 0.129
+    spreadIntensity: 0.0135
+    snappiness: 38
+    returnSpeed: 9
+    hasSight: 1
+    hasLaser: 1
+    hasGrip: 1
   fireSound: {fileID: 8300000, guid: 6739c01659ad96d47987f4ddee226b36, type: 3}
   reloadSound: {fileID: 8300000, guid: 3cddb1ea2225be5488e1184fb147a0c6, type: 3}
   equipSound: {fileID: 8300000, guid: e2cf3cdb870b36245a8d39c1c61c29e3, type: 3}

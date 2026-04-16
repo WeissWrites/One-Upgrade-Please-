@@ -13,19 +13,57 @@ MonoBehaviour:
   m_Name: Pistol 4 Modded MicroUzi
   m_EditorClassIdentifier: Assembly-CSharp::WeaponDataSO
   weaponName: MicroUzi
-  weaponRarity: 0
-  damage: 8
-  headshotDamage: 16
-  shootingDelay: 0.05
-  spreadIntensity: 0.04
   shootingMode: 2
-  kickBackZ: 0.03
-  kickRotationX: 0.8
-  snappiness: 10
-  returnSpeed: 8
   magazineSize: 25
   startingReservedAmmo: 100
   reloadTime: 1.3
+  kickBackZ: 0.03
+  kickRotationX: 0.8
+  rarityTiers:
+  - rarityName: Common
+    rarityLevel: 0
+    damage: 8
+    headshotDamage: 16
+    shootingDelay: 0.05
+    spreadIntensity: 0.035
+    snappiness: 10
+    returnSpeed: 8
+    hasSight: 0
+    hasLaser: 0
+    hasGrip: 0
+  - rarityName: Rare
+    rarityLevel: 1
+    damage: 11
+    headshotDamage: 22
+    shootingDelay: 0.048
+    spreadIntensity: 0.0298
+    snappiness: 11
+    returnSpeed: 9
+    hasSight: 1
+    hasLaser: 0
+    hasGrip: 0
+  - rarityName: Epic
+    rarityLevel: 2
+    damage: 14
+    headshotDamage: 28
+    shootingDelay: 0.045
+    spreadIntensity: 0.0254
+    snappiness: 13
+    returnSpeed: 10
+    hasSight: 1
+    hasLaser: 1
+    hasGrip: 0
+  - rarityName: Legendary (Akimbo)
+    rarityLevel: 3
+    damage: 18
+    headshotDamage: 36
+    shootingDelay: 0.043
+    spreadIntensity: 0.0323
+    snappiness: 15
+    returnSpeed: 12
+    hasSight: 1
+    hasLaser: 1
+    hasGrip: 0
   fireSound: {fileID: 8300000, guid: 6453be76888727940b2b954a55ef25fc, type: 3}
   reloadSound: {fileID: 8300000, guid: bf262f02cf775994bab4a48e628498ee, type: 3}
   equipSound: {fileID: 8300000, guid: 2aa561217ffbdfe4cae312d5acf87f38, type: 3}

@@ -13,19 +13,57 @@ MonoBehaviour:
   m_Name: SMG 1 Modded UZI
   m_EditorClassIdentifier: Assembly-CSharp::WeaponDataSO
   weaponName: UZI
-  weaponRarity: 0
-  damage: 14
-  headshotDamage: 28
-  shootingDelay: 0.09
-  spreadIntensity: 0.025
   shootingMode: 2
-  kickBackZ: 0.04
-  kickRotationX: 2
-  snappiness: 18
-  returnSpeed: 12
   magazineSize: 32
   startingReservedAmmo: 128
   reloadTime: 1.5
+  kickBackZ: 0.04
+  kickRotationX: 2
+  rarityTiers:
+  - rarityName: Common
+    rarityLevel: 0
+    damage: 14
+    headshotDamage: 28
+    shootingDelay: 0.09
+    spreadIntensity: 0.03
+    snappiness: 18
+    returnSpeed: 12
+    hasSight: 0
+    hasLaser: 0
+    hasGrip: 0
+  - rarityName: Rare
+    rarityLevel: 1
+    damage: 19
+    headshotDamage: 39
+    shootingDelay: 0.085
+    spreadIntensity: 0.0255
+    snappiness: 20
+    returnSpeed: 13
+    hasSight: 1
+    hasLaser: 0
+    hasGrip: 0
+  - rarityName: Epic
+    rarityLevel: 2
+    damage: 25
+    headshotDamage: 50
+    shootingDelay: 0.081
+    spreadIntensity: 0.0217
+    snappiness: 23
+    returnSpeed: 15
+    hasSight: 1
+    hasLaser: 1
+    hasGrip: 0
+  - rarityName: Legendary
+    rarityLevel: 3
+    damage: 32
+    headshotDamage: 64
+    shootingDelay: 0.077
+    spreadIntensity: 0.0184
+    snappiness: 27
+    returnSpeed: 18
+    hasSight: 1
+    hasLaser: 1
+    hasGrip: 1
   fireSound: {fileID: 8300000, guid: cf36a258ef758d346af6b07a9851d005, type: 3}
   reloadSound: {fileID: 8300000, guid: 25997c412a0ae0644badb547801674e3, type: 3}
   equipSound: {fileID: 8300000, guid: 258ce5cc307e2d14795e5399821cf3dc, type: 3}

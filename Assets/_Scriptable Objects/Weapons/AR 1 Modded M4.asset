@@ -13,19 +13,57 @@ MonoBehaviour:
   m_Name: AR 1 Modded M4
   m_EditorClassIdentifier: Assembly-CSharp::WeaponDataSO
   weaponName: M4
-  weaponRarity: 0
-  damage: 17
-  headshotDamage: 43
-  shootingDelay: 0.09
-  spreadIntensity: 0.01
   shootingMode: 2
-  kickBackZ: 0.03
-  kickRotationX: 2
-  snappiness: 12
-  returnSpeed: 10
   magazineSize: 30
   startingReservedAmmo: 90
   reloadTime: 1.5
+  kickBackZ: 0.03
+  kickRotationX: 2
+  rarityTiers:
+  - rarityName: Common
+    rarityLevel: 0
+    damage: 18
+    headshotDamage: 45
+    shootingDelay: 0.1
+    spreadIntensity: 0.016
+    snappiness: 12
+    returnSpeed: 10
+    hasSight: 0
+    hasLaser: 0
+    hasGrip: 0
+  - rarityName: Rare
+    rarityLevel: 1
+    damage: 25
+    headshotDamage: 62
+    shootingDelay: 0.095
+    spreadIntensity: 0.0136
+    snappiness: 13
+    returnSpeed: 11
+    hasSight: 1
+    hasLaser: 0
+    hasGrip: 0
+  - rarityName: Epic
+    rarityLevel: 2
+    damage: 32
+    headshotDamage: 81
+    shootingDelay: 0.09
+    spreadIntensity: 0.0116
+    snappiness: 15
+    returnSpeed: 13
+    hasSight: 1
+    hasLaser: 1
+    hasGrip: 0
+  - rarityName: Legendary
+    rarityLevel: 3
+    damage: 41
+    headshotDamage: 103
+    shootingDelay: 0.086
+    spreadIntensity: 0.0098
+    snappiness: 18
+    returnSpeed: 15
+    hasSight: 1
+    hasLaser: 1
+    hasGrip: 1
   fireSound: {fileID: 8300000, guid: 6453be76888727940b2b954a55ef25fc, type: 3}
   reloadSound: {fileID: 8300000, guid: bf262f02cf775994bab4a48e628498ee, type: 3}
   equipSound: {fileID: 8300000, guid: e10158e4ad24e9243b10f8d9071b3ae8, type: 3}
