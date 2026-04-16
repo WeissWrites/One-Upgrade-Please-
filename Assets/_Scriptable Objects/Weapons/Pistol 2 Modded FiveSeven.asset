@@ -13,17 +13,18 @@ MonoBehaviour:
   m_Name: Pistol 2 Modded FiveSeven
   m_EditorClassIdentifier: Assembly-CSharp::WeaponDataSO
   weaponName: FiveSeven
-  damage: 0
-  headshotDamage: 0
-  shootingDelay: 0.4
-  spreadIntensity: 0
+  weaponRarity: 0
+  damage: 12
+  headshotDamage: 30
+  shootingDelay: 0.12
+  spreadIntensity: 0.01
   shootingMode: 0
-  kickBackZ: 0
-  kickRotationX: 0
-  snappiness: 0
-  returnSpeed: 0
+  kickBackZ: 0.01
+  kickRotationX: 1
+  snappiness: 25
+  returnSpeed: 20
   magazineSize: 20
-  startingReservedAmmo: 80
+  startingReservedAmmo: 60
   reloadTime: 1
   fireSound: {fileID: 8300000, guid: cf36a258ef758d346af6b07a9851d005, type: 3}
   reloadSound: {fileID: 8300000, guid: c7bfb2e1c46ebb84eb0201ea55560768, type: 3}

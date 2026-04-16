@@ -13,17 +13,18 @@ MonoBehaviour:
   m_Name: Pistol 3 Modded Ruger Mark IV 2245 Lite
   m_EditorClassIdentifier: Assembly-CSharp::WeaponDataSO
   weaponName: Ruger Mark IV 2245 Lite
-  damage: 0
-  headshotDamage: 0
-  shootingDelay: 0.4
-  spreadIntensity: 0
+  weaponRarity: 0
+  damage: 45
+  headshotDamage: 270
+  shootingDelay: 0.5
+  spreadIntensity: 0.001
   shootingMode: 0
-  kickBackZ: 0
-  kickRotationX: 0
-  snappiness: 0
-  returnSpeed: 0
+  kickBackZ: 0.06
+  kickRotationX: 5
+  snappiness: 35
+  returnSpeed: 5
   magazineSize: 10
-  startingReservedAmmo: 40
+  startingReservedAmmo: 30
   reloadTime: 1.5
   fireSound: {fileID: 8300000, guid: 5aa33f02777dd304787f28968296c3e4, type: 3}
   reloadSound: {fileID: 8300000, guid: 670c03a647e39334a9a7ed65f6cee62d, type: 3}

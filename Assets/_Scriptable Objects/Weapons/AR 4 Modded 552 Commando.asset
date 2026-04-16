@@ -13,17 +13,18 @@ MonoBehaviour:
   m_Name: AR 4 Modded 552 Commando
   m_EditorClassIdentifier: Assembly-CSharp::WeaponDataSO
   weaponName: 552 Commando
-  damage: 0
-  headshotDamage: 0
-  shootingDelay: 0.2
-  spreadIntensity: 0
+  weaponRarity: 0
+  damage: 22
+  headshotDamage: 55
+  shootingDelay: 0.11
+  spreadIntensity: 0.01
   shootingMode: 2
-  kickBackZ: 0
-  kickRotationX: 0
-  snappiness: 0
-  returnSpeed: 0
+  kickBackZ: 0.04
+  kickRotationX: 2.8
+  snappiness: 10
+  returnSpeed: 8
   magazineSize: 30
-  startingReservedAmmo: 120
+  startingReservedAmmo: 90
   reloadTime: 1.8
   fireSound: {fileID: 8300000, guid: 4cd0327f49555d2419bb0d86951b440f, type: 3}
   reloadSound: {fileID: 8300000, guid: e67b84f0919c1d54ebd23251aa7c7a9c, type: 3}

@@ -13,17 +13,18 @@ MonoBehaviour:
   m_Name: AR 3 Modded AUG
   m_EditorClassIdentifier: Assembly-CSharp::WeaponDataSO
   weaponName: AUG
-  damage: 0
-  headshotDamage: 0
-  shootingDelay: 0.2
-  spreadIntensity: 0
+  weaponRarity: 0
+  damage: 20
+  headshotDamage: 60
+  shootingDelay: 0.12
+  spreadIntensity: 0.0105
   shootingMode: 2
-  kickBackZ: 0
-  kickRotationX: 0
-  snappiness: 0
-  returnSpeed: 0
+  kickBackZ: 0.02
+  kickRotationX: 1.5
+  snappiness: 18
+  returnSpeed: 15
   magazineSize: 42
-  startingReservedAmmo: 168
+  startingReservedAmmo: 126
   reloadTime: 1.85
   fireSound: {fileID: 8300000, guid: 6453be76888727940b2b954a55ef25fc, type: 3}
   reloadSound: {fileID: 8300000, guid: d55757cf2fce7924da719866f106509b, type: 3}

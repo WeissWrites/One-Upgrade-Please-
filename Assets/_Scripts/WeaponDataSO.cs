@@ -5,6 +5,7 @@ public class WeaponDataSO : ScriptableObject
 {
     [Header("Info")]
     public string weaponName;
+    public int weaponRarity;
 
     [Header("Shooting")]
     public int damage;

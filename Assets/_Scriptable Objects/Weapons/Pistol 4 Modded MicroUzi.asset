@@ -13,15 +13,16 @@ MonoBehaviour:
   m_Name: Pistol 4 Modded MicroUzi
   m_EditorClassIdentifier: Assembly-CSharp::WeaponDataSO
   weaponName: MicroUzi
-  damage: 0
-  headshotDamage: 0
-  shootingDelay: 0.1
-  spreadIntensity: 0
+  weaponRarity: 0
+  damage: 8
+  headshotDamage: 16
+  shootingDelay: 0.05
+  spreadIntensity: 0.04
   shootingMode: 2
-  kickBackZ: 0
-  kickRotationX: 0
-  snappiness: 0
-  returnSpeed: 0
+  kickBackZ: 0.03
+  kickRotationX: 0.8
+  snappiness: 10
+  returnSpeed: 8
   magazineSize: 25
   startingReservedAmmo: 100
   reloadTime: 1.3

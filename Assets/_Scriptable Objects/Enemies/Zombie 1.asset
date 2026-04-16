@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Zombie 1
   m_EditorClassIdentifier: Assembly-CSharp::EnemyDataSO
   enemyName: Zombie 1
-  maxHealth: 100
+  maxHealth: 20
   scoreValue: 100

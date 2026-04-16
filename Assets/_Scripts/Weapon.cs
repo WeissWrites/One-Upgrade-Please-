@@ -8,7 +8,14 @@ public class Weapon : MonoBehaviour
     public Camera weaponCamera;
 
     public enum ShootingMode { Single, Burst, Automatic }
+    [Header("Rarity Settings")]
+    [Range(0, 3)] public int currentRarity = 0; // 0:Common, 1:Rare, 2:Epic, 3:Legendary
 
+    [Header("Attachments GameObjects")]
+    public GameObject sightAttachment;
+    public GameObject laserAttachment;
+    public GameObject gripAttachment;
+    public GameObject muzzleAttachment;
     [Header("Live Stats")]
     public int bulletsLeft;
     public int totalReservedAmmo;
@@ -34,7 +41,10 @@ public class Weapon : MonoBehaviour
     public Transform bulletSpawn;
     public ParticleSystem muzzleFlash;
     public AudioSource audioSourceSFX;
-
+    void Start()
+    {
+        RefreshWeaponVisuals();
+    }
     void Awake()
     {
         originalPosition = transform.localPosition;
@@ -52,6 +62,12 @@ public class Weapon : MonoBehaviour
         if (isSwapping) return;
 
         HandleInput();
+        HandleRecoilMath();
+    }
+    void LateUpdate()
+    {
+        if (isSwapping) return;
+
         HandleRecoilMath();
     }
 
@@ -255,6 +271,28 @@ public class Weapon : MonoBehaviour
         if (bulletHole) bulletHole.gameObject.SetActive(true);
 
         Destroy(impact, 5f);
+    }
+    public void RefreshWeaponVisuals()
+    {
+
+        // Activate Attachment bases on Rarity
+        // Common (0): No attachments
+        // Rare (1): Sight
+        // Epic (2): Sight + Laser
+        // Legendary (3): Sight + Laser + Grip
+        if (sightAttachment) sightAttachment.SetActive(currentRarity >= 1);
+        if (laserAttachment) laserAttachment.SetActive(currentRarity >= 2);
+
+        // Only Rifles have grips, so we check if it exists
+        if (gripAttachment) gripAttachment.SetActive(currentRarity >= 3);
+
+        // 2. Special Case: Sniper is always Legendary
+        if (data.weaponName == "CZ 600 Trail") // Use your Sniper's name
+        {
+            currentRarity = 3;
+            if (sightAttachment) sightAttachment.SetActive(true);
+            if (laserAttachment) laserAttachment.SetActive(true);
+        }
     }
 
     private void FinishSwapping() => isSwapping = false;
