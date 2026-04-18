@@ -7,6 +7,7 @@ public class Weapon : MonoBehaviour
 {
     public WeaponDataSO data;
     [Range(0, 3)] public int currentRarityLevel = 0;
+    [Range(0, 4)] public int currentUpgradeLevel = 0;
     public LayerMask shootingLayerMask;
     public Camera weaponCamera;
 
@@ -25,7 +26,8 @@ public class Weapon : MonoBehaviour
     private bool readyToShoot = true;
     private bool isReloading;
     private bool isSwapping;
-    private WeaponDataSO.WeaponRarityData currentStats;
+    private WeaponDataSO.WeaponRarityData currentRarityStats;
+    private WeaponDataSO.WeaponRarityData.WeaponUpgradeData currentUpgradeStats;
     [Header("Impact Effects")]
     public GameObject bulletImpactPrefab;
     public GameObject bloodImpactPrefab;
@@ -38,6 +40,12 @@ public class Weapon : MonoBehaviour
 
     private Vector3 originalPosition;
     private Quaternion originalRotation;
+    private float dynamicSpread;
+    [Header("Scope")]
+    public GameObject scopeOverlay;
+    public GameObject weaponModel;
+    private bool isScoped;
+    private float defaultFOV;
     [Header("Visual Effects")]
 
     public Animator weaponAnimator;
@@ -53,6 +61,7 @@ public class Weapon : MonoBehaviour
     {
         originalPosition = transform.localPosition;
         originalRotation = transform.localRotation;
+        if (weaponCamera != null) defaultFOV = weaponCamera.fieldOfView;
         InitializeWeapon();
     }
 
@@ -60,9 +69,17 @@ public class Weapon : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.T)) SetRarity(currentRarityLevel + 1);
         if (Input.GetKeyDown(KeyCode.Y)) SetRarity(currentRarityLevel - 1);
+        if (Input.GetKeyDown(KeyCode.G)) SetUpgrade(currentUpgradeLevel + 1);
+        if (Input.GetKeyDown(KeyCode.H)) SetUpgrade(currentUpgradeLevel - 1);
 
         if (isSwapping) return;
         HandleInput();
+        // Crosshair adjusting
+        dynamicSpread = Mathf.Lerp(dynamicSpread, 0f, Time.deltaTime * currentUpgradeStats.spreadRecovery);
+        if (UIManager.Instance != null && data != null && !isScoped)
+        {
+            UIManager.Instance.UpdateCrosshair(currentUpgradeStats.spreadIntensity + dynamicSpread);
+        }
     }
     void LateUpdate()
     {
@@ -88,24 +105,47 @@ public class Weapon : MonoBehaviour
     }
     public void SetRarity(int newLevel)
     {
-        // Set the Rarity of Gun
         currentRarityLevel = Mathf.Clamp(newLevel, 0, 3);
 
         if (data != null)
         {
-            currentStats = data.GetRarityData(currentRarityLevel);
-            // Check if weapon can be Akimbo
+            bool wasAkimbo = isAkimbo;
+            currentRarityStats = data.GetRarityData(currentRarityLevel);
+            currentUpgradeStats = data.GetUpgradeData(currentRarityLevel, currentUpgradeLevel);
             isAkimbo = (currentRarityLevel == 3 && akimboEligibleGuns.Contains(data.weaponName));
+
+            // Adjust magazine and reserves when akimbo state changes
+            if (!wasAkimbo && isAkimbo)
+            {
+                bulletsLeft = Mathf.Min(bulletsLeft * 2, data.magazineSize * 2);
+                totalReservedAmmo *= 2;
+            }
+            else if (wasAkimbo && !isAkimbo)
+            {
+                bulletsLeft = Mathf.CeilToInt(bulletsLeft / 2f);
+                totalReservedAmmo /= 2;
+            }
+
             UpdateVisualAttachments();
-            Debug.Log($"{data.weaponName} set to {currentStats.rarityName} rarity. Akimbo: {isAkimbo}");
+            Debug.Log($"{data.weaponName} set to {currentRarityStats.rarityName} rarity, upgrade {currentUpgradeLevel}. Akimbo: {isAkimbo}");
+        }
+    }
+
+    public void SetUpgrade(int newLevel)
+    {
+        currentUpgradeLevel = Mathf.Clamp(newLevel, 0, 4);
+        if (data != null)
+        {
+            currentUpgradeStats = data.GetUpgradeData(currentRarityLevel, currentUpgradeLevel);
+            Debug.Log($"{data.weaponName} upgrade set to level {currentUpgradeLevel}");
         }
     }
 
     private void UpdateVisualAttachments()
     {
-        if (sightAttachment != null) sightAttachment.SetActive(currentStats.hasSight);
-        if (laserAttachment != null) laserAttachment.SetActive(currentStats.hasLaser);
-        if (gripAttachment != null) gripAttachment.SetActive(currentStats.hasGrip);
+        if (sightAttachment != null) sightAttachment.SetActive(currentRarityStats.hasSight);
+        if (laserAttachment != null) laserAttachment.SetActive(currentRarityStats.hasLaser);
+        if (gripAttachment != null) gripAttachment.SetActive(currentRarityStats.hasGrip);
 
         if (akimboModel != null)
         {
@@ -123,9 +163,11 @@ public class Weapon : MonoBehaviour
         targetPosition += new Vector3(0, 0, -data.kickBackZ);
         targetRotation += new Vector3(-data.kickRotationX, Random.Range(-1f, 1f), 0);
 
-        // Raycast
+        // Raycast (Shot)
         Ray ray = weaponCamera.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
         Vector3 finalDirection = AddSpread(ray.direction);
+        // Bloom
+        dynamicSpread += currentUpgradeStats.spreadPerShot;
 
         if (Physics.Raycast(weaponCamera.transform.position, finalDirection, out RaycastHit hit, 1000f, shootingLayerMask))
         {
@@ -158,9 +200,11 @@ public class Weapon : MonoBehaviour
 
         targetPosition += new Vector3(0, 0, -data.kickBackZ * 0.7f); // Less recoil for Akimbo
         targetRotation += new Vector3(-data.kickRotationX * 0.7f, Random.Range(-1.5f, 1.5f), 0);
-
+        // Raycast (Shot)
         Ray ray = weaponCamera.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
         Vector3 dir = AddSpread(ray.direction);
+        // Bloom
+        dynamicSpread += currentUpgradeStats.spreadPerShot * 0.5f;
 
         if (Physics.Raycast(weaponCamera.transform.position, dir, out RaycastHit hit, 1000f, shootingLayerMask))
         {
@@ -171,6 +215,7 @@ public class Weapon : MonoBehaviour
     {
         int maxMag = data.magazineSize * (isAkimbo ? 2 : 1);
         if (isReloading || bulletsLeft == maxMag || totalReservedAmmo <= 0) return;
+        if (isScoped) SetScope(false);
 
         isReloading = true;
         readyToShoot = false;
@@ -197,7 +242,7 @@ public class Weapon : MonoBehaviour
         Enemy enemy = hit.collider.GetComponentInParent<Enemy>();
         if (enemy != null)
         {
-            enemy.TakeDamage(hit.collider.CompareTag("Head") ? currentStats.headshotDamage : currentStats.damage);
+            enemy.TakeDamage(hit.collider.CompareTag("Head") ? currentUpgradeStats.headshotDamage : currentUpgradeStats.damage);
             if (bloodImpactPrefab != null)
             {
                 GameObject blood = Instantiate(bloodImpactPrefab, hit.point, Quaternion.LookRotation(hit.normal));
@@ -220,7 +265,7 @@ public class Weapon : MonoBehaviour
         }
         else
         {
-            Invoke(nameof(ResetShot), currentStats.shootingDelay);
+            Invoke(nameof(ResetShot), currentUpgradeStats.shootingDelay);
         }
 
         if (UIManager.Instance != null)
@@ -233,6 +278,12 @@ public class Weapon : MonoBehaviour
         if (data.shootingMode == Weapon.ShootingMode.Automatic) isShooting = Input.GetKey(KeyCode.Mouse0);
         else isShooting = Input.GetKeyDown(KeyCode.Mouse0);
 
+        if (data.canScope)
+        {
+            if (Input.GetMouseButtonDown(1)) SetScope(true);
+            if (Input.GetMouseButtonUp(1)) SetScope(false);
+        }
+
         if (Input.GetKeyDown(KeyCode.R) && bulletsLeft < (data.magazineSize * (isAkimbo ? 2 : 1)) && !isReloading && totalReservedAmmo > 0)
             Reload();
 
@@ -243,14 +294,29 @@ public class Weapon : MonoBehaviour
         }
     }
 
+    private void SetScope(bool scoped)
+    {
+        isScoped = scoped;
+        if (scopeOverlay != null) scopeOverlay.SetActive(scoped);
+        if (weaponModel != null)
+        {
+            foreach (var r in weaponModel.GetComponentsInChildren<Renderer>())
+                r.enabled = !scoped;
+        }
+        if (weaponCamera != null)
+            weaponCamera.fieldOfView = scoped ? data.scopedFOV : defaultFOV;
+        if (UIManager.Instance != null)
+            UIManager.Instance.SetCrosshairActive(!scoped);
+    }
+
     void HandleRecoilMath()
     {
         // Move back over time
-        targetRotation = Vector3.Lerp(targetRotation, Vector3.zero, currentStats.returnSpeed * Time.deltaTime);
-        targetPosition = Vector3.Lerp(targetPosition, Vector3.zero, currentStats.returnSpeed * Time.deltaTime);
+        targetRotation = Vector3.Lerp(targetRotation, Vector3.zero, currentUpgradeStats.returnSpeed * Time.deltaTime);
+        targetPosition = Vector3.Lerp(targetPosition, Vector3.zero, currentUpgradeStats.returnSpeed * Time.deltaTime);
 
-        currentRotation = Vector3.Lerp(currentRotation, targetRotation, currentStats.snappiness * Time.deltaTime);
-        currentPosition = Vector3.Lerp(currentPosition, targetPosition, currentStats.snappiness * Time.deltaTime);
+        currentRotation = Vector3.Lerp(currentRotation, targetRotation, currentUpgradeStats.snappiness * Time.deltaTime);
+        currentPosition = Vector3.Lerp(currentPosition, targetPosition, currentUpgradeStats.snappiness * Time.deltaTime);
 
         // Apply values
         transform.localPosition = originalPosition + currentPosition;
@@ -259,9 +325,10 @@ public class Weapon : MonoBehaviour
 
     private Vector3 AddSpread(Vector3 baseDir)
     {
-        // Add current Spread amount
-        float x = Random.Range(-currentStats.spreadIntensity, currentStats.spreadIntensity);
-        float y = Random.Range(-currentStats.spreadIntensity, currentStats.spreadIntensity);
+        if (isScoped) return baseDir;
+        float totalSpread = currentUpgradeStats.spreadIntensity + dynamicSpread;
+        float x = Random.Range(-totalSpread, totalSpread);
+        float y = Random.Range(-totalSpread, totalSpread);
         return (baseDir + weaponCamera.transform.right * x + weaponCamera.transform.up * y).normalized;
     }
 
@@ -291,6 +358,8 @@ public class Weapon : MonoBehaviour
 
         transform.localPosition = originalPosition;
         transform.localRotation = originalRotation;
+        // Bloom
+        dynamicSpread = 0f;
 
         if (data != null && data.equipSound != null && audioSourceSFX != null)
         {
@@ -309,7 +378,10 @@ public class Weapon : MonoBehaviour
         }
 
         if (UIManager.Instance != null)
+        {
             UIManager.Instance.UpdateAmmoUI(bulletsLeft, totalReservedAmmo);
+            UIManager.Instance.SnapCrosshair(currentUpgradeStats.spreadIntensity);
+        }
         // Reload if Gun empty on Swap to
         if (bulletsLeft <= 0 && totalReservedAmmo > 0)
         {
@@ -322,6 +394,7 @@ public class Weapon : MonoBehaviour
     }
     private void OnDisable()
     {
+        if (isScoped) SetScope(false);
         CancelInvoke();
         StopAllCoroutines();
 
