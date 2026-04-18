@@ -22,45 +22,205 @@ MonoBehaviour:
   rarityTiers:
   - rarityName: Common
     rarityLevel: 0
-    damage: 18
-    headshotDamage: 45
-    shootingDelay: 0.1
-    spreadIntensity: 0.016
-    snappiness: 12
-    returnSpeed: 10
+    upgradeLevels:
+    - upgradeLevel: 0
+      damage: 18
+      headshotDamage: 45
+      shootingDelay: 0.1
+      spreadIntensity: 0.016
+      spreadPerShot: 0.024
+      spreadRecovery: 5
+      snappiness: 12
+      returnSpeed: 10
+    - upgradeLevel: 1
+      damage: 21
+      headshotDamage: 53
+      shootingDelay: 0.0979
+      spreadIntensity: 0.01383
+      spreadPerShot: 0.0203
+      spreadRecovery: 5.79
+      snappiness: 13
+      returnSpeed: 11
+    - upgradeLevel: 2
+      damage: 28
+      headshotDamage: 70
+      shootingDelay: 0.0958
+      spreadIntensity: 0.01195
+      spreadPerShot: 0.01718
+      spreadRecovery: 6.58
+      snappiness: 14
+      returnSpeed: 12
+    - upgradeLevel: 3
+      damage: 42
+      headshotDamage: 105
+      shootingDelay: 0.0937
+      spreadIntensity: 0.01033
+      spreadPerShot: 0.01453
+      spreadRecovery: 7.37
+      snappiness: 15
+      returnSpeed: 12
+    - upgradeLevel: 4
+      damage: 73
+      headshotDamage: 182
+      shootingDelay: 0.0916
+      spreadIntensity: 0.00893
+      spreadPerShot: 0.01229
+      spreadRecovery: 8.16
+      snappiness: 16
+      returnSpeed: 13
     hasSight: 0
     hasLaser: 0
     hasGrip: 0
   - rarityName: Rare
     rarityLevel: 1
-    damage: 25
-    headshotDamage: 62
-    shootingDelay: 0.095
-    spreadIntensity: 0.0136
-    snappiness: 13
-    returnSpeed: 11
+    upgradeLevels:
+    - upgradeLevel: 0
+      damage: 36
+      headshotDamage: 90
+      shootingDelay: 0.0895
+      spreadIntensity: 0.00771
+      spreadPerShot: 0.0104
+      spreadRecovery: 8.95
+      snappiness: 17
+      returnSpeed: 14
+    - upgradeLevel: 1
+      damage: 42
+      headshotDamage: 105
+      shootingDelay: 0.0874
+      spreadIntensity: 0.00667
+      spreadPerShot: 0.0088
+      spreadRecovery: 9.74
+      snappiness: 18
+      returnSpeed: 15
+    - upgradeLevel: 2
+      damage: 56
+      headshotDamage: 140
+      shootingDelay: 0.0853
+      spreadIntensity: 0.00576
+      spreadPerShot: 0.00744
+      spreadRecovery: 10.53
+      snappiness: 19
+      returnSpeed: 16
+    - upgradeLevel: 3
+      damage: 84
+      headshotDamage: 210
+      shootingDelay: 0.0832
+      spreadIntensity: 0.00498
+      spreadPerShot: 0.0063
+      spreadRecovery: 11.32
+      snappiness: 20
+      returnSpeed: 16
+    - upgradeLevel: 4
+      damage: 146
+      headshotDamage: 364
+      shootingDelay: 0.0811
+      spreadIntensity: 0.0043
+      spreadPerShot: 0.00533
+      spreadRecovery: 12.11
+      snappiness: 21
+      returnSpeed: 17
     hasSight: 1
     hasLaser: 0
     hasGrip: 0
   - rarityName: Epic
     rarityLevel: 2
-    damage: 32
-    headshotDamage: 81
-    shootingDelay: 0.09
-    spreadIntensity: 0.0116
-    snappiness: 15
-    returnSpeed: 13
+    upgradeLevels:
+    - upgradeLevel: 0
+      damage: 72
+      headshotDamage: 180
+      shootingDelay: 0.0789
+      spreadIntensity: 0.00372
+      spreadPerShot: 0.00451
+      spreadRecovery: 12.89
+      snappiness: 21
+      returnSpeed: 18
+    - upgradeLevel: 1
+      damage: 84
+      headshotDamage: 211
+      shootingDelay: 0.0768
+      spreadIntensity: 0.00321
+      spreadPerShot: 0.00381
+      spreadRecovery: 13.68
+      snappiness: 22
+      returnSpeed: 19
+    - upgradeLevel: 2
+      damage: 112
+      headshotDamage: 279
+      shootingDelay: 0.0747
+      spreadIntensity: 0.00278
+      spreadPerShot: 0.00322
+      spreadRecovery: 14.47
+      snappiness: 23
+      returnSpeed: 19
+    - upgradeLevel: 3
+      damage: 168
+      headshotDamage: 419
+      shootingDelay: 0.0726
+      spreadIntensity: 0.0024
+      spreadPerShot: 0.00273
+      spreadRecovery: 15.26
+      snappiness: 24
+      returnSpeed: 20
+    - upgradeLevel: 4
+      damage: 292
+      headshotDamage: 729
+      shootingDelay: 0.0705
+      spreadIntensity: 0.00207
+      spreadPerShot: 0.00231
+      spreadRecovery: 16.05
+      snappiness: 25
+      returnSpeed: 21
     hasSight: 1
     hasLaser: 1
     hasGrip: 0
   - rarityName: Legendary
     rarityLevel: 3
-    damage: 41
-    headshotDamage: 103
-    shootingDelay: 0.086
-    spreadIntensity: 0.0098
-    snappiness: 18
-    returnSpeed: 15
+    upgradeLevels:
+    - upgradeLevel: 0
+      damage: 144
+      headshotDamage: 360
+      shootingDelay: 0.0684
+      spreadIntensity: 0.00179
+      spreadPerShot: 0.00195
+      spreadRecovery: 16.84
+      snappiness: 26
+      returnSpeed: 22
+    - upgradeLevel: 1
+      damage: 168
+      headshotDamage: 421
+      shootingDelay: 0.0663
+      spreadIntensity: 0.00155
+      spreadPerShot: 0.00165
+      spreadRecovery: 17.63
+      snappiness: 27
+      returnSpeed: 23
+    - upgradeLevel: 2
+      damage: 223
+      headshotDamage: 558
+      shootingDelay: 0.0642
+      spreadIntensity: 0.00134
+      spreadPerShot: 0.0014
+      spreadRecovery: 18.42
+      snappiness: 28
+      returnSpeed: 23
+    - upgradeLevel: 3
+      damage: 336
+      headshotDamage: 839
+      shootingDelay: 0.0621
+      spreadIntensity: 0.00116
+      spreadPerShot: 0.00118
+      spreadRecovery: 19.21
+      snappiness: 29
+      returnSpeed: 24
+    - upgradeLevel: 4
+      damage: 583
+      headshotDamage: 1458
+      shootingDelay: 0.06
+      spreadIntensity: 0.001
+      spreadPerShot: 0.001
+      spreadRecovery: 20
+      snappiness: 30
+      returnSpeed: 25
     hasSight: 1
     hasLaser: 1
     hasGrip: 1

@@ -10,18 +10,27 @@ public class WeaponDataSO : ScriptableObject
         public string rarityName;
         [Range(0, 3)] public int rarityLevel; // 0=Common, 1=Rare, 2=Epic, 3=Legendary
 
-        [Header("Stats Boosts")]
-        public int damage;
-        public int headshotDamage;
-        public float shootingDelay;
-        public float spreadIntensity;
-        public float snappiness;
-        public float returnSpeed;
+        public List<WeaponUpgradeData> upgradeLevels;
 
         [Header("Attachments Activation")]
         public bool hasSight;
         public bool hasLaser;
         public bool hasGrip;
+
+        [System.Serializable]
+        public struct WeaponUpgradeData
+        {
+            [Range(0, 4)] public int upgradeLevel;
+            [Header("Stats")]
+            public int damage;
+            public int headshotDamage;
+            public float shootingDelay;
+            public float spreadIntensity;
+            public float spreadPerShot;
+            public float spreadRecovery;
+            public float snappiness;
+            public float returnSpeed;
+        }
     }
 
     [Header("General Info")]
@@ -36,6 +45,10 @@ public class WeaponDataSO : ScriptableObject
     [Header("Rarity Tiers")]
     public List<WeaponRarityData> rarityTiers = new List<WeaponRarityData>();
 
+    [Header("Scope")]
+    public bool canScope = false;
+    public float scopedFOV = 15f;
+
     [Header("Visuals & Audio")]
     public AudioClip fireSound;
     public AudioClip reloadSound;
@@ -49,5 +62,15 @@ public class WeaponDataSO : ScriptableObject
             if (tier.rarityLevel == level) return tier;
         }
         return rarityTiers[0];
+    }
+
+    public WeaponRarityData.WeaponUpgradeData GetUpgradeData(int rarityLevel, int upgradeLevel)
+    {
+        var rarity = GetRarityData(rarityLevel);
+        foreach (var upgrade in rarity.upgradeLevels)
+        {
+            if (upgrade.upgradeLevel == upgradeLevel) return upgrade;
+        }
+        return rarity.upgradeLevels[0];
     }
 }

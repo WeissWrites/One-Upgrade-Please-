@@ -10960,6 +10960,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Weapon
   data: {fileID: 11400000, guid: 2c7c0fea544b3f84ca5b79ebd18254f2, type: 2}
   currentRarityLevel: 0
+  currentUpgradeLevel: 0
   shootingLayerMask:
     serializedVersion: 2
     m_Bits: 1215
@@ -10972,6 +10973,8 @@ MonoBehaviour:
   isAkimbo: 0
   bulletImpactPrefab: {fileID: 6248269765741331700, guid: 89edfee002030cb4d8b00758de0ddc81, type: 3}
   bloodImpactPrefab: {fileID: 1326358922357506203, guid: 70c5a013df30507438597bd8b904d15e, type: 3}
+  scopeOverlay: {fileID: 0}
+  weaponModel: {fileID: 2123804274602552981}
   weaponAnimator: {fileID: 6021727057466143931}
   weaponAnimatorAkimbo: {fileID: 5340712350250439316}
   akimboModel: {fileID: 2591590012534214327}

@@ -11,12 +11,23 @@ public class UIManager : MonoBehaviour
     [Header("Ammo Display")]
     public TextMeshProUGUI currentAmmoText;
     public TextMeshProUGUI reservedAmmoText;
+    [Header("Crosshair Display")]
+    public CrosshairController crosshair;
 
     void Awake()
     {
         Instance = this;
     }
 
+    public void UpdateCrosshair(float spread)
+    {
+        if (crosshair != null) crosshair.UpdateCrosshair(spread);
+    }
+
+    public void SnapCrosshair(float spread)
+    {
+        if (crosshair != null) crosshair.SnapCrosshair(spread);
+    }
     public void UpdateAmmoUI(int current, int reserved)
     {
         currentAmmoText.text = current.ToString();
@@ -25,5 +36,10 @@ public class UIManager : MonoBehaviour
     public void UpdateHealthUI(int health)
     {
         currentHealthText.text = health.ToString();
+    }
+
+    public void SetCrosshairActive(bool active)
+    {
+        if (crosshair != null) crosshair.gameObject.SetActive(active);
     }
 }
