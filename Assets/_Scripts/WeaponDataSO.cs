@@ -47,12 +47,14 @@ public class WeaponDataSO : ScriptableObject
 
     [Header("Scope")]
     public bool canScope = false;
-    public float scopedFOV = 15f;
+    [Tooltip("Zoom multiplier when scoped. 2 = 2x zoom (halves FOV). 1 = no zoom.")]
+    public float zoomFactor = 2f;
 
     [Header("Visuals & Audio")]
     public AudioClip fireSound;
     public AudioClip reloadSound;
     public AudioClip equipSound;
+    public AudioClip scopeSound;
     public float swapInTime = 0.5f;
 
     public WeaponRarityData GetRarityData(int level)

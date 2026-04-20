@@ -225,8 +225,9 @@ MonoBehaviour:
     hasLaser: 0
     hasGrip: 0
   canScope: 1
-  scopedFOV: 15
+  zoomFactor: 3
   fireSound: {fileID: 8300000, guid: 1cae697a74c3c73448b9c9ba1bfef074, type: 3}
   reloadSound: {fileID: 8300000, guid: dcbff8e5b576116468b4c7a09ac4b054, type: 3}
   equipSound: {fileID: 8300000, guid: 7866dea096973fc4080ed9235f6399eb, type: 3}
+  scopeSound: {fileID: 8300000, guid: b4fb6aaefd3232e4bba7ab9b29a5cc2e, type: 3}
   swapInTime: 0.67

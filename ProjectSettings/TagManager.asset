@@ -21,8 +21,8 @@ TagManager:
   - Weapon
   - Bullet
   - Terrain
-  - 
-  - 
+  - Interactable
+  - WeaponIcon
   - 
   - 
   - 
