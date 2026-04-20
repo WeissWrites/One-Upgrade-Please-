@@ -14,217 +14,40 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::WeaponDataSO
   weaponName: AUG
   shootingMode: 2
-  magazineSize: 42
-  startingReservedAmmo: 126
-  reloadTime: 1.85
   kickBackZ: 0.02
   kickRotationX: 1.5
-  rarityTiers:
-  - rarityName: Common
-    rarityLevel: 0
-    upgradeLevels:
-    - upgradeLevel: 0
-      damage: 20
-      headshotDamage: 60
-      shootingDelay: 0.12
-      spreadIntensity: 0.02
-      spreadPerShot: 0.024
-      spreadRecovery: 5
-      snappiness: 18
-      returnSpeed: 15
-    - upgradeLevel: 1
-      damage: 23
-      headshotDamage: 70
-      shootingDelay: 0.1175
-      spreadIntensity: 0.01708
-      spreadPerShot: 0.0203
-      spreadRecovery: 5.79
-      snappiness: 19
-      returnSpeed: 16
-    - upgradeLevel: 2
-      damage: 31
-      headshotDamage: 93
-      shootingDelay: 0.1149
-      spreadIntensity: 0.01459
-      spreadPerShot: 0.01718
-      spreadRecovery: 6.58
-      snappiness: 21
-      returnSpeed: 17
-    - upgradeLevel: 3
-      damage: 47
-      headshotDamage: 140
-      shootingDelay: 0.1124
-      spreadIntensity: 0.01246
-      spreadPerShot: 0.01453
-      spreadRecovery: 7.37
-      snappiness: 22
-      returnSpeed: 19
-    - upgradeLevel: 4
-      damage: 81
-      headshotDamage: 243
-      shootingDelay: 0.1099
-      spreadIntensity: 0.01064
-      spreadPerShot: 0.01229
-      spreadRecovery: 8.16
-      snappiness: 24
-      returnSpeed: 20
-    hasSight: 0
-    hasLaser: 0
-    hasGrip: 0
-  - rarityName: Rare
-    rarityLevel: 1
-    upgradeLevels:
-    - upgradeLevel: 0
-      damage: 40
-      headshotDamage: 120
-      shootingDelay: 0.1074
-      spreadIntensity: 0.00909
-      spreadPerShot: 0.0104
-      spreadRecovery: 8.95
-      snappiness: 25
-      returnSpeed: 21
-    - upgradeLevel: 1
-      damage: 47
-      headshotDamage: 140
-      shootingDelay: 0.1048
-      spreadIntensity: 0.00777
-      spreadPerShot: 0.0088
-      spreadRecovery: 9.74
-      snappiness: 27
-      returnSpeed: 22
-    - upgradeLevel: 2
-      damage: 62
-      headshotDamage: 186
-      shootingDelay: 0.1023
-      spreadIntensity: 0.00663
-      spreadPerShot: 0.00744
-      spreadRecovery: 10.53
-      snappiness: 28
-      returnSpeed: 23
-    - upgradeLevel: 3
-      damage: 93
-      headshotDamage: 280
-      shootingDelay: 0.0998
-      spreadIntensity: 0.00567
-      spreadPerShot: 0.0063
-      spreadRecovery: 11.32
-      snappiness: 29
-      returnSpeed: 24
-    - upgradeLevel: 4
-      damage: 162
-      headshotDamage: 486
-      shootingDelay: 0.0973
-      spreadIntensity: 0.00484
-      spreadPerShot: 0.00533
-      spreadRecovery: 12.11
-      snappiness: 31
-      returnSpeed: 26
-    hasSight: 1
-    hasLaser: 0
-    hasGrip: 0
-  - rarityName: Epic
-    rarityLevel: 2
-    upgradeLevels:
-    - upgradeLevel: 0
-      damage: 80
-      headshotDamage: 240
-      shootingDelay: 0.0947
-      spreadIntensity: 0.00413
-      spreadPerShot: 0.00451
-      spreadRecovery: 12.89
-      snappiness: 32
-      returnSpeed: 27
-    - upgradeLevel: 1
-      damage: 94
-      headshotDamage: 281
-      shootingDelay: 0.0922
-      spreadIntensity: 0.00353
-      spreadPerShot: 0.00381
-      spreadRecovery: 13.68
-      snappiness: 34
-      returnSpeed: 28
-    - upgradeLevel: 2
-      damage: 124
-      headshotDamage: 372
-      shootingDelay: 0.0897
-      spreadIntensity: 0.00302
-      spreadPerShot: 0.00322
-      spreadRecovery: 14.47
-      snappiness: 35
-      returnSpeed: 29
-    - upgradeLevel: 3
-      damage: 186
-      headshotDamage: 559
-      shootingDelay: 0.0872
-      spreadIntensity: 0.00258
-      spreadPerShot: 0.00273
-      spreadRecovery: 15.26
-      snappiness: 36
-      returnSpeed: 30
-    - upgradeLevel: 4
-      damage: 324
-      headshotDamage: 972
-      shootingDelay: 0.0846
-      spreadIntensity: 0.0022
-      spreadPerShot: 0.00231
-      spreadRecovery: 16.05
-      snappiness: 38
-      returnSpeed: 32
-    hasSight: 1
-    hasLaser: 1
-    hasGrip: 0
-  - rarityName: Legendary
-    rarityLevel: 3
-    upgradeLevels:
-    - upgradeLevel: 0
-      damage: 160
-      headshotDamage: 480
-      shootingDelay: 0.0821
-      spreadIntensity: 0.00188
-      spreadPerShot: 0.00195
-      spreadRecovery: 16.84
-      snappiness: 39
-      returnSpeed: 33
-    - upgradeLevel: 1
-      damage: 187
-      headshotDamage: 562
-      shootingDelay: 0.0796
-      spreadIntensity: 0.0016
-      spreadPerShot: 0.00165
-      spreadRecovery: 17.63
-      snappiness: 41
-      returnSpeed: 34
-    - upgradeLevel: 2
-      damage: 248
-      headshotDamage: 744
-      shootingDelay: 0.0771
-      spreadIntensity: 0.00137
-      spreadPerShot: 0.0014
-      spreadRecovery: 18.42
-      snappiness: 42
-      returnSpeed: 35
-    - upgradeLevel: 3
-      damage: 373
-      headshotDamage: 1118
-      shootingDelay: 0.0745
-      spreadIntensity: 0.00117
-      spreadPerShot: 0.00118
-      spreadRecovery: 19.21
-      snappiness: 44
-      returnSpeed: 36
-    - upgradeLevel: 4
-      damage: 648
-      headshotDamage: 1944
-      shootingDelay: 0.072
-      spreadIntensity: 0.001
-      spreadPerShot: 0.001
-      spreadRecovery: 20
-      snappiness: 45
-      returnSpeed: 38
-    hasSight: 1
-    hasLaser: 1
-    hasGrip: 1
+  baseStats:
+    damage: 20
+    headshotDamage: 60
+    magazineSize: 42
+    startingReservedAmmo: 126
+    reloadTime: 1.85
+    spreadIntensity: 0.02
+    spreadPerShot: 0.024
+    spreadRecovery: 5
+    shootingDelay: 0.12
+    snappiness: 18
+    returnSpeed: 15
+  currentStats:
+    damage: 30
+    headshotDamage: 90
+    magazineSize: 42
+    startingReservedAmmo: 126
+    reloadTime: 1.85
+    spreadIntensity: 0.013333333
+    spreadPerShot: 0.016
+    spreadRecovery: 7.5
+    shootingDelay: 0.08
+    snappiness: 27
+    returnSpeed: 22.5
+  canHaveSight: 1
+  canHaveLaser: 1
+  canHaveGrip: 1
+  canBeAkimbo: 0
+  canScope: 0
+  zoomFactor: 2
   fireSound: {fileID: 8300000, guid: 6453be76888727940b2b954a55ef25fc, type: 3}
   reloadSound: {fileID: 8300000, guid: d55757cf2fce7924da719866f106509b, type: 3}
   equipSound: {fileID: 8300000, guid: 00334bf4d681d3c46b84e80b0dfbdc14, type: 3}
+  scopeSound: {fileID: 0}
   swapInTime: 0.42

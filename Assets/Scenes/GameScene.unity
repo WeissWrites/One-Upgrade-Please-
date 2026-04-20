@@ -2864,6 +2864,7 @@ GameObject:
   - component: {fileID: 314426189}
   - component: {fileID: 314426188}
   - component: {fileID: 314426187}
+  - component: {fileID: 314426190}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -2991,6 +2992,23 @@ MonoBehaviour:
   currentHealth: 100
   regenDelay: 2.5
   regenDuration: 5
+--- !u!114 &314426190
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 314426182}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 119a693db97bce646a9f5461f39fbd04, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerUpgrades
+  damageUpgrades: 0
+  accuracyUpgrades: 0
+  ammoUpgrades: 0
+  shootingDelayUpgrades: 0
+  reloadSpeedUpgrades: 0
 --- !u!1 &317272527
 GameObject:
   m_ObjectHideFlags: 0

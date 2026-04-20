@@ -1,17 +1,15 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-
 
 public class Weapon : MonoBehaviour
 {
     public WeaponDataSO data;
     [Range(0, 3)] public int currentRarityLevel = 0;
-    [Range(0, 4)] public int currentUpgradeLevel = 0;
     public LayerMask shootingLayerMask;
     public Camera weaponCamera;
 
     public enum ShootingMode { Single, Burst, Automatic }
+
     [Header("Attachments GameObjects")]
     public GameObject sightAttachment;
     public GameObject laserAttachment;
@@ -26,29 +24,27 @@ public class Weapon : MonoBehaviour
     private bool readyToShoot = true;
     private bool isReloading;
     private bool isSwapping;
-    private WeaponDataSO.WeaponRarityData currentRarityStats;
-    private WeaponDataSO.WeaponRarityData.WeaponUpgradeData currentUpgradeStats;
+
     [Header("Impact Effects")]
     public GameObject bulletImpactPrefab;
     public GameObject bloodImpactPrefab;
 
-    [Header("Recoil State")]
     private Vector3 targetRotation;
     private Vector3 currentRotation;
     private Vector3 targetPosition;
     private Vector3 currentPosition;
-
     private Vector3 originalPosition;
     private Quaternion originalRotation;
     private float dynamicSpread;
+
     [Header("Scope")]
     public GameObject scopeOverlay;
     public GameObject weaponModel;
     private bool isScoped;
     private float defaultFOV;
     private float defaultMainFOV;
-    [Header("Visual Effects")]
 
+    [Header("Visual Effects")]
     public Animator weaponAnimator;
     public Animator weaponAnimatorAkimbo;
     public GameObject akimboModel;
@@ -57,13 +53,18 @@ public class Weapon : MonoBehaviour
     public Transform secondaryBulletSpawn;
     public ParticleSystem secondaryMuzzleFlash;
     public AudioSource audioSourceSFX;
-    private List<string> akimboEligibleGuns = new List<string> { "Hudson H9", "FiveSeven", "Ruger Mark IV 2245 Lite", "MicroUzi" };
+
+    private PlayerUpgrades ups;
+    private static readonly float[] RarityMults = { 1f, 1.2f, 1.5f, 2f };
+    private float RarityMult => RarityMults[Mathf.Clamp(currentRarityLevel, 0, 3)];
+
     void Awake()
     {
         originalPosition = transform.localPosition;
         originalRotation = transform.localRotation;
         if (weaponCamera != null) defaultFOV = weaponCamera.fieldOfView;
         if (Camera.main != null) defaultMainFOV = Camera.main.fieldOfView;
+        ups = PlayerUpgrades.Instance != null ? PlayerUpgrades.Instance : FindFirstObjectByType<PlayerUpgrades>();
         InitializeWeapon();
     }
 
@@ -71,18 +72,15 @@ public class Weapon : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.T)) { SetRarity(currentRarityLevel + 1); WeaponManager.Instance?.RefreshHUD(); }
         if (Input.GetKeyDown(KeyCode.Y)) { SetRarity(currentRarityLevel - 1); WeaponManager.Instance?.RefreshHUD(); }
-        if (Input.GetKeyDown(KeyCode.G)) SetUpgrade(currentUpgradeLevel + 1);
-        if (Input.GetKeyDown(KeyCode.H)) SetUpgrade(currentUpgradeLevel - 1);
 
         if (isSwapping) return;
         HandleInput();
-        // Crosshair adjusting
-        dynamicSpread = Mathf.Lerp(dynamicSpread, 0f, Time.deltaTime * currentUpgradeStats.spreadRecovery);
+
+        dynamicSpread = Mathf.Lerp(dynamicSpread, 0f, Time.deltaTime * data.currentStats.spreadRecovery);
         if (UIManager.Instance != null && data != null && !isScoped)
-        {
-            UIManager.Instance.UpdateCrosshair(currentUpgradeStats.spreadIntensity + dynamicSpread);
-        }
+            UIManager.Instance.UpdateCrosshair(data.currentStats.spreadIntensity + dynamicSpread);
     }
+
     void LateUpdate()
     {
         if (isSwapping)
@@ -93,66 +91,75 @@ public class Weapon : MonoBehaviour
         }
         HandleRecoilMath();
     }
+
     public void InitializeWeapon()
     {
         if (data != null)
         {
-            // Apply the specific stats for our current rarity
             SetRarity(currentRarityLevel);
-            // Akimbo guns get double mags
             int magMult = isAkimbo ? 2 : 1;
-            bulletsLeft = data.magazineSize * magMult;
-            totalReservedAmmo = data.startingReservedAmmo * magMult;
+            bulletsLeft = data.currentStats.magazineSize * magMult;
+            totalReservedAmmo = data.currentStats.startingReservedAmmo * magMult;
         }
     }
+
     public void SetRarity(int newLevel)
     {
         currentRarityLevel = Mathf.Clamp(newLevel, 0, 3);
+        if (data == null) return;
 
-        if (data != null)
+        bool wasAkimbo = isAkimbo;
+        isAkimbo = (currentRarityLevel == 3 && data.canBeAkimbo);
+
+        RecalculateCurrentStats();
+
+        if (!wasAkimbo && isAkimbo)
         {
-            bool wasAkimbo = isAkimbo;
-            currentRarityStats = data.GetRarityData(currentRarityLevel);
-            currentUpgradeStats = data.GetUpgradeData(currentRarityLevel, currentUpgradeLevel);
-            isAkimbo = (currentRarityLevel == 3 && akimboEligibleGuns.Contains(data.weaponName));
-
-            // Adjust magazine and reserves when akimbo state changes
-            if (!wasAkimbo && isAkimbo)
-            {
-                bulletsLeft = Mathf.Min(bulletsLeft * 2, data.magazineSize * 2);
-                totalReservedAmmo *= 2;
-            }
-            else if (wasAkimbo && !isAkimbo)
-            {
-                bulletsLeft = Mathf.CeilToInt(bulletsLeft / 2f);
-                totalReservedAmmo /= 2;
-            }
-
-            UpdateVisualAttachments();
+            bulletsLeft = Mathf.Min(bulletsLeft * 2, data.currentStats.magazineSize * 2);
+            totalReservedAmmo *= 2;
         }
+        else if (wasAkimbo && !isAkimbo)
+        {
+            bulletsLeft = Mathf.CeilToInt(bulletsLeft / 2f);
+            totalReservedAmmo /= 2;
+        }
+
+        UpdateVisualAttachments();
     }
 
-    public void SetUpgrade(int newLevel)
+    public void RecalculateCurrentStats()
     {
-        currentUpgradeLevel = Mathf.Clamp(newLevel, 0, 4);
-        if (data != null)
-        {
-            currentUpgradeStats = data.GetUpgradeData(currentRarityLevel, currentUpgradeLevel);
-            Debug.Log($"{data.weaponName} upgrade set to level {currentUpgradeLevel}");
-        }
+        if (data == null || ups == null) return;
+        float rm = RarityMult;
+
+        data.currentStats.damage             = Mathf.RoundToInt(data.baseStats.damage             * rm * Mathf.Max(1f, PlayerUpgrades.DamageMult        * ups.damageUpgrades));
+        data.currentStats.headshotDamage     = Mathf.RoundToInt(data.baseStats.headshotDamage     * rm * Mathf.Max(1f, PlayerUpgrades.DamageMult        * ups.damageUpgrades));
+        data.currentStats.magazineSize       = Mathf.RoundToInt(data.baseStats.magazineSize       *      Mathf.Max(1f, PlayerUpgrades.AmmoMult          * ups.ammoUpgrades));
+        data.currentStats.startingReservedAmmo = Mathf.RoundToInt(data.baseStats.startingReservedAmmo * Mathf.Max(1f, PlayerUpgrades.AmmoMult           * ups.ammoUpgrades));
+        data.currentStats.reloadTime         =                   data.baseStats.reloadTime         /      Mathf.Max(1f, PlayerUpgrades.ReloadSpeedMult   * ups.reloadSpeedUpgrades);
+        data.currentStats.spreadIntensity    =                   data.baseStats.spreadIntensity    / rm / Mathf.Max(1f, PlayerUpgrades.AccuracyMult      * ups.accuracyUpgrades);
+        data.currentStats.spreadPerShot      =                   data.baseStats.spreadPerShot      / rm / Mathf.Max(1f, PlayerUpgrades.AccuracyMult      * ups.accuracyUpgrades);
+        data.currentStats.spreadRecovery     =                   data.baseStats.spreadRecovery     * rm;
+        data.currentStats.shootingDelay      =                   data.baseStats.shootingDelay      / rm / Mathf.Max(1f, PlayerUpgrades.ShootingDelayMult * ups.shootingDelayUpgrades);
+        data.currentStats.snappiness         =                   data.baseStats.snappiness         * rm;
+        data.currentStats.returnSpeed        =                   data.baseStats.returnSpeed        * rm;
     }
 
     private void UpdateVisualAttachments()
     {
-        if (sightAttachment != null) sightAttachment.SetActive(currentRarityStats.hasSight);
-        if (laserAttachment != null) laserAttachment.SetActive(currentRarityStats.hasLaser);
-        if (gripAttachment != null) gripAttachment.SetActive(currentRarityStats.hasGrip);
-
-        if (akimboModel != null)
+        bool sight = false, laser = false, grip = false;
+        switch (currentRarityLevel)
         {
-            akimboModel.SetActive(isAkimbo);
+            case 1: sight = data.canHaveSight; break;
+            case 2: sight = data.canHaveSight; laser = data.canHaveLaser; break;
+            case 3: sight = data.canHaveSight; laser = data.canHaveLaser; grip = data.canHaveGrip; break;
         }
+        if (sightAttachment != null) sightAttachment.SetActive(sight);
+        if (laserAttachment != null) laserAttachment.SetActive(laser);
+        if (gripAttachment  != null) gripAttachment.SetActive(grip);
+        if (akimboModel     != null) akimboModel.SetActive(isAkimbo);
     }
+
     private void FireOneShot(Transform spawnPoint, ParticleSystem flash)
     {
         bulletsLeft--;
@@ -160,90 +167,74 @@ public class Weapon : MonoBehaviour
         if (flash != null) flash.Play();
         PlayFireSound(spawnPoint.position);
 
-        // Apply Recoil
         targetPosition += new Vector3(0, 0, -data.kickBackZ);
         targetRotation += new Vector3(-data.kickRotationX, Random.Range(-1f, 1f), 0);
 
-        // Raycast (Shot)
         Ray ray = weaponCamera.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
         Vector3 finalDirection = AddSpread(ray.direction);
-        // Bloom
-        dynamicSpread += currentUpgradeStats.spreadPerShot;
+        dynamicSpread += data.currentStats.spreadPerShot;
 
         if (Physics.Raycast(weaponCamera.transform.position, finalDirection, out RaycastHit hit, 1000f, shootingLayerMask))
-        {
             ProcessHit(hit);
-        }
 
         CheckReloadOrReset();
     }
+
     private IEnumerator FireAkimboRoutine()
     {
         readyToShoot = false;
-
-        // Shot Right Hand
         FireSingleAkimboShot(bulletSpawn, muzzleFlash);
-        // Small Delay
         yield return new WaitForSeconds(0.1f);
-        // Shot Left Hand
         if (bulletsLeft > 0)
-        {
             FireSingleAkimboShot(secondaryBulletSpawn ?? bulletSpawn, secondaryMuzzleFlash ?? muzzleFlash);
-        }
-
         CheckReloadOrReset();
     }
+
     private void FireSingleAkimboShot(Transform spawn, ParticleSystem flash)
     {
         bulletsLeft--;
         if (flash != null) flash.Play();
         PlayFireSound(spawn.position);
 
-        targetPosition += new Vector3(0, 0, -data.kickBackZ * 0.7f); // Less recoil for Akimbo
+        targetPosition += new Vector3(0, 0, -data.kickBackZ * 0.7f);
         targetRotation += new Vector3(-data.kickRotationX * 0.7f, Random.Range(-1.5f, 1.5f), 0);
-        // Raycast (Shot)
+
         Ray ray = weaponCamera.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
         Vector3 dir = AddSpread(ray.direction);
-        // Bloom
-        dynamicSpread += currentUpgradeStats.spreadPerShot * 0.5f;
+        dynamicSpread += data.currentStats.spreadPerShot * 0.5f;
 
         if (Physics.Raycast(weaponCamera.transform.position, dir, out RaycastHit hit, 1000f, shootingLayerMask))
-        {
             ProcessHit(hit);
-        }
     }
+
     private void Reload()
     {
-        int maxMag = data.magazineSize * (isAkimbo ? 2 : 1);
+        int maxMag = data.currentStats.magazineSize * (isAkimbo ? 2 : 1);
         if (isReloading || bulletsLeft == maxMag || totalReservedAmmo <= 0) return;
         if (isScoped) SetScope(false);
 
         isReloading = true;
         readyToShoot = false;
 
-        if (HasAnimator(weaponAnimator))
-        {
-            weaponAnimator.SetTrigger("Reload");
-        }
-        if (isAkimbo && HasAnimator(weaponAnimatorAkimbo))
-        {
-            weaponAnimatorAkimbo.SetTrigger("Reload");
-        }
+        if (HasAnimator(weaponAnimator)) weaponAnimator.SetTrigger("Reload");
+        if (isAkimbo && HasAnimator(weaponAnimatorAkimbo)) weaponAnimatorAkimbo.SetTrigger("Reload");
 
         if (data.reloadSound != null && audioSourceSFX != null)
         {
             audioSourceSFX.PlayOneShot(data.reloadSound);
             if (isAkimbo) audioSourceSFX.PlayOneShot(data.reloadSound);
         }
+
         CancelInvoke("ReloadFinished");
-        Invoke("ReloadFinished", data.reloadTime);
+        Invoke("ReloadFinished", data.currentStats.reloadTime);
     }
+
     private void ProcessHit(RaycastHit hit)
     {
         Enemy enemy = hit.collider.GetComponentInParent<Enemy>();
         if (enemy != null)
         {
-            enemy.TakeDamage(hit.collider.CompareTag("Head") ? currentUpgradeStats.headshotDamage : currentUpgradeStats.damage);
+            enemy.TakeDamage(hit.collider.CompareTag("Head") ? data.currentStats.headshotDamage : data.currentStats.damage);
             if (bloodImpactPrefab != null)
             {
                 GameObject blood = Instantiate(bloodImpactPrefab, hit.point, Quaternion.LookRotation(hit.normal));
@@ -255,25 +246,23 @@ public class Weapon : MonoBehaviour
             SpawnEnvironmentImpact(hit, hit.collider.tag);
         }
     }
+
     private void CheckReloadOrReset()
     {
         if (bulletsLeft <= 0 && totalReservedAmmo > 0)
         {
             if (!IsInvoking(nameof(Reload)))
-            {
                 Invoke(nameof(Reload), 0.2f);
-            }
         }
         else
         {
-            Invoke(nameof(ResetShot), currentUpgradeStats.shootingDelay);
+            Invoke(nameof(ResetShot), data.currentStats.shootingDelay);
         }
 
         if (UIManager.Instance != null)
-        {
             UIManager.Instance.UpdateAmmoUI(bulletsLeft, totalReservedAmmo);
-        }
     }
+
     void HandleInput()
     {
         if (data.shootingMode == Weapon.ShootingMode.Automatic) isShooting = Input.GetKey(KeyCode.Mouse0);
@@ -285,7 +274,8 @@ public class Weapon : MonoBehaviour
             if (Input.GetMouseButtonUp(1)) SetScope(false);
         }
 
-        if (Input.GetKeyDown(KeyCode.R) && bulletsLeft < (data.magazineSize * (isAkimbo ? 2 : 1)) && !isReloading && totalReservedAmmo > 0)
+        int maxMag = data.currentStats.magazineSize * (isAkimbo ? 2 : 1);
+        if (Input.GetKeyDown(KeyCode.R) && bulletsLeft < maxMag && !isReloading && totalReservedAmmo > 0)
             Reload();
 
         if (readyToShoot && isShooting && !isReloading && !isSwapping && bulletsLeft > 0)
@@ -300,32 +290,25 @@ public class Weapon : MonoBehaviour
         isScoped = scoped;
         if (scopeOverlay != null) scopeOverlay.SetActive(scoped);
         if (weaponModel != null)
-        {
             foreach (var r in weaponModel.GetComponentsInChildren<Renderer>())
                 r.enabled = !scoped;
-        }
         if (weaponCamera != null)
             weaponCamera.fieldOfView = scoped ? defaultFOV / data.zoomFactor : defaultFOV;
         if (Camera.main != null)
             Camera.main.fieldOfView = scoped ? defaultMainFOV / data.zoomFactor : defaultMainFOV;
         PlayerMovement pm = FindFirstObjectByType<PlayerMovement>();
         if (pm != null) pm.SetSensitivityDivisor(scoped ? data.zoomFactor : 1f);
-        if (UIManager.Instance != null)
-            UIManager.Instance.SetCrosshairActive(!scoped);
+        if (UIManager.Instance != null) UIManager.Instance.SetCrosshairActive(!scoped);
         if (scoped && data.scopeSound != null && audioSourceSFX != null)
             audioSourceSFX.PlayOneShot(data.scopeSound);
     }
 
     void HandleRecoilMath()
     {
-        // Move back over time
-        targetRotation = Vector3.Lerp(targetRotation, Vector3.zero, currentUpgradeStats.returnSpeed * Time.deltaTime);
-        targetPosition = Vector3.Lerp(targetPosition, Vector3.zero, currentUpgradeStats.returnSpeed * Time.deltaTime);
-
-        currentRotation = Vector3.Lerp(currentRotation, targetRotation, currentUpgradeStats.snappiness * Time.deltaTime);
-        currentPosition = Vector3.Lerp(currentPosition, targetPosition, currentUpgradeStats.snappiness * Time.deltaTime);
-
-        // Apply values
+        targetRotation = Vector3.Lerp(targetRotation, Vector3.zero, data.currentStats.returnSpeed * Time.deltaTime);
+        targetPosition = Vector3.Lerp(targetPosition, Vector3.zero, data.currentStats.returnSpeed * Time.deltaTime);
+        currentRotation = Vector3.Lerp(currentRotation, targetRotation, data.currentStats.snappiness * Time.deltaTime);
+        currentPosition = Vector3.Lerp(currentPosition, targetPosition, data.currentStats.snappiness * Time.deltaTime);
         transform.localPosition = originalPosition + currentPosition;
         transform.localRotation = originalRotation * Quaternion.Euler(currentRotation);
     }
@@ -333,7 +316,7 @@ public class Weapon : MonoBehaviour
     private Vector3 AddSpread(Vector3 baseDir)
     {
         if (isScoped) return baseDir;
-        float totalSpread = currentUpgradeStats.spreadIntensity + dynamicSpread;
+        float totalSpread = data.currentStats.spreadIntensity + dynamicSpread;
         float x = Random.Range(-totalSpread, totalSpread);
         float y = Random.Range(-totalSpread, totalSpread);
         return (baseDir + weaponCamera.transform.right * x + weaponCamera.transform.up * y).normalized;
@@ -341,75 +324,57 @@ public class Weapon : MonoBehaviour
 
     private void ResetShot() { if (!isReloading && !isSwapping) readyToShoot = true; }
 
-
     private void ReloadFinished()
     {
-        int maxMag = data.magazineSize * (isAkimbo ? 2 : 1);
+        int maxMag = data.currentStats.magazineSize * (isAkimbo ? 2 : 1);
         int bulletsNeeded = maxMag - bulletsLeft;
         int amountToFill = Mathf.Min(totalReservedAmmo, bulletsNeeded);
-
         bulletsLeft += amountToFill;
         totalReservedAmmo -= amountToFill;
-
         isReloading = false;
         readyToShoot = true;
         if (UIManager.Instance != null) UIManager.Instance.UpdateAmmoUI(bulletsLeft, totalReservedAmmo);
     }
+
     private void OnEnable()
     {
         isSwapping = true;
         isReloading = false;
         readyToShoot = true;
-
         targetPosition = targetRotation = currentPosition = currentRotation = Vector3.zero;
-
         transform.localPosition = originalPosition;
         transform.localRotation = originalRotation;
-        // Bloom
         dynamicSpread = 0f;
 
         if (data != null && data.equipSound != null && audioSourceSFX != null)
-        {
             audioSourceSFX.PlayOneShot(data.equipSound);
-        }
 
-        if (HasAnimator(weaponAnimator))
-        {
-            weaponAnimator.Rebind();
-            weaponAnimator.Update(0f);
-        }
-        if (isAkimbo && HasAnimator(weaponAnimatorAkimbo))
-        {
-            weaponAnimatorAkimbo.Rebind();
-            weaponAnimatorAkimbo.Update(0f);
-        }
+        if (HasAnimator(weaponAnimator)) { weaponAnimator.Rebind(); weaponAnimator.Update(0f); }
+        if (isAkimbo && HasAnimator(weaponAnimatorAkimbo)) { weaponAnimatorAkimbo.Rebind(); weaponAnimatorAkimbo.Update(0f); }
 
         if (UIManager.Instance != null)
         {
             UIManager.Instance.UpdateAmmoUI(bulletsLeft, totalReservedAmmo);
-            UIManager.Instance.SnapCrosshair(currentUpgradeStats.spreadIntensity);
+            UIManager.Instance.SnapCrosshair(data.currentStats.spreadIntensity);
         }
-        // Reload if Gun empty on Swap to
-        if (bulletsLeft <= 0 && totalReservedAmmo > 0)
-        {
 
+        if (bulletsLeft <= 0 && totalReservedAmmo > 0)
             Invoke(nameof(Reload), data != null ? data.swapInTime : 0.5f);
-        }
 
         CancelInvoke("FinishSwapping");
         Invoke("FinishSwapping", data != null ? data.swapInTime : 0.5f);
     }
+
     private void OnDisable()
     {
         if (isScoped) SetScope(false);
         CancelInvoke();
         StopAllCoroutines();
-
         if (audioSourceSFX != null) audioSourceSFX.Stop();
-
         isReloading = false;
         isSwapping = true;
     }
+
     private void PlayFireSound(Vector3 pos)
     {
         if (data.fireSound != null && AudioManagerShooting.Instance != null)
@@ -418,38 +383,20 @@ public class Weapon : MonoBehaviour
             AudioManagerShooting.Instance.PlayFiringSound(data.fireSound, pos, randomPitch);
         }
     }
+
     private void SpawnEnvironmentImpact(RaycastHit hit, string tag)
     {
         if (bulletImpactPrefab == null) return;
-
         GameObject impact = Instantiate(bulletImpactPrefab, hit.point, Quaternion.LookRotation(hit.normal));
         Transform sandEffect = impact.transform.Find("SandImpactDebris");
         Transform stoneEffect = impact.transform.Find("StoneImpactDebris");
-        // Find Particle
-        if (sandEffect != null) sandEffect.gameObject.SetActive(false);
+        if (sandEffect  != null) sandEffect.gameObject.SetActive(false);
         if (stoneEffect != null) stoneEffect.gameObject.SetActive(false);
-
-        // Enable Correct one
-        if (tag == "Terrain")
-        {
-            if (sandEffect != null) sandEffect.gameObject.SetActive(true);
-        }
-        else if (tag == "Concrete")
-        {
-            if (stoneEffect != null) stoneEffect.gameObject.SetActive(true);
-        }
-        else
-        {
-            // Default
-            if (stoneEffect != null) stoneEffect.gameObject.SetActive(true);
-        }
-
+        if (tag == "Terrain") { if (sandEffect  != null) sandEffect.gameObject.SetActive(true); }
+        else                  { if (stoneEffect != null) stoneEffect.gameObject.SetActive(true); }
         Destroy(impact, 5f);
     }
 
-    private bool HasAnimator(Animator anim)
-    {
-        return anim != null && anim.runtimeAnimatorController != null;
-    }
+    private bool HasAnimator(Animator anim) => anim != null && anim.runtimeAnimatorController != null;
     private void FinishSwapping() => isSwapping = false;
 }

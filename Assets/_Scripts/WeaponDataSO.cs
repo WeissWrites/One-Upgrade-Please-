@@ -1,49 +1,52 @@
 using UnityEngine;
-using System.Collections.Generic;
 
 [CreateAssetMenu(fileName = "NewWeaponData", menuName = "ScriptableObjects/WeaponData")]
 public class WeaponDataSO : ScriptableObject
 {
     [System.Serializable]
-    public struct WeaponRarityData
+    public struct WeaponStats
     {
-        public string rarityName;
-        [Range(0, 3)] public int rarityLevel; // 0=Common, 1=Rare, 2=Epic, 3=Legendary
+        [Header("Damage")]
+        public int damage;
+        public int headshotDamage;
 
-        public List<WeaponUpgradeData> upgradeLevels;
+        [Header("Ammo")]
+        public int magazineSize;
+        public int startingReservedAmmo;
 
-        [Header("Attachments Activation")]
-        public bool hasSight;
-        public bool hasLaser;
-        public bool hasGrip;
+        [Header("Reload Speed")]
+        public float reloadTime;
 
-        [System.Serializable]
-        public struct WeaponUpgradeData
-        {
-            [Range(0, 4)] public int upgradeLevel;
-            [Header("Stats")]
-            public int damage;
-            public int headshotDamage;
-            public float shootingDelay;
-            public float spreadIntensity;
-            public float spreadPerShot;
-            public float spreadRecovery;
-            public float snappiness;
-            public float returnSpeed;
-        }
+        [Header("Accuracy")]
+        public float spreadIntensity;
+        public float spreadPerShot;
+        public float spreadRecovery;
+
+        [Header("Fire Rate")]
+        public float shootingDelay;
+
+        [Header("Recoil")]
+        public float snappiness;
+        public float returnSpeed;
     }
 
     [Header("General Info")]
     public string weaponName;
     public Weapon.ShootingMode shootingMode;
-    public int magazineSize;
-    public int startingReservedAmmo;
-    public float reloadTime;
     public float kickBackZ;
     public float kickRotationX;
 
-    [Header("Rarity Tiers")]
-    public List<WeaponRarityData> rarityTiers = new List<WeaponRarityData>();
+    [Header("Base Stats")]
+    public WeaponStats baseStats;
+
+    [Header("Current Stats")]
+    public WeaponStats currentStats;
+
+    [Header("Attachments")]
+    public bool canHaveSight;
+    public bool canHaveLaser;
+    public bool canHaveGrip;
+    public bool canBeAkimbo;
 
     [Header("Scope")]
     public bool canScope = false;
@@ -56,23 +59,4 @@ public class WeaponDataSO : ScriptableObject
     public AudioClip equipSound;
     public AudioClip scopeSound;
     public float swapInTime = 0.5f;
-
-    public WeaponRarityData GetRarityData(int level)
-    {
-        foreach (var tier in rarityTiers)
-        {
-            if (tier.rarityLevel == level) return tier;
-        }
-        return rarityTiers[0];
-    }
-
-    public WeaponRarityData.WeaponUpgradeData GetUpgradeData(int rarityLevel, int upgradeLevel)
-    {
-        var rarity = GetRarityData(rarityLevel);
-        foreach (var upgrade in rarity.upgradeLevels)
-        {
-            if (upgrade.upgradeLevel == upgradeLevel) return upgrade;
-        }
-        return rarity.upgradeLevels[0];
-    }
 }

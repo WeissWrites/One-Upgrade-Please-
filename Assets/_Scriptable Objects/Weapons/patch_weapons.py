@@ -1,6 +1,16 @@
 """
 Reads WeaponStats.csv and patches every .asset file in this folder
-to use the new nested upgradeLevels structure inside each rarity tier.
+to use the new flat baseStats / currentStats structure.
+
+Replacement region:
+  START — first occurrence of "  magazineSize:" (old format)
+           or "  baseStats:"                   (already-patched format)
+  END   — "  fireSound:" (footer preserved as-is)
+
+Only Common / Upgrade Level 0 values from the CSV are used as base stats.
+magazineSize, startingReservedAmmo and reloadTime are read from the existing
+asset and written unchanged into both structs.
+currentStats is set to the same values as baseStats.
 
 Run from the Weapons folder:
     python patch_weapons.py
@@ -29,11 +39,7 @@ WEAPON_MAP = {
     "SMG 3 Modded P90.asset":                        "P90",
 }
 
-# These weapons use the "(Akimbo)" CSV rows for their Legendary rarity
 AKIMBO_WEAPONS = {"Hudson H9", "FiveSeven", "Ruger Mark IV", "MicroUzi"}
-
-RARITY_ORDER = ["Common", "Rare", "Epic", "Legendary"]
-RARITY_LEVEL = {"Common": 0, "Rare": 1, "Epic": 2, "Legendary": 3}
 
 
 def load_csv():
@@ -42,31 +48,42 @@ def load_csv():
     with open(CSV_PATH, newline="", encoding="utf-8") as f:
         reader = csv.DictReader(f)
         for row in reader:
-            name = row["Gun Name"].strip()
+            name   = row["Gun Name"].strip()
             rarity = row["Rarity"].strip()
-            level = int(row["Upgrade Level"].strip())
+            level  = int(row["Upgrade Level"].strip())
             data.setdefault(name, {}).setdefault(rarity, {})[level] = row
     return data
 
 
-def parse_attachments(asset_text):
-    """Extracts hasSight/hasLaser/hasGrip per rarityName from existing asset."""
-    attachments = {}
-    # Find each rarity block by rarityName, then grab the three attachment fields
-    blocks = re.split(r"(?=  - rarityName:)", asset_text)
-    for block in blocks:
-        name_match = re.search(r"rarityName: (.+)", block)
-        sight_match = re.search(r"hasSight: (\d)", block)
-        laser_match = re.search(r"hasLaser: (\d)", block)
-        grip_match = re.search(r"hasGrip: (\d)", block)
-        if name_match and sight_match:
-            rarity_name = name_match.group(1).strip()
-            attachments[rarity_name] = {
-                "hasSight": int(sight_match.group(1)),
-                "hasLaser": int(laser_match.group(1)) if laser_match else 0,
-                "hasGrip":  int(grip_match.group(1)) if grip_match else 0,
-            }
-    return attachments
+def get_field(text, field, default="0"):
+    """Extract a scalar field value from a YAML snippet."""
+    m = re.search(rf"^\s+{re.escape(field)}: (.+)$", text, re.MULTILINE)
+    return m.group(1).strip() if m else default
+
+
+def get_attachments_from_tiers(text):
+    """
+    Derive canHaveSight/canHaveLaser/canHaveGrip from old per-rarity fields.
+      canHaveSight = hasSight on the Rare tier
+      canHaveLaser = hasLaser on the Epic tier
+      canHaveGrip  = hasGrip  on the Legendary tier
+    """
+    att = {}
+    for block in re.split(r"(?=  - rarityName:)", text):
+        nm = re.search(r"rarityName: (.+)", block)
+        if not nm:
+            continue
+        rarity = nm.group(1).strip()
+        att[rarity] = {
+            "hasSight": int((re.search(r"hasSight: (\d)", block) or re.search(r"(0)", "0")).group(1)),
+            "hasLaser": int((re.search(r"hasLaser: (\d)", block) or re.search(r"(0)", "0")).group(1)),
+            "hasGrip":  int((re.search(r"hasGrip: (\d)",  block) or re.search(r"(0)", "0")).group(1)),
+        }
+    return (
+        att.get("Rare",      {}).get("hasSight", 0),
+        att.get("Epic",      {}).get("hasLaser", 0),
+        att.get("Legendary", {}).get("hasGrip",  0),
+    )
 
 
 def format_float(value):
@@ -76,44 +93,20 @@ def format_float(value):
     return s if s else "0"
 
 
-def build_rarity_tiers(weapon_name, csv_data, attachments):
-    lines = ["  rarityTiers:"]
-    for rarity in RARITY_ORDER:
-        # Akimbo weapons use a different CSV key for Legendary
-        csv_key = weapon_name
-        if rarity == "Legendary" and weapon_name in AKIMBO_WEAPONS:
-            csv_key = f"{weapon_name} (Akimbo)"
-
-        rarity_rows = csv_data.get(csv_key, {}).get(rarity)
-        if not rarity_rows:
-            print(f"  WARNING: no data for {weapon_name} / {rarity}, skipping tier")
-            continue
-
-        att = attachments.get(rarity, {"hasSight": 0, "hasLaser": 0, "hasGrip": 0})
-
-        lines.append(f"  - rarityName: {rarity}")
-        lines.append(f"    rarityLevel: {RARITY_LEVEL[rarity]}")
-        lines.append(f"    upgradeLevels:")
-
-        for lvl in range(5):
-            row = rarity_rows.get(lvl)
-            if not row:
-                print(f"  WARNING: missing upgrade level {lvl} for {weapon_name}/{rarity}")
-                continue
-            lines.append(f"    - upgradeLevel: {lvl}")
-            lines.append(f"      damage: {int(row['Damage'])}")
-            lines.append(f"      headshotDamage: {int(row['HS Damage'])}")
-            lines.append(f"      shootingDelay: {format_float(row['Shooting Delay'])}")
-            lines.append(f"      spreadIntensity: {format_float(row['Spread Intensity'])}")
-            lines.append(f"      spreadPerShot: {format_float(row['Spread Per Shot'])}")
-            lines.append(f"      spreadRecovery: {format_float(row['Spread Recovery'])}")
-            lines.append(f"      snappiness: {format_float(row['Snappiness'])}")
-            lines.append(f"      returnSpeed: {format_float(row['Return Speed'])}")
-
-        lines.append(f"    hasSight: {att['hasSight']}")
-        lines.append(f"    hasLaser: {att['hasLaser']}")
-        lines.append(f"    hasGrip: {att['hasGrip']}")
-
+def build_stats_block(label, row, mag, reserve, reload_time):
+    """Build a baseStats or currentStats YAML block (4-space indent for struct fields)."""
+    lines = [f"  {label}:"]
+    lines.append(f"    damage: {int(row['Damage'])}")
+    lines.append(f"    headshotDamage: {int(row['HS Damage'])}")
+    lines.append(f"    magazineSize: {mag}")
+    lines.append(f"    startingReservedAmmo: {reserve}")
+    lines.append(f"    reloadTime: {reload_time}")
+    lines.append(f"    spreadIntensity: {format_float(row['Spread Intensity'])}")
+    lines.append(f"    spreadPerShot: {format_float(row['Spread Per Shot'])}")
+    lines.append(f"    spreadRecovery: {format_float(row['Spread Recovery'])}")
+    lines.append(f"    shootingDelay: {format_float(row['Shooting Delay'])}")
+    lines.append(f"    snappiness: {format_float(row['Snappiness'])}")
+    lines.append(f"    returnSpeed: {format_float(row['Return Speed'])}")
     return "\n".join(lines) + "\n"
 
 
@@ -121,23 +114,57 @@ def patch_asset(asset_path, weapon_name, csv_data):
     with open(asset_path, "r", encoding="utf-8") as f:
         text = f.read()
 
-    attachments = parse_attachments(text)
+    # Find replacement region start — works for old and already-patched formats
+    start = -1
+    for marker in ["  magazineSize:", "  baseStats:"]:
+        start = text.find(marker)
+        if start != -1:
+            break
 
-    # Split into: header (up to rarityTiers:), rarity block, footer (from fireSound onward)
-    rarity_start = text.find("  rarityTiers:")
     footer_start = text.find("  fireSound:")
-    if rarity_start == -1 or footer_start == -1:
+    if start == -1 or footer_start == -1:
         print(f"  SKIPPED (unexpected format): {os.path.basename(asset_path)}")
         return
 
-    header = text[:rarity_start]
+    header = text[:start]
+    middle = text[start:footer_start]
     footer = text[footer_start:]
 
-    new_rarity_block = build_rarity_tiers(weapon_name, csv_data, attachments)
-    new_text = header + new_rarity_block + footer
+    # Extract values to preserve from the region being replaced
+    mag         = get_field(middle, "magazineSize",          "30")
+    reserve     = get_field(middle, "startingReservedAmmo",  "90")
+    reload_time = get_field(middle, "reloadTime",            "1.5")
+    can_scope   = get_field(middle, "canScope",              "0")
+    zoom_factor = get_field(middle, "zoomFactor",            "2")
+
+    # Attachment capability: read from old rarity tiers or new flat fields
+    if "rarityTiers:" in middle:
+        can_sight, can_laser, can_grip = get_attachments_from_tiers(middle)
+    else:
+        can_sight = int(get_field(middle, "canHaveSight", "0"))
+        can_laser = int(get_field(middle, "canHaveLaser", "0"))
+        can_grip  = int(get_field(middle, "canHaveGrip",  "0"))
+
+    can_akimbo = 1 if weapon_name in AKIMBO_WEAPONS else 0
+
+    # CSV: Common / Upgrade Level 0 as base
+    row = csv_data.get(weapon_name, {}).get("Common", {}).get(0)
+    if not row:
+        print(f"  WARNING: no Common/0 data for {weapon_name}, skipping")
+        return
+
+    # Build replacement block
+    new_middle  = build_stats_block("baseStats",    row, mag, reserve, reload_time)
+    new_middle += build_stats_block("currentStats", row, mag, reserve, reload_time)
+    new_middle += f"  canHaveSight: {can_sight}\n"
+    new_middle += f"  canHaveLaser: {can_laser}\n"
+    new_middle += f"  canHaveGrip: {can_grip}\n"
+    new_middle += f"  canBeAkimbo: {can_akimbo}\n"
+    new_middle += f"  canScope: {can_scope}\n"
+    new_middle += f"  zoomFactor: {zoom_factor}\n"
 
     with open(asset_path, "w", encoding="utf-8") as f:
-        f.write(new_text)
+        f.write(header + new_middle + footer)
 
     print(f"  Patched: {os.path.basename(asset_path)}")
 
