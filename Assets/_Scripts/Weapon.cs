@@ -46,6 +46,7 @@ public class Weapon : MonoBehaviour
     public GameObject weaponModel;
     private bool isScoped;
     private float defaultFOV;
+    private float defaultMainFOV;
     [Header("Visual Effects")]
 
     public Animator weaponAnimator;
@@ -62,13 +63,14 @@ public class Weapon : MonoBehaviour
         originalPosition = transform.localPosition;
         originalRotation = transform.localRotation;
         if (weaponCamera != null) defaultFOV = weaponCamera.fieldOfView;
+        if (Camera.main != null) defaultMainFOV = Camera.main.fieldOfView;
         InitializeWeapon();
     }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.T)) SetRarity(currentRarityLevel + 1);
-        if (Input.GetKeyDown(KeyCode.Y)) SetRarity(currentRarityLevel - 1);
+        if (Input.GetKeyDown(KeyCode.T)) { SetRarity(currentRarityLevel + 1); WeaponManager.Instance?.RefreshHUD(); }
+        if (Input.GetKeyDown(KeyCode.Y)) { SetRarity(currentRarityLevel - 1); WeaponManager.Instance?.RefreshHUD(); }
         if (Input.GetKeyDown(KeyCode.G)) SetUpgrade(currentUpgradeLevel + 1);
         if (Input.GetKeyDown(KeyCode.H)) SetUpgrade(currentUpgradeLevel - 1);
 
@@ -127,7 +129,6 @@ public class Weapon : MonoBehaviour
             }
 
             UpdateVisualAttachments();
-            Debug.Log($"{data.weaponName} set to {currentRarityStats.rarityName} rarity, upgrade {currentUpgradeLevel}. Akimbo: {isAkimbo}");
         }
     }
 
@@ -304,9 +305,15 @@ public class Weapon : MonoBehaviour
                 r.enabled = !scoped;
         }
         if (weaponCamera != null)
-            weaponCamera.fieldOfView = scoped ? data.scopedFOV : defaultFOV;
+            weaponCamera.fieldOfView = scoped ? defaultFOV / data.zoomFactor : defaultFOV;
+        if (Camera.main != null)
+            Camera.main.fieldOfView = scoped ? defaultMainFOV / data.zoomFactor : defaultMainFOV;
+        PlayerMovement pm = FindFirstObjectByType<PlayerMovement>();
+        if (pm != null) pm.SetSensitivityDivisor(scoped ? data.zoomFactor : 1f);
         if (UIManager.Instance != null)
             UIManager.Instance.SetCrosshairActive(!scoped);
+        if (scoped && data.scopeSound != null && audioSourceSFX != null)
+            audioSourceSFX.PlayOneShot(data.scopeSound);
     }
 
     void HandleRecoilMath()

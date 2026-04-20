@@ -19,6 +19,9 @@ public class PlayerMovement : MonoBehaviour
     public float mouseSensitivity = 2f;
     public Transform playerCamera;
     private float xRotation = 0f;
+    private float sensitivityDivisor = 1f;
+
+    public void SetSensitivityDivisor(float divisor) => sensitivityDivisor = Mathf.Max(1f, divisor);
 
     private CharacterController controller;
     private Vector3 velocity;
@@ -48,8 +51,8 @@ public class PlayerMovement : MonoBehaviour
 
     void HandleRotation()
     {
-        float mouseX = Input.GetAxis("Mouse X") * (mouseSensitivity * 100) * Time.deltaTime;
-        float mouseY = Input.GetAxis("Mouse Y") * (mouseSensitivity * 100) * Time.deltaTime;
+        float mouseX = Input.GetAxis("Mouse X") * (mouseSensitivity / sensitivityDivisor * 100) * Time.deltaTime;
+        float mouseY = Input.GetAxis("Mouse Y") * (mouseSensitivity / sensitivityDivisor * 100) * Time.deltaTime;
 
         xRotation -= mouseY;
         xRotation = Mathf.Clamp(xRotation, -90f, 90f);
