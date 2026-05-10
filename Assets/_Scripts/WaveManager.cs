@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class WaveManager : MonoBehaviour
 {
@@ -32,11 +33,9 @@ public class WaveManager : MonoBehaviour
     [Header("Waves (configure all 5 here)")]
     public WaveConfig[] waves = new WaveConfig[5];
 
-    [Header("Spawn Points")]
-    [Tooltip("Enemies pick a random point from this list each spawn")]
-    public Transform[] spawnPoints;
-    [Tooltip("Boss always spawns here (assign an empty GameObject in the scene)")]
-    public Transform bossSpawnPoint;
+    [Header("Enemy Spawning")]
+    [Tooltip("Radius around the map center within which enemies can spawn on the NavMesh")]
+    public float spawnRadius = 40f;
 
     [Header("Base Stats — used exactly for Wave 1")]
     public float baseHealth = 100f;
@@ -107,10 +106,12 @@ public class WaveManager : MonoBehaviour
         if (enemiesAlive == 0 && waveInProgress)
         {
             waveInProgress = false;
-            if (currentWave < waves.Length)
-                Invoke(nameof(StartNextWave), timeBetweenWaves);
+
+            // Every 5th wave triggers the shopkeeper phase instead of the normal timer
+            if (currentWave % 5 == 0 && ShopkeeperSequence.Instance != null)
+                ShopkeeperSequence.Instance.BeginShopPhase();
             else
-                Debug.Log("All waves cleared!");
+                Invoke(nameof(StartNextWave), timeBetweenWaves);
         }
     }
 
@@ -130,10 +131,10 @@ public class WaveManager : MonoBehaviour
 
     private void SpawnOne(GameObject prefab)
     {
-        if (prefab == null || spawnPoints == null || spawnPoints.Length == 0) return;
+        if (prefab == null) return;
 
-        Transform sp = spawnPoints[Random.Range(0, spawnPoints.Length)];
-        GameObject go = Instantiate(prefab, sp.position, sp.rotation);
+        Vector3 pos = GetRandomNavMeshPoint();
+        GameObject go = Instantiate(prefab, pos, Quaternion.identity);
 
         Enemy e = go.GetComponent<Enemy>();
         if (e != null)
@@ -147,8 +148,23 @@ public class WaveManager : MonoBehaviour
     {
         if (prefab == null) return;
 
-        Transform sp = bossSpawnPoint != null ? bossSpawnPoint : (spawnPoints?.Length > 0 ? spawnPoints[0] : transform);
-        Instantiate(prefab, sp.position, sp.rotation);
+        GameObject go = Instantiate(prefab, Vector3.zero, Quaternion.identity);
+
+        Enemy e = go.GetComponent<Enemy>();
+        if (e != null)
+        {
+            e.SetRuntimeStats(currentHealth, currentDamage, currentSpeed);
+            enemiesAlive++;
+        }
+    }
+
+    private Vector3 GetRandomNavMeshPoint()
+    {
+        Vector3 randomDir = Random.insideUnitSphere * spawnRadius;
+        randomDir.y = 0f;
+        if (NavMesh.SamplePosition(randomDir, out NavMeshHit hit, spawnRadius, NavMesh.AllAreas))
+            return hit.position;
+        return Vector3.zero;
     }
 
     private static GameObject PickRandom(GameObject[] arr) =>

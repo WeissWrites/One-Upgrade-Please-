@@ -57,7 +57,7 @@ Material:
     m_Ints: []
     m_Floats:
     - _BLEND_MODE: 0
-    - _BUILTIN_QueueControl: -1
+    - _BUILTIN_QueueControl: 1
     - _BUILTIN_QueueOffset: 0
     - _Emission: 1
     - _Metallic: 0.705

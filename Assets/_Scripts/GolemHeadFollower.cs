@@ -17,6 +17,7 @@ public class GolemHeadFollower : MonoBehaviour
 
     [Header("Visuals")]
     public Transform headVisualChild;
+    public GameObject hitEffectPrefab;
 
     private Transform player;
     private PlayerHealth playerHealth;
@@ -54,6 +55,10 @@ public class GolemHeadFollower : MonoBehaviour
         Collider ownCol = GetComponent<Collider>();
         foreach (Collider c in b.GetComponentsInChildren<Collider>())
             Physics.IgnoreCollision(ownCol, c);
+
+        // Don't push the player — damage is handled by trigger overlap
+        Collider playerCol = p.GetComponent<Collider>();
+        if (playerCol != null) Physics.IgnoreCollision(ownCol, playerCol);
 
         Vector3 toTarget = p.position - transform.position;
         Vector3 horizontalVel = new Vector3(toTarget.x, 0f, toTarget.z) / flightTime;

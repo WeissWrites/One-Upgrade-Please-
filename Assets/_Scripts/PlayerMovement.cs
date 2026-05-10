@@ -23,6 +23,10 @@ public class PlayerMovement : MonoBehaviour
 
     public void SetSensitivityDivisor(float divisor) => sensitivityDivisor = Mathf.Max(1f, divisor);
 
+    [HideInInspector] public bool isConfined;
+    [HideInInspector] public Vector3 confinementCenter;
+    [HideInInspector] public float confinementRadius;
+
     private CharacterController controller;
     private Vector3 velocity;
     private bool isGrounded;
@@ -74,6 +78,22 @@ public class PlayerMovement : MonoBehaviour
 
         Vector3 move = transform.right * x + transform.forward * z;
         controller.Move(move * walkSpeed * Time.deltaTime);
+
+        EnforceConfinement();
+    }
+
+    private void EnforceConfinement()
+    {
+        if (!isConfined) return;
+        Vector3 p = transform.position;
+        Vector3 flat = new(p.x - confinementCenter.x, 0f, p.z - confinementCenter.z);
+        if (flat.magnitude > confinementRadius)
+        {
+            Vector3 clamped = confinementCenter + flat.normalized * confinementRadius;
+            controller.enabled = false;
+            transform.position = new Vector3(clamped.x, p.y, clamped.z);
+            controller.enabled = true;
+        }
     }
 
     void HandleJumpAndGravity()

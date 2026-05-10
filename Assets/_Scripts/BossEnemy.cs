@@ -28,9 +28,9 @@ public class BossEnemy : Enemy
 
     private bool CanSeePlayer()
     {
-        Vector3 origin    = transform.position + Vector3.up * 1.5f;
-        Vector3 toPlayer  = player.position - origin;
-        float   dist      = toPlayer.magnitude;
+        Vector3 origin = transform.position + Vector3.up * 1.5f;
+        Vector3 toPlayer = player.position - origin;
+        float dist = toPlayer.magnitude;
 
         if (dist > sightRange) return false;
 

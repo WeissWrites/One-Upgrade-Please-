@@ -80,7 +80,7 @@ public class MysteryBox : MonoBehaviour
 
     private void Update()
     {
-        if (!playerNearby || !Input.GetKeyDown(KeyCode.F)) return;
+        if (!playerNearby || !Input.GetKeyDown(KeyCode.E)) return;
         if (!isRolling && !weaponReady && !isDespawning)
             OpenBox();
         else if (weaponReady)
@@ -108,10 +108,10 @@ public class MysteryBox : MonoBehaviour
         if (weaponReady)
         {
             string weaponName = currentDisplayWeapon.name.Replace("(Clone)", "").Trim();
-            promptText.text = $"Press <color=#FFD700><b>[F]</b></color> to Take {weaponName}";
+            promptText.text = $"Press <color=#FFD700><b>[E]</b></color> to Take {weaponName}";
         }
         else if (!isRolling && !isDespawning)
-            promptText.text = "Press <color=#FFD700><b>[F]</b></color> to Open Mystery Box";
+            promptText.text = "Press <color=#FFD700><b>[E]</b></color> to Open Mystery Box";
         else
             promptText.text = "";
     }

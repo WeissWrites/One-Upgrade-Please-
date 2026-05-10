@@ -57,6 +57,7 @@ MonoBehaviour:
   sphereRadius: 2.5
   stopThreshold: 0.1
   headVisualChild: {fileID: 9016582883371851218}
+  hitEffectPrefab: {fileID: 6248269765741331700, guid: 89edfee002030cb4d8b00758de0ddc81, type: 3}
 --- !u!135 &5972069565483482500
 SphereCollider:
   m_ObjectHideFlags: 0

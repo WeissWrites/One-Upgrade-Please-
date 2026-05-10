@@ -238,13 +238,33 @@ public class Weapon : MonoBehaviour
             if (bloodImpactPrefab != null)
             {
                 GameObject blood = Instantiate(bloodImpactPrefab, hit.point, Quaternion.LookRotation(hit.normal));
+                blood.transform.SetParent(hit.collider.transform, true);
                 Destroy(blood, 2f);
             }
+            return;
         }
-        else
+
+        GolemHeadFollower golemHead = hit.collider.GetComponentInParent<GolemHeadFollower>();
+        if (golemHead != null)
         {
-            SpawnEnvironmentImpact(hit, hit.collider.tag);
+            golemHead.TakeDamage(data.currentStats.damage);
+            if (golemHead.hitEffectPrefab != null)
+            {
+                GameObject fx = Instantiate(golemHead.hitEffectPrefab, hit.point, Quaternion.LookRotation(hit.normal));
+                fx.transform.SetParent(hit.collider.transform, true);
+                Destroy(fx, 2f);
+            }
+            return;
         }
+
+        ShopkeeperNPC shopkeeper = hit.collider.GetComponentInParent<ShopkeeperNPC>();
+        if (shopkeeper != null)
+        {
+            shopkeeper.RegisterHit();
+            return;
+        }
+
+        SpawnEnvironmentImpact(hit, hit.collider.tag);
     }
 
     private void CheckReloadOrReset()
